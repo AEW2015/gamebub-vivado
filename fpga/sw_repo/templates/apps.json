@@ -1,4 +1,5 @@
 [
+  {"name":"app_tester","title":"App Tester","source":"app_tester.h","drivers":{"gbesp32":["reg"],"gbaudio":["reg"],"gbsram":["reg"],"gbsdram":["reg"],"v_tpg":["reg"],"gpio":["reg","xlnx,gpio-width","xlnx,all-outputs"]},"guarded":true},
   {"name":"hello_jtag","title":"Hello JTAG UART","kind":1,"drivers":{"uartlite":["reg"]}},
   {"name":"esp32_poll","title":"Buttons (polled)","kind":2,"drivers":{"gbesp32":["reg"]}},
   {"name":"qspi_diagnostics","title":"ESP32 QSPI diagnostics","kind":3,"drivers":{"gbesp32":["reg"]}},

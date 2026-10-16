@@ -52,6 +52,7 @@ All IDs begin with `gamebub_`. The suffixes below also match the existing comman
 
 | Suffix | Purpose / prerequisites |
 | --- | --- |
+| `app_tester` | Combined compact LCD tester: SRAM, Audio, Vibration, SDRAM; all six peripheral classes required; memory writes guarded |
 | `hello_jtag` | Hello-world through the selected console; MDM UART and BRAM |
 | `esp32_poll` | Read buttons; combined ESP32 core |
 | `qspi_diagnostics` | Read ESP32 diagnostics; not a lossless QSPI trace |
@@ -69,6 +70,23 @@ All IDs begin with `gamebub_`. The suffixes below also match the existing comman
 
 ## Safety and selection rules
 
+### Combined App Tester
+
+Select **GameBub - App Tester** (`gamebub_app_tester`) for the combined UI:
+
+- L/R shoulders select SRAM, Audio, Vibration or SDRAM.
+- A starts the selected test; B stops. Outputs stop when switching apps.
+- The compact black panel has white text; the surrounding CPU layer is transparent so TPG bars remain visible. The independent ESP32 menu layer retains priority.
+- Audio is a 440-Hz, 5% level tone for nominally 250 ms. Vibration is a nominal 100-ms forward/coast pulse. GPIO vibration has no independent hardware watchdog; do not halt/debug the processor during a pulse.
+- SRAM/SDRAM show **GUARDED**, not PASS, until `GB_ALLOW_DESTRUCTIVE`, `GB_BRAM_EXECUTION_CONFIRMED` and a nonzero, word-aligned `GB_SCRATCH_BYTES` are set in the imported `gamebub_settings.h`. Set `GB_SCRATCH_OFFSET` to a reserved range and park all other clients first. The same offset/length is used for both RAMs, so it must fit both.
+- Enabled memory tests use uncached CPU accesses in 256-byte chunks: zero, ones, address, inverted-address and byte-lane checks. The progress bar covers the configured scratch range only, not the entire memory unless explicitly configured. This is not an exhaustive memory/timing qualification. Cache is flushed and disabled when starting a memory test; it is not automatically re-enabled. SDRAM is left CPU-owned.
+
+The selected platform needs one combined ESP32 core with the COV2 two-bit CPU overlay enabled, DAC audio, SRAM and SDRAM control and memory apertures, AMD TPG and one two-bit all-output vibration AXI GPIO. The TPG must already be wired through the correct FIFO/LCD path, and the ESP32 overlay stream connected. The template cannot create those hardware connections. It links into local BRAM and uses a scanline renderer instead of a large framebuffer.
+
+The combined application's CMake adds `-Os` even in Debug to fit the reference 16-KiB BRAM. The guarded build loads through byte 16,352, including its reserved 2-KiB stack, leaving only 32 bytes of unallocated BRAM. Disabling optimization, enabling destructive tests or adding features may require more BRAM; use 32 KiB or more for development and check linker usage rather than moving test code into the RAM being tested.
+
+After adding/updating the repository, **rescan repositories, Regenerate BSP and Build the platform**, then create the application. Existing domains cache their supported-template list; a sidebar entry alone does not refresh it.
+
 - **Build never runs hardware.** Deliberately running the audio or vibration ELF actuates the board. The GPIO motor has no independent CPU-hang watchdog.
 - Memory/retiming examples print a disabled/refusal result by default, not PASS. Before editing the imported application's `gamebub_settings.h`, verify its entire memory mapping, reserve the scratch range, park all other masters and satisfy the [cache/ownership requirements](memory-cache.md). These flags acknowledge preconditions; they do not park other hardware automatically.
 - RAM bases come from the selected BSP's generated secondary `reg` macros. Physical capacities follow the current fixed controller contract (512 KiB SRAM / 32 MiB SDRAM), not a measurement of your Address Editor window. Verify the full aperture before enabling destructive tests.
@@ -85,6 +103,8 @@ All IDs begin with `gamebub_`. The suffixes below also match the existing comman
 
 **Template listed but creation/build fails:** read the first missing-driver/memory/metadata error. The platform must contain the selected example's peripherals. Bind custom drivers and rebuild the BSP before retrying in a new component. Preserve the failed component/log when investigating.
 
+**"Not a valid template name" despite being listed:** the platform's generated `app_list.yaml` predates the repository update. In the platform editor, select the standalone domain's Board Support Package, click **Regenerate BSP**, then **Build** the platform and retry. Do not edit the generated list or the AMD installation manually.
+
 **Address/instance selection failure:** use one supported instance per required peripheral class, or make an explicit application-specific selection. Renamed instances are supported; ambiguous multiple instances are not selected automatically.
 
 ## Automated native discovery/build verification
@@ -95,11 +115,13 @@ From a Vitis-configured terminal at this repository's root:
 vitis -s fpga/vivado/gamebub_ipi_demo/test_app_templates.py C:/fpga-builds/gamebub-reference-001/gamebub_demo.xsa C:/fpga-builds/gamebub-native-templates-001
 ```
 
-Use a new workspace. This lists native embedded templates, creates/builds all 19 using `create_app_component(template=...)`, checks ELF bounds and writes `template-evidence.json`. It does not manually import source or fix addresses/linkers after creation, and never connects to hardware. Add repeatable `--app hello_jtag --app esp32_poll` options to select a subset. This script is optional; sidebar users do not need it.
+Use a new workspace. This lists native embedded templates, creates/builds all 20 using `create_app_component(template=...)`, checks ELF bounds and writes `template-evidence.json`. It does not manually import source or fix addresses/linkers after creation, and never connects to hardware. Add repeatable `--app hello_jtag --app esp32_poll` options to select a subset. This script is optional; sidebar users do not need it.
 
 Native backend discovery/build is tested separately from mouse-driven acceptance of every GUI action. See [validation status](validation.md) for the recorded scope.
 
 ### Executed verification (2026-10-16)
+
+The added App Tester passes native discovery (20 templates visible), the GUI's `validate_bsp` gate, native application creation and ELF build. Host tests exercise both guarded and opted-in mocked memory paths, buttons, rendering and actuator shutdown. See the [App Tester verification record](app-tester-validation.json). This template has not been run on physical hardware; the earlier compact UI's hardware observations do not qualify this new package automatically.
 
 All **19** templates are advertised by the native Examples-tree service and create/build successfully through the public Vitis API. The final run verified **101 imported source files**, allowing only Vitis's normal application-name/library substitutions in CMake. Maximum ELF load end is **14,432 bytes**, within the reference's 16 KiB BRAM.
 

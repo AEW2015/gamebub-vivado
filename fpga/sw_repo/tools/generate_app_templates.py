@@ -35,15 +35,21 @@ def expected():
                            'DRIVERS': ' '.join(app['drivers']),
                            'IRQ': '1' if app.get('kind') == 11 else '0'}.items():
             cmake = cmake.replace('@' + key + '@', value)
-        if app['name'] == 'vibration_pulse':
+        if 'gpio' in app['drivers']:
             marker = 'include(${CMAKE_CURRENT_SOURCE_DIR}/gamebub_bindings.cmake)'
             cmake = cmake.replace(marker, 'include(${CMAKE_CURRENT_SOURCE_DIR}/gamebub_vibration.cmake)\n' + marker)
             files['src/gamebub_vibration.cmake'] = (CANONICAL / 'gamebub_vibration.cmake').read_bytes()
+        if app['name'] == 'app_tester':
+            cmake += '\n# Keep the combined UI within the reference 16-KiB BRAM, even in Debug.\n'
+            cmake += 'target_compile_options(${APP_NAME}.elf PRIVATE -Os)\n'
         files['src/CMakeLists.txt'] = cmake.encode()
         for name in ('gamebub_settings.h', 'gamebub_bindings.cmake'):
             files['src/' + name] = (CANONICAL / name).read_bytes()
         main = '/* SPDX-License-Identifier: CERN-OHL-S-2.0 */\n#include "gamebub_settings.h"\n'
-        if 'kind' in app:
+        if 'source' in app:
+            main += '#include "' + app['source'] + '"\n'
+            files['src/' + app['source']] = (CANONICAL / app['source']).read_bytes()
+        elif 'kind' in app:
             main += f'#define GB_DEMO_KIND {app["kind"]}\n#define GB_APP_NAME "{app["name"]}"\n#include "demo_program.h"\n'
             files['src/demo_program.h'] = (ROOT / 'fpga/vivado/gamebub_ipi_demo/software/demo_program.h').read_bytes()
         else:

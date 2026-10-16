@@ -19,7 +19,7 @@ SPEC.loader.exec_module(GEN)
 class NativeTemplates(unittest.TestCase):
     def test_generated_sources_match_canonical(self):
         apps, files = GEN.expected()
-        self.assertEqual(len(apps), 19)
+        self.assertEqual(len(apps), 20)
         for p, body in files.items():
             with self.subTest(path=p.relative_to(ROOT)):
                 self.assertEqual(p.read_bytes(), body)

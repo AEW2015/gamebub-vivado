@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "date": "2026-10-16",
+  "scope": "App Tester native Vitis 2025.2 BSP validation, discovery/create/build and host-mode behavioral tests; NOT physical execution",
+  "hardware_access": "none",
+  "template": "gamebub_app_tester",
+  "templates_discovered": 20,
+  "new_templates_built_this_run": 1,
+  "previous_19_template_evidence": "native-template-validation.json",
+  "gui_precreation_validate_bsp": "PASS",
+  "platform": "Owned reference platform, freshly built with all 20 templates during attempt 2, reused unchanged for the final app build",
+  "xsa_sha256": "319b7a1beae5dfad2d7f3f9ab0e73f9d8b0fdea040f5db59ec39b0d31f7e3d22",
+  "elf_sha256": "023d6f1b2faa8fc888d5faa7df5d0410cd2acce7e7fcc1925f977e66b99c1d7e",
+  "elf_load_end": 16352,
+  "bram_bytes": 16384,
+  "reserved_stack_bytes": 2048,
+  "heap_bytes": 0,
+  "compile_optimization": "-Os for App Tester, including Debug",
+  "portable_suite": "20 Python unittest cases PASS, including exact-source App Tester builds with default guards and opted-in mocked scratch tests; seven memory-helper tests and four driver host suites also PASS",
+  "host_observations": [
+    "ESP32 reverse-order register bitmap to A/B/shoulder mapping",
+    "Debounced shoulder changes page once while held",
+    "Transparent exterior, opaque black center and white text/border pixels",
+    "Audio and vibration stop on timeout, B and app change",
+    "No overlay upload while an actuator is active",
+    "Default memory guards prevent scratch accesses and ownership changes",
+    "Opted-in scratch chunks stay in the configured reservation, finish with progress 100 and propagate failures"
+  ],
+  "preserved_failed_attempts": [
+    "Attempt 1 reused an old platform: GUI validation rejected the new template because app_list.yaml was stale",
+    "Attempt 2 freshly generated the platform: unoptimized application overflowed 16-KiB BRAM by 3408 bytes",
+    "Attempt 3 added size optimization but still overflowed BRAM by 2488 bytes; a diagnostic link map identified unnecessary formatter and UI-copy costs"
+  ],
+  "final_local_evidence_directory": "D:/xup_2026/bub/native-app-tester4",
+  "raw_logs_in_git": false,
+  "raw_evidence_hashes": {
+    "template-evidence.json": "3c042aa0562b2723bc2d4584761ea01630937a7725a3dd6cbc25b189387c050e",
+    "native-app-tester4.console.log": "fb566d15f38dfe4ac4a56efb874fef02374a820ecddd3e8d6d620a9b9d5b1c82",
+    "app-tester-host2.log": "9546128810d2553fe16d315d6b36319fdb19165e7bb8e09802c57264738d57eb"
+  },
+  "pending": [
+    "Physical acceptance of this newly packaged template on a matching timing-qualified image",
+    "Opted-in destructive memory code native size/run qualification; additional BRAM may be necessary",
+    "Independent GPIO motor watchdog is not present"
+  ]
+}

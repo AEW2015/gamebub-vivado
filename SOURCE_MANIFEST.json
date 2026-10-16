@@ -12,8 +12,8 @@
     "Mouse-driven GUI acceptance",
     "Remote GitHub Actions/Pages"
   ],
-  "apps_built": 19,
-  "maximum_elf_load_end": 14432,
+  "apps_built": 20,
+  "maximum_elf_load_end": 16352,
   "bram_bytes": 16384,
   "checks": {
     "source_assets_and_retained_payload": {
@@ -60,7 +60,11 @@
       "status": "pass",
       "evidence": "docs/vivado/native-template-validation.json"
     },
-    "portable_checks_19_plus_7": {
+    "native_app_tester": {
+      "status": "pass",
+      "evidence": "docs/vivado/app-tester-validation.json"
+    },
+    "portable_checks_20_plus_7": {
       "status": "pass",
       "evidence": "docs/vivado/vitis-examples.md"
     }
@@ -156,7 +160,7 @@
     {
       "role": "source",
       "path": "README.md",
-      "sha256": "81bd719162fa357a4721effb167840d3a1c7f1ee2f100645f9eac562d47bc6c0"
+      "sha256": "1d5ff296e6b011ba52bb9f8a237c6bd52803a2a5defbad6b4e6fd7c53658dfa6"
     },
     {
       "role": "source",
@@ -167,6 +171,11 @@
       "role": "source",
       "path": "docs/vivado/amd-ip.md",
       "sha256": "96b950e864fa5ae17d2b17839bebbb4e6e41ec9e6fc6e34d041fd75002bdaa83"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/app-tester-validation.json",
+      "sha256": "4e443fe36d84d70b234183059e0bbbb41ba42068f62f00d60fe53b2dffd46d31"
     },
     {
       "role": "source",
@@ -351,7 +360,7 @@
     {
       "role": "source",
       "path": "docs/vivado/vitis-examples.md",
-      "sha256": "9a3f7bda4f6da8004d0aff412a680857c3e5ea502078e5420f681cd6e37ee85f"
+      "sha256": "71013aeaf1c0f6b7ba616947cc7819f6b9d39efebc7ce898529bed41a564a83a"
     },
     {
       "role": "source",
@@ -1525,6 +1534,41 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/data/gamebub_app_tester.yaml",
+      "sha256": "7085a416eef37d5296c722c0345eb9865bcbf171968907397b5c27c174b93987"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/CMakeLists.txt",
+      "sha256": "4e4034be4a504af50525a767db59b17ec0383015de494cfb04ea79c5fe431786"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/app_tester.h",
+      "sha256": "c9de87cb67eff9f9522eeaebae24331232429d40b15ab0e86fd6dc545f01fc8e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_vibration.cmake",
+      "sha256": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/main.c",
+      "sha256": "3791cb2938eee64faf88f106496962bee8cc4e161d4b47369832afde7ed03c88"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/data/gamebub_audio_tone.yaml",
       "sha256": "0d140f64d89fe5d5635e86b53d1c3b4ef941b573f5baac2fe74ab7df2e73c3cc"
     },
@@ -2135,8 +2179,13 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/templates/app_tester.h",
+      "sha256": "c9de87cb67eff9f9522eeaebae24331232429d40b15ab0e86fd6dc545f01fc8e"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/templates/apps.json",
-      "sha256": "76882b741be1ab20fbe622b75a837f0416b5e3eee1134d463b424b5e6823c752"
+      "sha256": "ffaf3d3587b90035fba5759b1364ac37ef0ff5243e74149fac06a4dfd41f487d"
     },
     {
       "role": "source",
@@ -2231,7 +2280,17 @@
     {
       "role": "source",
       "path": "fpga/sw_repo/tests/test_app_templates.py",
-      "sha256": "59b7da22c901f64cd886b0b6663c599e72cd8ed9fff1f59a2c5a08e2cab8d801"
+      "sha256": "ec2aed015177fca40b98e04f3def3fa9df1e097d152e24bac1a70e40c93d336a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/test_app_tester.c",
+      "sha256": "fe49861527c074adcc9f30e33c032c76d7e299da974e0dc1a09c5ddcb2f21099"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/test_app_tester.py",
+      "sha256": "38244a6d42cabeb9897c455d18dbe966811ebecbe670c23950ddd4cef9eb7eec"
     },
     {
       "role": "source",
@@ -2261,7 +2320,7 @@
     {
       "role": "source",
       "path": "fpga/sw_repo/tools/generate_app_templates.py",
-      "sha256": "9d6e991afa217da6fa898199e67c7d71d381a4d2fcf4d8a714a3de55de07a5ee"
+      "sha256": "928d6ff4e21c0ea4c16d6f91991a64be39ac0816583b5eb063a98ecc559b5de4"
     },
     {
       "role": "source",
@@ -2316,7 +2375,7 @@
     {
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/test_app_templates.py",
-      "sha256": "acb06215fbb0d71dcc22c54fc84dc05fa3e5125d04037c740a2ad358bc535544"
+      "sha256": "43ee527aad7bd5e950fe4a975795772c082c91e3df264c7e2c06d72060d3570e"
     },
     {
       "role": "source",

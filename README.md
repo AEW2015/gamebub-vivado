@@ -43,6 +43,8 @@ See the [step-by-step quickstart](QUICKSTART.md) for the GUI flow, reference blo
 
 To select and build individual applications in Vitis, use the [Examples sidebar walkthrough](docs/vivado/vitis-examples.md). Register `fpga/sw_repo` through **Embedded SW Repositories...**; native templates are listed under **Embedded Software Examples**.
 
+Select **GameBub - App Tester** for the combined compact LCD UI with SRAM, SDRAM, audio and vibration pages. The native sidebar now provides 20 templates. Memory writes are guarded by default; see the walkthrough for prerequisites and controls. After repository updates, rescan and regenerate/rebuild your platform BSP before creating a new template.
+
 ## Status
 
 This is a source/software candidate targeting Vivado/Vitis 2025.2. It includes the current board package, eight selected IP packages, four custom drivers and a builder for 19 separate Vitis applications. Optional version-bumped IP packaging candidates and historical lab projects are deliberately excluded.

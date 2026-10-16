@@ -7,6 +7,8 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import shutil
+import subprocess
 import sys
 import vitis
 
@@ -47,7 +49,7 @@ def main():
         report['discovery'] = str(templates)
         if not all('gamebub_' + a in str(templates).lower() for a in names):
             raise RuntimeError('Not all GameBub templates are advertised by native embedded discovery')
-        print('GAMEBUB_NATIVE_TEMPLATE_DISCOVERY_PASS count=19', flush=True)
+        print('GAMEBUB_NATIVE_TEMPLATE_DISCOVERY_PASS count=' + str(len(names)), flush=True)
         if args.platform_export:
             export = args.platform_export.resolve()
             xsas = list((export/'hw').glob('*.xsa'))
@@ -71,8 +73,21 @@ def main():
             if not all(d in driver_list for d in ['gbesp32','gbaudio','gbsram','gbsdram']):
                 raise RuntimeError('Native custom BSP driver binding missing')
         xpfm = client.find_platform_in_repos('gamebub_platform')
+        # This is the GUI's additional pre-creation gate. Reused platforms may
+        # have stale app_list.yaml even though the sidebar advertises a template.
+        empyro = shutil.which('empyro.bat') or shutil.which('empyro')
+        if not empyro:
+            raise RuntimeError('empyro is required to exercise GUI BSP validation')
+        domain_path = Path(xpfm).parent / 'sw/standalone_cpu'
         for suffix in chosen:
             template = 'gamebub_' + suffix
+            result = subprocess.run([empyro, 'validate_bsp', '-t', template,
+                '-d', str(domain_path), '-r', str(work/'_ide/.wsdata/.repo.yaml')],
+                capture_output=True, text=True)
+            (work/(template+'-validate-bsp.log')).write_text(result.stdout+result.stderr)
+            if result.returncode:
+                raise RuntimeError('GUI BSP validation failed: '+template+
+                    '. Regenerate BSP and rebuild the platform after repository updates. '+result.stdout+result.stderr)
             app = client.create_app_component(name='native_' + suffix, platform=xpfm,
                 domain='standalone_cpu', template=template)
             # Same native creation as the Examples sidebar. Do not import files,
