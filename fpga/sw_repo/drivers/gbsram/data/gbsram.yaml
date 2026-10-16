@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+title: GameBub SRAM control driver
+description: CSR binding only; MEM_AXI linker RAM requires independent XSA registration.
+type: driver
+properties:
+  compatible:
+    OneOf:
+      - items:
+          - enum:
+              - xlnx,gamebub-sram-mem-1.6
+  reg:
+    description: CTRL_AXI CSR address (not MEM_AXI RAM)
+config:
+  - GBSram_Config
+required:
+  - compatible
+  - reg
+examples:
+  gbsram_probe_example.c:
+    - reg
+  gbsram_scratch_example.c:
+    - dependency_files:
+        - gbsram_example_setup.h
+    - reg
+  gbsram_test_example.c:
+    - dependency_files:
+        - gbsram_example_setup.h
+    - reg
+  gbsram_instruction_example.c:
+    - dependency_files:
+        - gbsram_example_setup.h
+    - reg
+...

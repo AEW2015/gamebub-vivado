@@ -1,0 +1,11 @@
+{
+  "canonical_package": "gamebub_sram_mem_v1_4",
+  "derived_from": "gamebub_sram_mem_v1_3",
+  "host_clock_hz": 100000000,
+  "scheduler_clock_hz": 100000000,
+  "serializer_clock_hz": 400000000,
+  "rtl_changes": {
+    "src/sram_clock_tree.sv": "Change the dedicated DONT_TOUCH local reset driver to active-high, driving the400MHz FDCE.CLR directly without an inverter. Async assertion and three-stage I/O release retained. No timing exceptions added."
+  },
+  "final_file_hashes": "See the cached-memory/video build handoff; not the older b007 release."
+}

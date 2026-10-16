@@ -1,0 +1,14 @@
+# GameBub native board constraints. Physical pin data comes from BOARD_PART.
+package require xilinx::board 1.0
+namespace import ::xilinx::board::*
+set f_xdc [add_ipfile -usedIn {synthesis implementation board} -force [current_inst]_board.xdc]
+puts_ipfile $f_xdc {# GameBub board constraints; Custom interfaces intentionally remain unbound.}
+if {[get_project_property BOARD] eq ""} {close_ipfile $f_xdc; return}
+set board_if [get_property PARAM_VALUE.AUDIO_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if MCLK dac_mclk 1
+ board_add_port_constraints $f_xdc $board_if WCLK dac_wclk 1
+ board_add_port_constraints $f_xdc $board_if BCLK dac_bclk 1
+ board_add_port_constraints $f_xdc $board_if DIN dac_din 1
+}
+close_ipfile $f_xdc

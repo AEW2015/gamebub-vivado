@@ -1,0 +1,17 @@
+# GameBub native board constraints. Physical pin data comes from BOARD_PART.
+package require xilinx::board 1.0
+namespace import ::xilinx::board::*
+set f_xdc [add_ipfile -usedIn {synthesis implementation board} -force [current_inst]_board.xdc]
+puts_ipfile $f_xdc {# GameBub board constraints; Custom interfaces intentionally remain unbound.}
+if {[get_project_property BOARD] eq ""} {close_ipfile $f_xdc; return}
+set board_if [get_property PARAM_VALUE.SRAM_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if A sram_a 18
+ board_add_port_constraints $f_xdc $board_if IO sram_io 16
+ board_add_port_constraints $f_xdc $board_if CE_N sram_ce_n 1
+ board_add_port_constraints $f_xdc $board_if OE_N sram_oe_n 1
+ board_add_port_constraints $f_xdc $board_if WE_N sram_we_n 1
+ board_add_port_constraints $f_xdc $board_if UB_N sram_ub_n 1
+ board_add_port_constraints $f_xdc $board_if LB_N sram_lb_n 1
+}
+close_ipfile $f_xdc

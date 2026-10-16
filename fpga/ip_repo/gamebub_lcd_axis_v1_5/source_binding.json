@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "destination": "gamebub-source/fpga/ip_repo/gamebub_lcd_axis_v1_4/hdl/gamebub_lcd_axis.v",
+      "sha256": "e37cb3875af82d58c251387d2f11cf00491252cad9ddfa8addc697b1be2cf309",
+      "source": "gamebub-source/fpga/vivado/gamebub_lcd_v14/rtl/gamebub_lcd_axis.v"
+    },
+    {
+      "destination": "gamebub-source/fpga/ip_repo/gamebub_lcd_axis_v1_4/src/gamebub_axis_overlay_compositor.v",
+      "sha256": "77a1fb2c7f79f4316d54c14debe987ed3ff21688e1cec9414ebcd88a95188aa6",
+      "source": "gamebub-source/fpga/vivado/gamebub_lcd_v14/rtl/gamebub_axis_overlay_compositor.v"
+    },
+    {
+      "destination": "gamebub-source/fpga/ip_repo/gamebub_lcd_axis_v1_4/src/gamebub_axis_raster.v",
+      "sha256": "77690c67f95925eb551187c0ec37f81ac2782b0e978d03d55595f85efdef03f1",
+      "source": "gamebub-source/fpga/vivado/gamebub_lcd_v14/rtl/gamebub_axis_raster.v"
+    },
+    {
+      "destination": "gamebub-source/fpga/ip_repo/gamebub_lcd_axis_v1_4/constraints/lcd_clock.xdc",
+      "sha256": "e6829c61012964eeb0a453eac3804123d92da66537e440c7324f4bd814b892f3",
+      "source": "gamebub-source/fpga/vivado/gamebub_lcd_v14/constraints/lcd_clock.xdc"
+    }
+  ],
+  "vlnv": "gamebub.org:ip:gamebub_lcd_axis:1.4"
+}

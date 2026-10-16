@@ -1,0 +1,19 @@
+﻿{
+    "scope":  "v1.11 white/transparent CPU bitmap beneath unchanged ESP32 overlay; v1.10 derived",
+    "endpoint_sha256":  "b1dabe65572c8ad3ec6f1cdd5e149ae99bddcdbf8e5678eb7ba9403e53dc2db0",
+    "endpoint_unchanged_from":  "v1.9 (inherited v1.6 endpoint)",
+    "canonical_modified_sources": ["src/gamebub_esp32_v102.v", "src/esp32_overlay_axis.sv", "constraints/esp32_cdc.xdc"],
+    "source_note": "The v1.11 package sources are canonical for this transparency extension; the legacy bindings below describe only inherited v1.8 ancestry, not the modified files.",
+    "source_bindings":  [
+                            {
+                                "sha256":  "688c658d82d5ac67ad83f307f5be3d5c72244a95c411ac9542c610967b9c31a3",
+                                "packaged":  "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_esp32_v102_v1_8/src/gamebub_esp32_v102.v",
+                                "canonical":  "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\vivado\\gamebub_esp32_overlay_axis/rtl/gamebub_esp32_v102.v"
+                            },
+                            {
+                                "sha256":  "eb4b496818a4cf2b712958373032a2d3ed25d9f10d8b66a10cb98f9639881eda",
+                                "packaged":  "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_esp32_v102_v1_8/src/esp32_overlay_axis.sv",
+                                "canonical":  "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\vivado\\gamebub_esp32_overlay_axis/rtl/esp32_overlay_axis.sv"
+                            }
+                        ]
+}

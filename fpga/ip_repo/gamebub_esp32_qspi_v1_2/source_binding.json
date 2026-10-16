@@ -1,0 +1,26 @@
+{
+  "baseline": [
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\esp32_qspi_endpoint.sv",
+      "sha256": "72f1ca1021d08437af077d8bfb8b481e000c401cb5b29e060b40a9f9dddd868e"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\sd_mailbox_axi.sv",
+      "sha256": "e7ba4a440cb204d9526726998df86e4fedd16888a699e0e863ee75eb2eab82d6"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\qspi_sniffer_capture.sv",
+      "sha256": "8804e777ac676a6691b2b1e1f8cbc54e422b06325b4beaed436763e84b260e99"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\qspi_sniffer_peripheral.sv",
+      "sha256": "9938a2f096b55c0458cece0c1bede7568090d278dbd343760e197b944a7aacc3"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\axi_lite_zero_slave.sv",
+      "sha256": "1ef1c35bc758ea31891df2c3c71be94d0e4d020e7768b7778a98abc991bafab0"
+    }
+  ],
+  "modifications": {},
+  "wrapper": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\vivado\\gamebub_modular_ip\\prepare_sources.py"
+}

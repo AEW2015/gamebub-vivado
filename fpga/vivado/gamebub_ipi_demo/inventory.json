@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "design": "GameBub Rev4 Vivado IP inventory",
+  "exported_on": "2026-10-16",
+  "board_file_version": "2.0",
+  "hardware_revision": "Rev4",
+  "vivado_version": "2025.2",
+  "source": {
+    "file": "review_bd.tcl",
+    "sha256": "89c22d93b446ea93eed8cffd29e13cc7a7b3ed5899ebbb5b94a2baa01445d80a"
+  },
+  "instance_count": 24,
+  "instances": [
+    { "name": "dlmb_v10", "kind": "ip", "vlnv": "xilinx.com:ip:lmb_v10:3.0", "version": "3.0", "driver": "none; local bus infrastructure" },
+    { "name": "ilmb_v10", "kind": "ip", "vlnv": "xilinx.com:ip:lmb_v10:3.0", "version": "3.0", "driver": "none; local bus infrastructure" },
+    { "name": "dlmb_bram_if_cntlr", "kind": "ip", "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0", "version": "4.0", "driver": "none; applicable AMD BRAM support is memory-side only" },
+    { "name": "ilmb_bram_if_cntlr", "kind": "ip", "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0", "version": "4.0", "driver": "none; applicable AMD BRAM support is memory-side only" },
+    { "name": "lmb_bram", "kind": "ip", "vlnv": "xilinx.com:ip:blk_mem_gen:8.4", "version": "8.4", "driver": "none; ordinary memory access" },
+    { "name": "microblaze_riscv_0", "kind": "ip", "vlnv": "xilinx.com:ip:microblaze_riscv:1.0", "version": "1.0", "driver": "AMD standalone BSP/cache/exception APIs" },
+    { "name": "microblaze_riscv_0_axi_periph", "kind": "ip", "vlnv": "xilinx.com:ip:smartconnect:1.0", "version": "1.0", "driver": "none; interconnect infrastructure" },
+    { "name": "microblaze_riscv_0_axi_intc", "kind": "ip", "vlnv": "xilinx.com:ip:axi_intc:4.1", "version": "4.1", "driver": "AMD XIntc" },
+    { "name": "microblaze_riscv_0_xlconcat", "kind": "inline_hdl", "vlnv": "xilinx.com:inline_hdl:ilconcat:1.0", "version": "1.0", "driver": "none; inline logic" },
+    { "name": "mdm_1", "kind": "ip", "vlnv": "xilinx.com:ip:mdm_riscv:1.0", "version": "1.0", "driver": "AMD uartlite binding/standalone console stack" },
+    { "name": "clk_wiz_1", "kind": "ip", "vlnv": "xilinx.com:ip:clk_wiz:6.0", "version": "6.0", "driver": "none; fixed clock configuration" },
+    { "name": "rst_clk_wiz_1_100M", "kind": "ip", "vlnv": "xilinx.com:ip:proc_sys_reset:5.0", "version": "5.0", "driver": "none; reset infrastructure" },
+    { "name": "gamebub_esp32_v102_0", "kind": "ip", "vlnv": "gamebub.org:ip:gamebub_esp32_v102:1.14", "version": "1.14", "driver": "GameBub GBEsp32 required for custom register interface" },
+    { "name": "rst_clk_wiz_1_200M", "kind": "ip", "vlnv": "xilinx.com:ip:proc_sys_reset:5.0", "version": "5.0", "driver": "none; reset infrastructure" },
+    { "name": "axi_gpio_0", "kind": "ip", "vlnv": "xilinx.com:ip:axi_gpio:2.0", "version": "2.0", "driver": "AMD XGpio" },
+    { "name": "gamebub_sram_mem_0", "kind": "ip", "vlnv": "gamebub.org:ip:gamebub_sram_mem:1.6", "version": "1.6", "driver": "GameBub GBSram required for custom control registers; RAM uses memory access" },
+    { "name": "axi_smc", "kind": "ip", "vlnv": "xilinx.com:ip:smartconnect:1.0", "version": "1.0", "driver": "none; memory interconnect infrastructure" },
+    { "name": "gamebub_sdram_mem_0", "kind": "ip", "vlnv": "gamebub.org:ip:gamebub_sdram_mem:1.6", "version": "1.6", "driver": "GameBub GBSdram required for custom control registers; RAM uses memory access" },
+    { "name": "clk_wiz_0", "kind": "ip", "vlnv": "xilinx.com:ip:clk_wiz:6.0", "version": "6.0", "driver": "none; fixed pixel clock configuration" },
+    { "name": "gamebub_dac_audio_0", "kind": "ip", "vlnv": "gamebub.org:ip:gamebub_dac_audio:1.3", "version": "1.3", "driver": "GameBub GBAudio required for custom register interface" },
+    { "name": "rst_clk_wiz_0_29M", "kind": "ip", "vlnv": "xilinx.com:ip:proc_sys_reset:5.0", "version": "5.0", "driver": "none; reset infrastructure" },
+    { "name": "gamebub_lcd_axis_0", "kind": "ip", "vlnv": "gamebub.org:ip:gamebub_lcd_axis:1.5", "version": "1.5", "driver": "no register driver; software video helper only if needed" },
+    { "name": "v_tpg_0", "kind": "ip", "vlnv": "xilinx.com:ip:v_tpg:8.2", "version": "8.2", "driver": "AMD XV_tpg and video_common" },
+    { "name": "axis_data_fifo_0", "kind": "ip", "vlnv": "xilinx.com:ip:axis_data_fifo:2.0", "version": "2.0", "driver": "none; AXI-Stream infrastructure" }
+  ],
+  "clocks": {
+    "input_hz": 50000000,
+    "clk_wiz_1": {
+      "instance": "clk_wiz_1",
+      "outputs_hz": {
+        "clk_out100": 100000000,
+        "clk_out200": 200000000,
+        "clk_out50": 50000000
+      },
+      "consumers": {
+        "clk_out100": ["microblaze_riscv_0", "microblaze_riscv_0_axi_periph", "microblaze_riscv_0_axi_intc", "microblaze_riscv_0_local_memory", "mdm_1", "axi_gpio_0", "gamebub_sram_mem_0", "axi_smc", "gamebub_sdram_mem_0", "v_tpg_0", "axis_data_fifo_0/s_axis_aclk"],
+        "clk_out200": ["gamebub_esp32_v102_0/service_clk", "gamebub_sdram_mem_0/refclk200"],
+        "clk_out50": ["clk_wiz_0/clk_in1"]
+      }
+    },
+    "clk_wiz_0": {
+      "instance": "clk_wiz_0",
+      "input_hz": 50000000,
+      "requested_output_hz_rounded": 29362000,
+      "derived_output_hz": 29361979,
+      "derivation": "50,000,000 * 56.375 / (3 * 32)",
+      "consumers": ["gamebub_dac_audio_0/audio_clk", "microblaze_riscv_0_axi_periph/aclk2", "rst_clk_wiz_0_29M/slowest_sync_clk", "gamebub_esp32_v102_0/overlay_clk", "gamebub_lcd_axis_0/pixel_clk", "axis_data_fifo_0/m_axis_aclk"]
+    }
+  },
+  "memory_maps": {
+    "local_bram": { "base": "0x00000000", "size_bytes": 16384, "interfaces": ["Instruction", "Data"], "ecc_enabled": false },
+    "axi_gpio_0": { "base": "0x40000000", "size_bytes": 65536 },
+    "mdm_1": { "base": "0x44A00000", "size_bytes": 65536 },
+    "gamebub_esp32_v102_0": { "base": "0x44A10000", "size_bytes": 65536 },
+    "gamebub_sram_mem_0_CTRL_AXI": { "base": "0x44A20000", "size_bytes": 65536 },
+    "gamebub_sdram_mem_0_CTRL_AXI": { "base": "0x44A30000", "size_bytes": 65536 },
+    "gamebub_dac_audio_0": { "base": "0x44A40000", "size_bytes": 65536 },
+    "v_tpg_0": { "base": "0x44A50000", "size_bytes": 65536 },
+    "gamebub_sram_mem_0_MEM_AXI": { "base": "0x76000000", "size_bytes": 524288, "high": "0x7607FFFF", "interfaces": ["Instruction", "Data"] },
+    "gamebub_sdram_mem_0_MEM_AXI": { "base": "0x78000000", "size_bytes": 33554432, "high": "0x79FFFFFF", "interfaces": ["Instruction", "Data"] }
+  },
+  "processor": {
+    "instance": "microblaze_riscv_0",
+    "clock_hz": 100000000,
+    "instruction_cache_bytes": 4096,
+    "data_cache_bytes": 4096,
+    "instruction_cache_window": { "base": "0x70000000", "high": "0x7FFFFFFF" },
+    "data_cache_window": { "base": "0x70000000", "high": "0x7FFFFFFF" }
+  },
+  "audio": {
+    "instance": "gamebub_dac_audio_0",
+    "stop_n_net": "rst_clk_wiz_0_29M/peripheral_aresetn",
+    "connected_pins": ["gamebub_dac_audio_0/stop_n", "gamebub_dac_audio_0/audio_resetn", "gamebub_esp32_v102_0/overlay_resetn", "gamebub_lcd_axis_0/pixel_resetn"],
+    "meaning": "stop_n shares the active-low pixel-domain reset net; it is not an independent software stop control"
+  }
+}

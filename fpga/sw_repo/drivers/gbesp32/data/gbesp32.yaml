@@ -1,0 +1,25 @@
+%YAML 1.2
+---
+title: GameBub ESP32 communications and optional COV2 overlay
+type: driver
+properties:
+  compatible:
+    OneOf:
+      - items:
+          - enum:
+              - xlnx,gamebub-esp32-v102-1.14
+  reg:
+    description: CPU AXI4-Lite register base and aperture, not QSPI addresses
+config:
+  - GBEsp32_Config
+required:
+  - compatible
+  - reg
+examples:
+  esp32_poll.c:
+    - reg
+  qspi_diagnostics.c:
+    - reg
+  cpu_overlay.c:
+    - reg
+...

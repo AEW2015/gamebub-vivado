@@ -15,9 +15,37 @@ The development kit is intended to make it easier to build GameBub FPGA designs 
 
 The initial target is GameBub Rev4 hardware with Vivado/Vitis 2025.2. Compatibility and hardware-test status will be documented for each release.
 
+## Getting started with Vivado 2025.2
+
+Clone into a path without spaces:
+
+```powershell
+git clone https://github.com/AEW2015/gamebub-vivado.git C:/fpga/gamebub-vivado
+```
+
+At the Vivado welcome screen, run this in the **Tcl Console**:
+
+```tcl
+source C:/fpga/gamebub-vivado/fpga/board_files/install_gamebub_current_repositories.tcl
+```
+
+Create an RTL project, select **GameBub Rev4**, board-file version **2.0**, then source the same command again inside the project to register the IP catalog. Board-file 2.0 is not hardware revision 2.0.
+
+See the [step-by-step quickstart](QUICKSTART.md) for the GUI flow, reference block design, Vitis applications and safety checks. No FuseSoC is required.
+
+| Content | Location |
+| --- | --- |
+| Board files, presets and physical interfaces | [fpga/board_files](fpga/board_files/README.md) |
+| Packaged IP | [fpga/ip_repo](fpga/ip_repo/README.md) |
+| Product guides, registers and integration | [docs/vivado](docs/vivado/README.md) |
+| Drivers, examples and tests | [fpga/sw_repo](fpga/sw_repo/README.md) |
+| Reproducible reference design and workspace builder | [fpga/vivado/gamebub_ipi_demo](fpga/vivado/gamebub_ipi_demo/README.md) |
+
 ## Status
 
-This repository is being prepared for the development-kit source import. This initial commit contains only the README and licensing information; board files, IP, software, and build artifacts are not included yet.
+This is a source/software candidate targeting Vivado/Vitis 2025.2. It includes the current board package, eight selected IP packages, four custom drivers and a builder for 19 separate Vitis applications. Optional version-bumped IP packaging candidates and historical lab projects are deliberately excluded.
+
+The reference builder validates the BD and exports a **metadata-only XSA**. It does not route a design or produce/program a bitstream. See [validation status](docs/vivado/validation.md) and [source-import verification](docs/vivado/public-import.md) for the distinction between historical SDK evidence, checks on this checkout, and outstanding hardware gates. No prebuilt BIT, ELF or XSA is included in this source import.
 
 This is an independent community project, not an official GameBub or AMD/Xilinx release. No hardware qualification is implied by this repository's initial publication.
 
@@ -30,6 +58,6 @@ This is an independent community project, not an official GameBub or AMD/Xilinx 
 
 ## Licensing
 
-This is a mixed-license project. Original independent documentation in this initial commit uses **0BSD**. Imported or derived GameBub material retains its applicable **CERN-OHL-S-2.0** or **GPL-3.0-only** license; other third-party material retains its own terms.
+This is a mixed-license project. Independent documentation explicitly marked **0BSD** uses that license. Imported FPGA material, drivers and guides retain **CERN-OHL-S-2.0** unless otherwise specified. Any imported GameBub firmware/scripts must retain their applicable **GPL-3.0-only** terms; other third-party material retains its own terms.
 
 See [LICENSE.md](LICENSE.md) for the licensing policy and full license texts. GameBub names and logos remain subject to their owners' trademark rights; copyright licenses do not grant trademark permission.

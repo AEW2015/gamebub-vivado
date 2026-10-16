@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+title: GameBub bounded DSP DAC tone generator
+type: driver
+properties:
+  compatible:
+    OneOf:
+      - items:
+          - enum:
+              - xlnx,gamebub-dac-audio-1.3
+  reg:
+    description: CPU AXI4-Lite register base and aperture
+config:
+  - GBAudio_Config
+required:
+  - compatible
+  - reg
+examples:
+  audio_tone.c:
+    - reg
+  audio_safety.c:
+    - reg
+...

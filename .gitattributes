@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: 0BSD
+# Preserve imported RTL/IP bytes and generated source hashes on every platform.
+# Do not let a user's core.autocrlf setting rewrite packaged vendor payloads.
+* -text
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.png binary

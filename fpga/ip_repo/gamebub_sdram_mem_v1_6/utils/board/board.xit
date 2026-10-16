@@ -1,0 +1,21 @@
+# GameBub native board constraints. Physical pin data comes from BOARD_PART.
+package require xilinx::board 1.0
+namespace import ::xilinx::board::*
+set f_xdc [add_ipfile -usedIn {synthesis implementation board} -force [current_inst]_board.xdc]
+puts_ipfile $f_xdc {# GameBub board constraints; Custom interfaces intentionally remain unbound.}
+if {[get_project_property BOARD] eq ""} {close_ipfile $f_xdc; return}
+set board_if [get_property PARAM_VALUE.SDRAM_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if A sdram_a 13
+ board_add_port_constraints $f_xdc $board_if BS sdram_bs 2
+ board_add_port_constraints $f_xdc $board_if DQ sdram_dq 16
+ board_add_port_constraints $f_xdc $board_if CLK sdram_clk 1
+ board_add_port_constraints $f_xdc $board_if WE_N sdram_we_n 1
+ board_add_port_constraints $f_xdc $board_if LDQM sdram_ldqm 1
+ board_add_port_constraints $f_xdc $board_if UDQM sdram_udqm 1
+ board_add_port_constraints $f_xdc $board_if CAS_N sdram_cas_n 1
+ board_add_port_constraints $f_xdc $board_if RAS_N sdram_ras_n 1
+ board_add_port_constraints $f_xdc $board_if CKE sdram_cke 2
+ board_add_port_constraints $f_xdc $board_if CS_N sdram_cs_n 2
+}
+close_ipfile $f_xdc

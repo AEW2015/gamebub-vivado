@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<spirit:busDefinition xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+  <spirit:vendor>gamebub.org</spirit:vendor>
+  <spirit:library>interface</spirit:library>
+  <spirit:name>sdram</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:directConnection>true</spirit:directConnection>
+  <spirit:isAddressable>false</spirit:isAddressable>
+</spirit:busDefinition>

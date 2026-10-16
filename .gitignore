@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: 0BSD
+# Keep generated projects and tool output outside the source checkout.
+/build/
+/builds/
+/.venv/
+/dfx_runtime.txt
+__pycache__/
+*.pyc
+.Xil/
+*.cache/
+*.srcs/
+*.xpr
+*.runs/
+*.sim/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.jou
+*.log
+*.dmp
+*.wdb
+*.vcd
+*.vvp
+*.bit
+*.bin
+*.dcp
+*.elf
+*.xsa
+*.o
+*.obj
+*.a
+*.zip
+*.str
+*.rpx
+*.pb
+*.backup.*
+# Regenerate the nested AMD Clocking Wizard from its configuration, not HDL dumps.
+/fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_mmcm_ip/*
+!/fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_mmcm_ip/serdes4_mmcm_ip.xci

@@ -1,0 +1,1661 @@
+{
+  "overall": "PASS",
+  "scope": "Source import and locally executed build/control-test checks only; NOT hardware qualification",
+  "date": "2026-10-16",
+  "tools": "Vivado/Vitis 2025.2; C11 GCC host tests; Icarus Verilog RTL tests; Doxygen 1.18.0",
+  "raw_logs_included": false,
+  "hardware_programmed": false,
+  "pending": [
+    "Routed timing/CDC/external-I/O qualification",
+    "End-to-end CPU/cache/PHY and physical peripheral testing",
+    "Native SDT RAM linker discovery",
+    "Mouse-driven GUI acceptance",
+    "Remote GitHub Actions/Pages"
+  ],
+  "apps_built": 19,
+  "maximum_elf_load_end": 14432,
+  "bram_bytes": 16384,
+  "checks": {
+    "source_assets_and_retained_payload": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "native_catalog_8": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "native_bd_xsa_and_clock_regeneration": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "native_bsp_and_19_app_builds": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "host_4_drivers": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "python_11_and_memory_helper_7": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "esp32_control_rtl_2": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "memory_control_rtl_2": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "audio_temporal_control_rtl": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    },
+    "markdown_and_api_docs": {
+      "status": "pass",
+      "evidence": "docs/vivado/public-import.md"
+    }
+  },
+  "execution_record_hashes": {
+    "native_reference": {
+      "sha256": "aca5ad30ec5a3075671ad850702c237432edbe964c302a2ac209bae46abad5e2",
+      "included_in_git": false
+    },
+    "native_catalog": {
+      "sha256": "e4e9339c24bafff7ce72d0c62787c1369cb2c573f6925aac05ab24b0a2f33d33",
+      "included_in_git": false
+    },
+    "native_vitis": {
+      "sha256": "fc9fabb5c6a5e059d66803c464fa772aa7db4678425b2cf1d39bd85d2d811a09",
+      "included_in_git": false
+    },
+    "native_build_evidence": {
+      "sha256": "8366c3fa6af1cd80910b62e8a86f8dddbb273d01e1a82a01f7b1662561caeacc",
+      "included_in_git": false
+    },
+    "host": {
+      "sha256": "6ff59e2b22a42345949b56482a946f899b93c4bf1e1d89e3dd4acf93dadde3f7",
+      "included_in_git": false
+    },
+    "esp32_rtl": {
+      "sha256": "6a34a8080165f1f48bf45da48eb80c5422ada9c3a2c91289bc962552d8afd091",
+      "included_in_git": false
+    },
+    "memory_rtl": {
+      "sha256": "37e5eba2ebe6e5bf3627e06a0aba2757d6c3f2fb8d4e799f588a2a5f50b1b301",
+      "included_in_git": false
+    },
+    "audio_rtl": {
+      "sha256": "d753fbb4dfa11157b7a61a990bda2304721793210fe281de0ae3e993f3ddfd65",
+      "included_in_git": false
+    }
+  },
+  "artifacts": [
+    {
+      "role": "source",
+      "path": ".gitattributes",
+      "sha256": "d43d9649966c4da9e8f517d55be7da2e67d7d7e5a786ced7c32792572f8319d4"
+    },
+    {
+      "role": "source",
+      "path": ".github/workflows/gamebub-sdk.yml",
+      "sha256": "7abeeca5d1af2e943c568d34ded3a9ff38a47579e98d7275fe59670933bcb68f"
+    },
+    {
+      "role": "source",
+      "path": ".gitignore",
+      "sha256": "2e3625c268db148d5ee91bc58f4782aa9ac766536856456a9ceb07e456666e06"
+    },
+    {
+      "role": "source",
+      "path": "LICENSE.md",
+      "sha256": "eda0b0e1c1071b73a5c588d935f94f2d371bcaed98a246e70d9fd06fa4d565b7"
+    },
+    {
+      "role": "source",
+      "path": "LICENSES/0BSD.txt",
+      "sha256": "fcb5d7dc634fe1806d3695db2466843e3afa5eea5f8570b97f61fb35e77789f7"
+    },
+    {
+      "role": "source",
+      "path": "LICENSES/CERN-OHL-S-2.0.txt",
+      "sha256": "8485ec0b6162f44a0f5e6be54155f5d7b2d083155d5d1f3c2c96b3dc2296c06e"
+    },
+    {
+      "role": "source",
+      "path": "LICENSES/GPL-3.0-only.txt",
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
+    },
+    {
+      "role": "source",
+      "path": "QUICKSTART.md",
+      "sha256": "c3a3eafaabf8e9d3afd6dabd96e8f6017fb44acee5956f422eb21d5b0b54fc87"
+    },
+    {
+      "role": "source",
+      "path": "README.md",
+      "sha256": "0fea9149caebdc2f7a19e09faf12120fe2137aa2527f43229a47e2675c37b3fe"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/README.md",
+      "sha256": "e39846ad9f4524bb0ccc508283c31923a0013cb1358c9b6772eba851f2a5da1e"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/amd-ip.md",
+      "sha256": "96b950e864fa5ae17d2b17839bebbb4e6e41ec9e6fc6e34d041fd75002bdaa83"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/clocks-resets.md",
+      "sha256": "82aa2c96644651ee5dc4aab7ea94122d2d9b3bde1f38d6225314fc8ee04ad22a"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/getting-started.md",
+      "sha256": "f207f363812735cb0e09b63f14b33c5e4745bb9154341d6af338f78596b9fe2c"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/README.md",
+      "sha256": "2935833366d429f520c28ceee9e7944a5ac8a8d15ecb3f0d46e6e39d5f8591b0"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/catalog.md",
+      "sha256": "815d6ca5b6dbd102fe140661d0ec65b27592142384010ec076c02bb1634fb75c"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/product-guide.md",
+      "sha256": "0656039cbd4f80285895b899b9a5db2dbf3c6e3669486a07327309862b4c710f"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/registers.md",
+      "sha256": "08ed277f109f7376a03353b8665afa190c32a272f041adc548f87380b5a0dd3b"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/software.md",
+      "sha256": "3945eadd6f410dc1daaf49b1e55c53425952f0e9626d12fb7d868b88015e6f39"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/audio/verification.md",
+      "sha256": "ad22c01cf375ad5886e67798b39275da960dd22970f3960c1bf421af13149a32"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/README.md",
+      "sha256": "c9a26e674dbdacad18d7bb52df6e2a5b3223bf717ce7234e9fef9e928c7f3c18"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/catalog.md",
+      "sha256": "58b66db603ccb2a8073772d5f383d9f4a4f3436f0570eabdbd191bc70c77d941"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/product-guide.md",
+      "sha256": "324327b5b640dce63a567827ac8dd58e53d51d1aa3a9b106329e32ab8d229a44"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/registers.md",
+      "sha256": "553e165461874e5329043c11c1be766bdc51459cfd400ea38445bfbd2a12060f"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/software.md",
+      "sha256": "14f248e0ef0d8a11e438a95fac69b3cae555db9fe8cc7e813f7749251fc48477"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/esp32/verification.md",
+      "sha256": "548472e2bb610026529ec7f9931f4e4bbe2ef2ea9d454d0c606e84e24009f3a4"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/lcd/README.md",
+      "sha256": "b381a0e67d18272971d0ce0e80d4c9e95bfd792b9b626cea83ebaf82c3b3d41e"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/lcd/catalog.md",
+      "sha256": "3de989091531d0ea34b928a4f12b178ead1ee64da36bc3e81f27aaed96ad1293"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/lcd/product-guide.md",
+      "sha256": "64746be1f5019c1e977db199ae2a6e505c7a3b768ada96fe36feb085fa87127a"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/lcd/software.md",
+      "sha256": "3d7e0429b3889305c37b55950d34ad93e7ad568eec91e29da5f3870aaf8faf5a"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/lcd/verification.md",
+      "sha256": "f4536330375d67d89376ec92eb19205d3f4794aed2602743d9b872dd768c25e8"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/README.md",
+      "sha256": "23c0aa550b3233d687635bbcdc0e875a7cb8e65fd4f1eb22a280eba1232292b7"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/catalog.md",
+      "sha256": "4929bd5fdb5051e3c122a89608f4920c4a8f0016780f7902fe5b99ad5970a8ca"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/product-guide.md",
+      "sha256": "435eb0a207286ee8e66a187e70f66b342fcda4026fe184872cb04707c8bb76e4"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/registers.md",
+      "sha256": "c5bf66e27d250694e962b2778284d15c63aec41785914aa085eb39ef24e4acec"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/software.md",
+      "sha256": "0c42f81e08d5fbc0ac27debf63ef3a319bb79363b465a58c42816c16f7a895a3"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sdram/verification.md",
+      "sha256": "ff5cd8d1dfd95dffd730950005839e7229ec704d586306ec24632bbc2fecb700"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/README.md",
+      "sha256": "fc77a7772b0b370f997cd136ebf96e988fafef670d70f6501d9ce9a6ba963297"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/catalog.md",
+      "sha256": "9c457f66de773eaa6f6f6fbc550eb22f3da7ecb7cf97b82605bf1f889759148c"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/product-guide.md",
+      "sha256": "79e1cd6f677856d23d57fe85596910764202dc2989bc6a51200990a8bb908448"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/registers.md",
+      "sha256": "a67c43f00d088dd6ea8cc54008c6beadfeafa12bc7a009d72049085ab7ce1466"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/software.md",
+      "sha256": "06137cef1a3923d085ce1e638daa58ef400b0d149eb9e835b0d39f2ea9a0da7a"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/ips/sram/verification.md",
+      "sha256": "bfeba96f52075c366a97eb726cb27ff875ade31f3ed6ee3c8e0d255e42fb8af7"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/memory-cache.md",
+      "sha256": "e0dae4fb0ec60a12c82abdcf0f7fff8bc001aa9709e239577daf0a36e2513d3b"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/public-import.md",
+      "sha256": "f38b5d7fdfacbd5d15f50d976c6404f47b8e65b95f511ff8dd7305be763f5624"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/troubleshooting.md",
+      "sha256": "9c92ff2771b88b20ba574662c97bb8397c577bd541d03db1c8b6f8e1edd12a1b"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/validation.md",
+      "sha256": "fed2c67d41ba39363637db4c3755e5491abf136c61bf363ad132bb926a25f48d"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/vitis-workflow.md",
+      "sha256": "305b05b59a54a0fc6aa6feccb57e1d11a13d97357eb0b6fb4e28bb2fcdd9540c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/IP_DOCUMENTATION_DRIVER_PLAN.md",
+      "sha256": "5a56cacd7bd3f466c01f1c7f2991e2fead63e7cac33eb51f7f233946df0a0326"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/README.md",
+      "sha256": "50d2c88d3d60b890ef68138a778992179c45e0fbe93781cc12b2a2688de92e13"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/board.xml",
+      "sha256": "fa23ff5c92e059ea20f6e29240fbcc8dad1a4ecc621a19d2cfae5d23b013dce7"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/gamebub.png",
+      "sha256": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/part0_pins.xml",
+      "sha256": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/pin_bindings.json",
+      "sha256": "9bb285487de108cb6f7882137b2bcab3229fb0fac555aaf2525f8442bf242fdc"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/preset.xml",
+      "sha256": "99fb417f7de909b6e70878fcb979c441d6307885da99690031d874154eb73c04"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/timing/lcd_rev41.tcl",
+      "sha256": "f6cc2ec0d0349c76e80e6bb47219daad939ee1eb3fe20da0af92e8043794a7f0"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/gamebub_rev4/2.0/validation_contract.tcl",
+      "sha256": "ca696252386e988c3e113ad2a6fe224edba994bc04ca1c8bddd2ffcc8b860663"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/board_files/gamebub_rev4/2.0/validation_only_probe.v",
+      "sha256": "a51664acc031cb7d208146e8de45e1cf6f4b0febafc89b7de71715af1cbd9345"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/install_gamebub_current_repositories.tcl",
+      "sha256": "267a89af5ee36bc9537635d2ce2ceaaddc1fecd35b2399335c2577d022df2830"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/cartridge/abstraction.xml",
+      "sha256": "856dd8394d085cf940908062aebe5c641654a5e6dc446b3f57f9f9bc9dea833f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/cartridge/bus.xml",
+      "sha256": "043ebf6f5bcd9528b305652f16d13c3d6be949d748d5ee5e4e8d6cdaa4f752d9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/dac_dsp/abstraction.xml",
+      "sha256": "ccf112f1e39a9796b4deae6dc0095305ea1c4a3da467c75dd1040ab0e1d9bef6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/dac_dsp/bus.xml",
+      "sha256": "7c55500c66254173020f34fd9237188a9acd8e2b1ac834f3b911306ecd18c711"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_irq/abstraction.xml",
+      "sha256": "b9d91a48061c64a47be5b6ed87a55baa4784faa358e952e666c3e27b9c000b5c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_irq/bus.xml",
+      "sha256": "cc1a1d19e419b873b61c4144f15350c535ce532e9f461e300498bd6d27aa6620"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_overlay/abstraction.xml",
+      "sha256": "2e9112a30b979a95348a00fb938d28d5937d44deaae20db56ba5190eb9e4f721"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_overlay/bus.xml",
+      "sha256": "d2f796b6bb7695a2e8c32d872d992f2444db35d113a3aeb262d401621f5821bd"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_qspi/abstraction.xml",
+      "sha256": "895901d01a31bb8d7a9adf537ffc8f024fa817fff3d769ee9dd7a03403f58a92"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_qspi/bus.xml",
+      "sha256": "3a06bc8d4bf7f0478ec96e9e6709f2c0099cfec7b2b86a85fabbd60427c12603"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_service/abstraction.xml",
+      "sha256": "5bbc536e80214e8ce082ed5f4b1fbfe6d33c4879eda87d3e1400f0ea3c36100b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/esp32_service/bus.xml",
+      "sha256": "257de412f63e760b7f5597ac725c4b4f97406e4ba48b65cfc4cfe579b00a7b00"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/hdmi_tmds/abstraction.xml",
+      "sha256": "430715ece00cb0d1a084d9964ed5ea92fe8ece36e797f721a2d814f09c03370e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/hdmi_tmds/bus.xml",
+      "sha256": "881f8916ccb714d3bc4140e8760e30fe5c8e60554e66a8a77a2e7b6b7436d698"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/lcd_rgb888/abstraction.xml",
+      "sha256": "473ff89cb418a23e9efbe5b6d0630098fd27a4d1b878ab6928b4eeefc5f91d50"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/lcd_rgb888/bus.xml",
+      "sha256": "9255f6054483d999ff5a64f977df2c3dd9136d9936063833d461089427007556"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/link_port/abstraction.xml",
+      "sha256": "ddbb339a708db36421c194b45508d5451e39c2e7dfd8f0a9756f81c21f2114ff"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/link_port/bus.xml",
+      "sha256": "65d81b24da458c91a4bd44e7b9314028d7cdf45161bdc40594a07c97d9d7f69c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/sdram/abstraction.xml",
+      "sha256": "9e5298f4a827b79fe2c48247d7e2aa04b8c4905462a71c942d8002eeab4a2f85"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/sdram/bus.xml",
+      "sha256": "8b2b1831bb2f83f269fa1c6b188649ae34f2a908fe74ba1026ef6560b83eec63"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/sram/abstraction.xml",
+      "sha256": "3783c88ee4722c891dfca5c5119cbfb2265b72506634115cb6705e6ba22e240b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/sram/bus.xml",
+      "sha256": "8a40407b00f9ebd36e7e686f759ba874c6ebba915207e61211e28258ba50c500"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/usb_sbu/abstraction.xml",
+      "sha256": "1080ea27aab207bb81f6ffdb5149f9145b96e190cb0ace0ebdec4bbe561c26dd"
+    },
+    {
+      "role": "source",
+      "path": "fpga/board_files/interfaces/usb_sbu/bus.xml",
+      "sha256": "b192584a9b10defa41e3882621e377f236ec665c5b3e8bc17e133fd23bf4f266"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/README.md",
+      "sha256": "454aefa74f8c8ab58d31b36a209b52826613e7f68c79b6f1c80e6f127bb7d93c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/TODO.md",
+      "sha256": "311797de5a11e78950b78deb5dc20ea0197e2fe559e44828080cc186a2ed2845"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/component.xml",
+      "sha256": "2699e376c18d2415cf33873205caf20afb3f5f6abfa2b06adfd41290ff1c673b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/doc/integration_guide.html",
+      "sha256": "550acd9b089b744c1221e5adfc952ea685dd57276b121d611c7dcda7ed42dc22"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/hdl/gamebub_dac_audio.v",
+      "sha256": "998c4db148fc0ee4996d43e7a03bff11ad0233f86a32e1c2c4af09b5b648d68a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/source_binding.json",
+      "sha256": "99fc79226956396e5cf19252d80ba1dafe417d69ecedc7c027764c9c57a05d11"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/src/speaker_engine.sv",
+      "sha256": "39ddafd2856950651d617fd923169e83be5761bfd70fe2cd67fcbf15e7554351"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/src/speaker_peripheral.sv",
+      "sha256": "a92021668f55bfd29259b5cef21b634167167fbced2e97b338b986d4e929f08a"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/src/tone_sine.vh",
+      "sha256": "446d1bbddd98f8dbfbfb25497d64df5411c4cedc78dd7ebb6bd4dbb23710b65f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/utils/board/board.xit",
+      "sha256": "e0617574ff8323407cddcbf6a297cdf2a91596939e7aa61b67ce649efe4904e9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/xgui/gamebub_dac_audio_v1_0.tcl",
+      "sha256": "f53debd951b4afcbfe5efa1f1ce14e607805cf4e085ad02466388876f09514d5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/xgui/gamebub_dac_audio_v1_1.tcl",
+      "sha256": "f53debd951b4afcbfe5efa1f1ce14e607805cf4e085ad02466388876f09514d5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/xgui/gamebub_dac_audio_v1_2.tcl",
+      "sha256": "f53debd951b4afcbfe5efa1f1ce14e607805cf4e085ad02466388876f09514d5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_dac_audio_v1_3/xgui/gamebub_dac_audio_v1_3.tcl",
+      "sha256": "9e706f3ce4a951a4ed14ef4c4be0c11829c8d8252df3a91a28a309c1faa08c87"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/component.xml",
+      "sha256": "570391c291fb630c2445ba954f4f143cac45d1d3d9bbbfa6c5d3d289cf328d26"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/doc/integration_guide.html",
+      "sha256": "68997b402ed18290c52433889968ab3aa1b5733dc85c7d32413301930bcdf7c1"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/hdl/gamebub_esp32_irq.v",
+      "sha256": "9696253cd15566580c5e7578398eda860aa4ed9cf32651fee8ddff0501e5b05a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/source_binding.json",
+      "sha256": "b78fc17776601280cd6841483937ea6937028448f2fcf1239d020ab4272f4d5e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/utils/board/board.xit",
+      "sha256": "ed8d7a8dbef9f349564bf04ccfd69724cc9565fc31b5150265f8728dc51a5532"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/xgui/gamebub_esp32_irq_v1_0.tcl",
+      "sha256": "52f2b486cd6833f773e82a2c9e7f569446c185b8dad12885a04ee38a17410bf4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/xgui/gamebub_esp32_irq_v1_1.tcl",
+      "sha256": "52f2b486cd6833f773e82a2c9e7f569446c185b8dad12885a04ee38a17410bf4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_irq_v1_2/xgui/gamebub_esp32_irq_v1_2.tcl",
+      "sha256": "c89ce8b848b06cb5c91d89af68fc52e47995d50ea9a773685e5c622d1c355b3f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/component.xml",
+      "sha256": "3255a5e615dd0525c578ce0f6d9574009cff09446e3d94b49e9b8bb2199f6910"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/doc/integration_guide.html",
+      "sha256": "ef9e83b03addbb67da344b1addbc5defed66ee6b4961765709cf4ba92f3dca42"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/hdl/gamebub_esp32_qspi.v",
+      "sha256": "9c356b898577a27cce0b6f5ee73a6c27ad984d0a7a0b2b680c163c8e6f89a856"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/source_binding.json",
+      "sha256": "e4251dff49ab2c22684b6934da69941b874dd2c53167384dd7de23b6d1f55f9c"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/src/axi_lite_zero_slave.sv",
+      "sha256": "738624363d9b0e3c9e151fb9c92a2762c29d005354d64ddb6b9e7abeb28d8d16"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/src/esp32_qspi_endpoint.sv",
+      "sha256": "f521afe925af1ef41246a21b4c9c4e2ab1777885e7b96ad4a911d9b828450565"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/src/qspi_sniffer_capture.sv",
+      "sha256": "32b5c04e1cebd18f284fe5df88df6d5e6cc4bfdd6c0d0105b469d879471bf04a"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/src/qspi_sniffer_peripheral.sv",
+      "sha256": "5e59444adbd43eb9b077cccfc721f4d57fab3fefcf96403e9e26b82e9ecf2b31"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/src/sd_mailbox_axi.sv",
+      "sha256": "67093cd53b5edd15446dd4bc940d68edaefe1a69460e8b9be8ad1ce4e71532a0"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/utils/board/board.xit",
+      "sha256": "8ab4302402cffc4dfcc8dd6cae3cb17c64cb113fb3f11d62e0e03629d243b836"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/xgui/gamebub_esp32_qspi_v1_0.tcl",
+      "sha256": "0093ca943251981a35224f7616b32f85f1a9718c4a1194e0ddb8a8fe79f6b803"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/xgui/gamebub_esp32_qspi_v1_1.tcl",
+      "sha256": "0093ca943251981a35224f7616b32f85f1a9718c4a1194e0ddb8a8fe79f6b803"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_qspi_v1_2/xgui/gamebub_esp32_qspi_v1_2.tcl",
+      "sha256": "c493e97d821547c1e13d88a08a8b77f9af585ea0a7f8759c7536e6dbd0e78d93"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/component.xml",
+      "sha256": "59b607003844a76d32d341294fdb26ef76c852db4bb4523e5576d2b51143da3d"
+    },
+    {
+      "role": "constraints",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/constraints/esp32_cdc.xdc",
+      "sha256": "2b5f9e44b565a19a31c9150a82def27a11f8dc95af9896f50bfa3d1ff975436c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/doc/integration_guide.html",
+      "sha256": "30f85b5752451186441a705037e62b044020265c6653ab70c9b7480dd70f7824"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/src/esp32_overlay_axis.sv",
+      "sha256": "4ae2fc528f04b426dcb1b6c45c8a58b9fd36be173f0ca479cf8830db82903945"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/src/esp32_v102_endpoint.sv",
+      "sha256": "b1dabe65572c8ad3ec6f1cdd5e149ae99bddcdbf8e5678eb7ba9403e53dc2db0"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/src/gamebub_esp32_v102.v",
+      "sha256": "41672c0787342e9f35aef0282943bef84ece92a5a6925594920a5dda71d3627f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/upstream_source_binding.json",
+      "sha256": "0533e443ee5c90c935eb30d6d6ab48e159561ce652651f0407af33b29c5211c6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/utils/board/board.xit",
+      "sha256": "3ab6392bb0bc538c0f991ec1fbb9115134cee5e4322ce4061cbfaf00db58ca9b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_0.tcl",
+      "sha256": "c9b46c94bc20fe3eafe1e1fcca0c404c85d8b510420aa802cff4d4ec5496f79e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_13.tcl",
+      "sha256": "1a8bf38a9f50341641e877c0cfb4753e49e8946e52fca6f9c1a0464fdf370623"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_14.tcl",
+      "sha256": "76f12e80c523bbb54e217da379c77f9cd804d45ef92993ecd483e61077ca4917"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_5.tcl",
+      "sha256": "4e9604279af141091ef7bcce92ece3247281e93a03e07a108979dbef96456e0d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_6.tcl",
+      "sha256": "4e9604279af141091ef7bcce92ece3247281e93a03e07a108979dbef96456e0d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_8.tcl",
+      "sha256": "196806418f00defd35aedd524a0e340c484c855852936238b8acb119d8480782"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/xgui/gamebub_esp32_v102_v1_9.tcl",
+      "sha256": "196806418f00defd35aedd524a0e340c484c855852936238b8acb119d8480782"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/component.xml",
+      "sha256": "b2353fdc58ded4a429ed569d0b3e8cac6607673fbc2c7e59660e2e8af9b810b8"
+    },
+    {
+      "role": "constraints",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/constraints/lcd_clock.xdc",
+      "sha256": "e6829c61012964eeb0a453eac3804123d92da66537e440c7324f4bd814b892f3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/doc/integration_guide.html",
+      "sha256": "f0dbf408e9e549d571fcfe934b30c4318ae8491b580c13a1213c10530f92a04d"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/hdl/gamebub_lcd_axis.v",
+      "sha256": "e37cb3875af82d58c251387d2f11cf00491252cad9ddfa8addc697b1be2cf309"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/source_binding.json",
+      "sha256": "db25a1e000b128c4751608cca494977156efe9a36982aaed0dc073060f450345"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/src/gamebub_axis_overlay_compositor.v",
+      "sha256": "77a1fb2c7f79f4316d54c14debe987ed3ff21688e1cec9414ebcd88a95188aa6"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/src/gamebub_axis_raster.v",
+      "sha256": "77690c67f95925eb551187c0ec37f81ac2782b0e978d03d55595f85efdef03f1"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/utils/board/board.xit",
+      "sha256": "8d86df19aa90576b0ac5f4652b5eebf6fc5fbb76d510b197692615171f4fc26d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_0.tcl",
+      "sha256": "612de4a4c80ce086c49c7dddbab839bb75ae85e09ab08bb493e951d11d901975"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_1.tcl",
+      "sha256": "612de4a4c80ce086c49c7dddbab839bb75ae85e09ab08bb493e951d11d901975"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_2.tcl",
+      "sha256": "612de4a4c80ce086c49c7dddbab839bb75ae85e09ab08bb493e951d11d901975"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_3.tcl",
+      "sha256": "64a65960dcb798a2b84bbe7a62ee8c50872dfe51af42bfe4d47d16fef97066c7"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_4.tcl",
+      "sha256": "244889287d00f40f090a8f115866ba6ab88437e8d02af232c1190c0249f13e92"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_lcd_axis_v1_5/xgui/gamebub_lcd_axis_v1_5.tcl",
+      "sha256": "bfcf1ce575b923ef1421f3acce2f5082a85bb763bb52277146baf21e462ab8f2"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/component.xml",
+      "sha256": "7974e53fe818d20926bcca22aa212f379dfe59b8fff2b15988f7f77f07a550a3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/doc/integration_guide.html",
+      "sha256": "d2460abf99914aa9d383cfe075527545024b458f2cdec03d0ea47c7e153f5b98"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/hdl/gamebub_sdram_mem.v",
+      "sha256": "8d924389db5a8dd9cd2c122b01e56dff846f3dc636c4f5bb3f15206d32360c77"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/source_binding.json",
+      "sha256": "7d34890bf888a257f7340072a901eea3af836d2e02a13be00bc44789796d1d8c"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/memory_test_pkg.sv",
+      "sha256": "3a6049d86301e7219a0b86a71128b6dcb007b739aed08ce30bb2f617116045d4"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/oser4.sv",
+      "sha256": "6766b5e112e24e9824179550b058438c59a4e461c59d0893546dfcbc7d7b5a52"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_axi_split.sv",
+      "sha256": "b8b514308b60451f2a201740340f166602c1f3d86af79c65aae44243286e87de"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_ctrl_router.sv",
+      "sha256": "70e862179e9540f04529ecb25b806755c662a13015c712bafed746d02bb73f95"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_shared_axi.sv",
+      "sha256": "5385e70a23e994f3a581a712a7055cd4a1c87771f859f8827558a7c9cdda6656"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_shared_backend.sv",
+      "sha256": "e21f3356338364a349f77e60ba8e16f6bcf4b9c1bbad407ba15f62191b971e6a"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_shared_mailbox.sv",
+      "sha256": "418ac3f9c6528ab1428d1bdb773e2ae03b890105b93e8122c03617efa1eafff4"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_shared_stack.sv",
+      "sha256": "51bb13a74ab1414467f6bf91da1dc91a6b6b80d93ccde4a960427ba61647372f"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/s4_shared_top.sv",
+      "sha256": "ee814ec8cc65bfc9158fd1ac7f670c6a77b3021892eff66aa613ab17bc19f531"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/sdram_serdes4_phy.sv",
+      "sha256": "0f76634b477dfae21d2e53d2d5d2480db248b42e95ca1a85a333efb191d590c1"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_clock_sequencer.sv",
+      "sha256": "e924c1656879e9d41532c17cabd87033e72e008ee434f3d0b5093058923e32d8"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_controller.sv",
+      "sha256": "bf989b7d9e65e1430dff02c61d1456aab8bf978b34475879987c9681cda86518"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_mmcm_ip/serdes4_mmcm_ip.xci",
+      "sha256": "227cf43d8dd585e91fe65dcd168c26a13991b61b40a4883c963c39dea2a33eb2"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_rate_meter.sv",
+      "sha256": "1f9ef8cc497ecae91a31e03f263756c21c90d629bc2ead539313a9aa93220a94"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_read_align.sv",
+      "sha256": "688ed1d4797e87fd2d761b5ef12d12580fed261a6220d89719134190f3a9a5aa"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_runtime_clocks.sv",
+      "sha256": "7ca02543dcdff0a02866c017d849ca173d00b4978d02699b81fc17e895a82f84"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/src/serdes4_test_engine.sv",
+      "sha256": "dc0a9f57a38e15a2a8a9ed3466fe6298e654074673f87a8340c16552a835861b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/utils/board/board.xit",
+      "sha256": "1e21c799d1f57fb84f026974a540cb1c1d55fe353646883fb00e8738f9f73f5d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_0.tcl",
+      "sha256": "1a07b0d8d423cc84ce74423911026ecb6daa5683100372a300656dbc70646b32"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_1.tcl",
+      "sha256": "1a07b0d8d423cc84ce74423911026ecb6daa5683100372a300656dbc70646b32"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_2.tcl",
+      "sha256": "1a07b0d8d423cc84ce74423911026ecb6daa5683100372a300656dbc70646b32"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_3.tcl",
+      "sha256": "1a07b0d8d423cc84ce74423911026ecb6daa5683100372a300656dbc70646b32"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_4.tcl",
+      "sha256": "093fb8af4c8051695a80203e58a0f700833183b58180e77b58b15cd13d0aecfa"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_5.tcl",
+      "sha256": "0f82dd1fafc8cd824ca004c84da4d77b1129859cdb606fd4a04f92184ba15c08"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/xgui/gamebub_sdram_mem_v1_6.tcl",
+      "sha256": "b8d568f1722fee3a874e9de86cf52039b4852dc13b8a9074eb2700272ec4de11"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/component.xml",
+      "sha256": "ecdb822e7654a8ab3bbf026d75fd1ba1372c046a16c70ae4899f4daba73484c8"
+    },
+    {
+      "role": "constraints",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/constraints/sram_cdc.xdc",
+      "sha256": "7e4138a22f04b8af16400e813916a54df13267a7ec0ec26f4751e74f1670c408"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/doc/integration_guide.html",
+      "sha256": "f696708f1b0d90bd2179256dfe257d64c31b1652dee20d3806e8d9118cff483e"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/hdl/gamebub_sram_mem.v",
+      "sha256": "64253d95bdb6bd194fcfdbd6b7aebedf1c011c954c939dc60c36bf22a9bc31b9"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_async_phy.sv",
+      "sha256": "68f622416670548937fa0e3b019eac0b60d0c3b9a7921c398e0971c16ab5c9fc"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_clock_control.sv",
+      "sha256": "08f07e563f580524fc5f9aa4f9a88c1a5bff29cc9ef47e1e0e7b71851637fe7a"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_clock_tree.sv",
+      "sha256": "7e6dfa12f4696d2f148b30700bcba0cf52530ff4ea60204dc4182e12d8455abe"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_cpu_axi.sv",
+      "sha256": "a6656790d82d34a30fb6d87dd52bf89c7122289fdbc1374b4c19a5e4383d3d13"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_phy_mailbox.sv",
+      "sha256": "97b9b01e3f2236339ae8ee79517afa2c041c565fb15e7b3ec594784d3c087448"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_serdes_io.sv",
+      "sha256": "b960429c6fa1143d5fa8b4ead49f26f8745441440710e1296df346b5a8990f50"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_arbiter.sv",
+      "sha256": "0d495396ed1d02c91771ad9f86f367418519e2b254f6eefb39e0bc4c03756e68"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_core.sv",
+      "sha256": "dc56ea28ce33fbed7c0c40fc7150c238c154b34c755c5931a95479c56dbdff7c"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_memory.sv",
+      "sha256": "20d8967f9ee30210862f77ce55fc943e057bec68adecdc8d69c1e189b66f2928"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_peripheral.sv",
+      "sha256": "50240765cea864cb8cffdbd9d90ecb0c849926eca52758163456dc55dabc38d3"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_test_regs.sv",
+      "sha256": "6e1336cbf6e3736443079bb1227c05dc5e31e37776219b7b2d488858ccdaa348"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_tester.sv",
+      "sha256": "b5794eb73a394da1e9277284fb59034c33b4028d91ad4623be29d7b14e761d31"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_test_engine.sv",
+      "sha256": "ac1f973019bd44593ba7120890a1746a9f8cf498f4c0c9d6ec272048cb026667"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_test_pkg.sv",
+      "sha256": "724fd393ec09a812d8bda97a02c7639ad71ba19fb4be14f604264e512b7d6edc"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/upstream_source_binding.json",
+      "sha256": "846a514eaf01ce201010e6c983e33410d90ecbde6144d8609ba1661237639522"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/utils/board/board.xit",
+      "sha256": "5b8b006db954957d8693cdc0d6e868c096a7d9086a1c7756d6c9369bcd34c4bc"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_0.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_1.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_2.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_3.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_4.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_5.tcl",
+      "sha256": "cf112df7005ab1f58d44ed95590843fec949bcbff651ce4dfa9a0865e0fb4062"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sram_mem_v1_6/xgui/gamebub_sram_mem_v1_6.tcl",
+      "sha256": "70d49df12706d36054e19aebffa0442c1aa9af2d79c273519fdc0ec7f596933b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/component.xml",
+      "sha256": "33f70216e6ee8bf4a4376dc04357eee73a8feaa42538c6770ff60327a14cf8a4"
+    },
+    {
+      "role": "constraints",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/constraints/status_cdc.xdc",
+      "sha256": "2b1fd192aff1d8706c8b70a508dadacf8ac5839ece914313cb6ee13d098be6a3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/doc/integration_guide.html",
+      "sha256": "df22c0b81f170eb08090fcc86c0b62ed239f6a7a51a111197bbc4d204c006936"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/hdl/gamebub_video_status.v",
+      "sha256": "9b00df3c812349647c1076dfd73f33b74a7d507ec24ab45e3d19d55b15b08727"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/xgui/gamebub_video_status_v1_0.tcl",
+      "sha256": "e0725b60cdc4cd625ee059e557ee3f5569fcd085edf601849e69e4d438080d96"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_video_status_v1_1/xgui/gamebub_video_status_v1_1.tcl",
+      "sha256": "b76490e47d65558505d3ea2ee70dd0bddbafd903ce770e2db8802c7b32ea1b98"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/README.md",
+      "sha256": "b5eb3f71ab174fdbe6d50fff676897aa9984444fa00b9678d2ee79116604507e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/data/gbaudio.yaml",
+      "sha256": "eeb0c165b3d1267f3268522250465f0a7ffaab6e1e0dc8a0e955bdf6b4b5e7a9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/data/registers.json",
+      "sha256": "c961cb75210419f129d006e4b69c95ea80d3faf8e98a66226083012637f43aef"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/doc/Doxyfile",
+      "sha256": "aa1af6dec100d681b7abf09141b79896ab542def5ba4766e58938cb4fbc00d6a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/examples/CMakeLists.txt",
+      "sha256": "1dffe9cae3c21bc3cc114c7b5ea7b6276f028ed66b6f5ef269cba35d15d04df3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/examples/audio_safety.c",
+      "sha256": "17d45b55381c3cd509375a2e72dfa35bf4bba91fb673cdedffee0722b4914f1b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/examples/audio_tone.c",
+      "sha256": "b9ea78035f2ce37f1fbd343b7bead7fbb249c0136d0609d2f1231d5c466d69fa"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/examples/gbaudio_examples.h",
+      "sha256": "45bfa5e2c36ae5ebec9d57e783f979d71bc7d878a89f383e2d3dd4fd6d643cb5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/CMakeLists.txt",
+      "sha256": "85d80e063e7988c6208da4c3e099ef45ee8cfa44c40044b33fe1f94ee7b49bb7"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/gbaudio.c",
+      "sha256": "db1f761cbf7aae984f8368e5cee1b90a7693239341a196f26745d91f3f5f2dfd"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/gbaudio.h",
+      "sha256": "33025ddf44e21a70a725b5fb8dfe910866664ee065d4bdb3fc5aceb6040b1ca6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/gbaudio_g.c",
+      "sha256": "5028f9894571cddc14e592ff6b236e91a801fa4a66775383dccef63c9166d0cd"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/gbaudio_hw.h",
+      "sha256": "e0027400914cda6a818ab62173554512c96c876c47cf1d7368932de87e7c0b16"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/src/gbaudio_sinit.c",
+      "sha256": "9cfcf3866584ba92c338427ef9170b56754dda1cdaa6f688cd34f84cc3d6664b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/tests/run_tests.ps1",
+      "sha256": "a3f55ddd585a6cae44902a1b1190e61136887aa254b75d9be59c33ce5cfee044"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbaudio/tests/test_gbaudio.c",
+      "sha256": "ef9a5759ca16b4a54d9e5262eab0cf9d97619895f4d5296d3739a1921305f8e1"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/data/gbesp32.yaml",
+      "sha256": "2d9983b4d45988f8e7b3d79d6d7246d0fcae203729d31306b4286650a0655a99"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/data/registers.json",
+      "sha256": "835ad3c6148eb338a8815265f482ee4d117a9ee3760a15b11c1408cbf564d05e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/doc/Doxyfile",
+      "sha256": "a54148c1bd29175d25191e3ed93c40c78440d9d7c907dadb1b926f23cd8c576c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/CMakeLists.txt",
+      "sha256": "1afc14a1ffb35bd0625e1989f5146a3d35320fddbf0ef8189d14e42600a71761"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/buttons_irq.c",
+      "sha256": "bfb4916002c3cee040fdb434875ba9c9e57366698df5388bf600783676350b63"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/cpu_overlay.c",
+      "sha256": "cb464fc7dae717a13f557a6b9f1045f5381dec344762b9e5697e72f23ebd43f3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/esp32_poll.c",
+      "sha256": "7e5cd64164ed4cb0fbfc8e1088569ac9b9878aaed6c358cd19d803a5f728ba10"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/gbesp32_examples.h",
+      "sha256": "6c96b9df1a79eecf4b539f0c6962f33d102060c565ca8ca07d85c94250fa0249"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/examples/qspi_diagnostics.c",
+      "sha256": "8a845a487ed293c41a4cc5d1e89b04487304aa8b3ab3f8a0c03c9a69460bb118"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/CMakeLists.txt",
+      "sha256": "48577c668cc72ad912c6d10bdce8fab666cb8f743456b9d619322284bb775ba4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/gbesp32.c",
+      "sha256": "54cb807e52d7a69d182a154fff7de073da9bde6c0e1290a5668c1148b04fb1ca"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/gbesp32.h",
+      "sha256": "ccf21869bd40786a5c78a52d390610b9a01a22460f2a60e5a62dc7637126d278"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/gbesp32_g.c",
+      "sha256": "8b300ab7103e7366c28dd5950721c2ec8d1b2c2ddeb0de656a61f65e6619ef3d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/gbesp32_hw.h",
+      "sha256": "86ccc5415f80892c9625d3fab190f5aa9a9569369a66d663eb037f9dbcd2297d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/src/gbesp32_sinit.c",
+      "sha256": "f9e755aac3de0ae441caae1ac25dd47c7ddd56368114ef7af57343a055aa87d3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/tests/include/xil_io.h",
+      "sha256": "b7da8fb0c7f7e765d8d22d7a3a7de9c294d27f934e4db4d3e56b90c23a960c0c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/tests/include/xil_types.h",
+      "sha256": "54a971e347272dfa0ef0df1784fb089c1f7d7fca4a9e310d594d2c0e3df3b2fa"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/tests/include/xstatus.h",
+      "sha256": "9cb0ecf94494a2dee30fc2a08ce500bbf65ad2dd1a3a431905548227984eb98c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/tests/run_tests.ps1",
+      "sha256": "8517ede7531191c44ba0ceb8719c6f54f470b214497955eb536efe41b2934ccf"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbesp32/tests/test_gbesp32.c",
+      "sha256": "81e802cc89d33fdb022167276b621742812b683fd03d4660231f71a7696a53df"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/data/gbsdram.yaml",
+      "sha256": "2fb407e3203406998bde72b3050446a42f51e8bea3e174a61b30578288cb39e9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/data/registers.json",
+      "sha256": "155d38b5ea29774073d4da63338b8ef55eadead0428bf53be2cda0104f76cf4c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/doc/Doxyfile",
+      "sha256": "882f2ef6b698e952c0eca53e62b445beeb999d6980edb47844bcf52070aa3b63"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/CMakeLists.txt",
+      "sha256": "939be6797e7be2d32853093c85d8dadc753ddb635551e8e2c5fb3f367dd31106"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/README.md",
+      "sha256": "d1068339a228bad4d555174e053599f00d7f1e8621f805f6ad96b857eefdaaf9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_example_setup.h",
+      "sha256": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_instruction_example.c",
+      "sha256": "a22bec7ca623cdb9347ab12f29f0386b73956f83d6755e32285285ef382c9d2c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_probe_example.c",
+      "sha256": "b77d0611976c27d032eb68e77b16f41684ca7acb8d4c1f6057b70ee73da87296"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_scratch_example.c",
+      "sha256": "491c27d68ef998b5bb9751dd4f46f347a3cddd2b070ba4ff31b4e73e8163e652"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_test_example.c",
+      "sha256": "c1e2942d0533fb48549a8762858ced88470431fb7fa469b9c2ee2884fe0d6384"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/examples/gbsdram_timing_example.c",
+      "sha256": "04ce3e181df4747b1de91204b90b4fa9d629d3c1808457a893d107ca10215e19"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/CMakeLists.txt",
+      "sha256": "86f7e42b3c1abd9d535cb618415067f32ddda3049d970ddce23c6faa6e801989"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/gbsdram.c",
+      "sha256": "64229d97a6e90c00a865a04ec16bf5d31412360840e2d000faacb1022801cd9d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/gbsdram.h",
+      "sha256": "35073abbaa5a8cf88d0f2592b656e0549be3ebcdbbbc9a60925c13dbbeba2ed4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/gbsdram_g.c",
+      "sha256": "ba48c7079cf091a1dd17373e46b1199fc8dc8034263bbfbd24a189376817ae00"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/gbsdram_hw.h",
+      "sha256": "119aedc1f80b2a6ff1c40b3a3a6c495da9d76deb9f7680c60f90aeb1c83e85d0"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/src/gbsdram_sinit.c",
+      "sha256": "55b71eedef21c875bb6f1131fce41c02c0eb764690d4bcb9e830dd8c180873e5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsdram/tests/test_gbsdram.c",
+      "sha256": "7544986afe0c59f06507c0618c9a68112c826ce5f7ab71d7908fa51fd3b5342a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/data/gbsram.yaml",
+      "sha256": "89b39b62be80b57ac79d27090a50e2ee3174bb513db6403357bf71fe1c2cab71"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/data/registers.json",
+      "sha256": "797c46c2eb746cc640da9945a3029be10e4c940f6edd19271fc479d524d7d82f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/doc/Doxyfile",
+      "sha256": "1284cf74384ea91886d5bc4cdb8d1ee477dc5553a1923fc2d5248be0d1c727e4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/CMakeLists.txt",
+      "sha256": "35b87b79ff380c669d0c4831b574067b09edfec444b89971eca03d96d7514a78"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/README.md",
+      "sha256": "d072cf36aa2bcdf640f2477c1c4e0dc1a684f27a7af9362831a809a68d54e198"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/gbsram_example_setup.h",
+      "sha256": "a14afd8eb0c0a7e97fc24f0ce61065ad8b8f6a090d65adf26d18264e2f756a83"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/gbsram_instruction_example.c",
+      "sha256": "3fdf8bcb2359e0853b6bd47064002230f74d53665e0f129bc14ab5912334c844"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/gbsram_probe_example.c",
+      "sha256": "d0a19a605810fe7ebda2e64f910751c99d6234a4cd3501968c86aab684ac81f4"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/gbsram_scratch_example.c",
+      "sha256": "a94c0ade9fbfcf1ab09452f372f0eb2620b268cbc718cc15dfb1b30163e6edc6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/examples/gbsram_test_example.c",
+      "sha256": "374e46ee03d95190e37d60ddca863460a6efe6bb25bbd622b2bd86d0eb83cba6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/CMakeLists.txt",
+      "sha256": "bec6e72ab1054d3dd7b182c016abdfbd4b313448fa9710a85e67c91fc4b95953"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/gbsram.c",
+      "sha256": "2d44ff5ab623387f52940350dd99a88dadc7035f7d8e8b367f5cb25baf854d5f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/gbsram.h",
+      "sha256": "ea7e35ea1d94e59e81ea60e4a0ef801bc26d0c2184fa68e4ef5e2f94fcfc9b07"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/gbsram_g.c",
+      "sha256": "ab39e95fa0cc4e99515572b07ae8cd76a6a1dc70372d2888427ff273076c665e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/gbsram_hw.h",
+      "sha256": "48788b9d9c8cd7cd2b25a3731748a430e965707d830e050334d3d8184c9a10b0"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/src/gbsram_sinit.c",
+      "sha256": "a40c9f1719e171a24e93bfb908414eb330f2a9aca309fc9884368fb7afa5a50f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/drivers/gbsram/tests/test_gbsram.c",
+      "sha256": "ea64b166c87a08e431125cc82aee9fe206e123d5a674c10fc94e6e2400f82e11"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/requirements-docs.txt",
+      "sha256": "77b474adc271726ed6136e8e1a8d05a38fe6ab25079667b46034852b58d6910b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/check_docs.py",
+      "sha256": "3e34abe86e300f3003d1e01650d5ad1af7e468b1a664a6fa68e4dc0555e936e9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/mock_include/xil_assert.h",
+      "sha256": "83968fcecce718b798af6a0c7c99eaab95e61142b33ee40f4a6bc5a5d397cd9b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/mock_include/xil_io.h",
+      "sha256": "75bd9f69a7229e2e7661b6d9cab7901860678321fb1411621a833f421cfea756"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/mock_include/xil_types.h",
+      "sha256": "ff8502bd4bf26a0daec405f060436c20cb4e279e56b210a8a2d1b0587e3e1ad5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/mock_include/xstatus.h",
+      "sha256": "3b8cfa489fa129683b4ba80e0d0b2d3bc90a773ee1c001631c88dce04c86ebeb"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/audio/oddr_stub.v",
+      "sha256": "3be11ed48b128adcce7aa02e409617e6ed2bd878a253935771777bd32c916fff"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/rtl/audio/run_tests.py",
+      "sha256": "aee3c6f4f3c5abdf3051939740462feca7221a2d13791c4966c20dd2d4eedd39"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/audio/tb_contract.sv",
+      "sha256": "4b9692bfd928dbb020fb8e676d559b1e2ff1e2c0d099bc24ea5e6095ca8589db"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/esp32/primitive_stubs.v",
+      "sha256": "0d9863a052f936eb972ff832bb8b68f3d414f7fef2e0b12489675b8c1a1eca44"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/rtl/esp32/run_tests.py",
+      "sha256": "d01e6e6bc447951cc98d105103800add6a04400bc2faf109e5b93b30baf900fe"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/esp32/tb_contract.sv",
+      "sha256": "c18d5d1867685f78c28c8ac34c53e382008656af4977ddad02358c63f42ed3fe"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/rtl/memory/run_memory.py",
+      "sha256": "1f7c019e742b3f2df5205fafa402354cb310bfe91905ebe3830236b8349520b6"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/memory/tb_sdram_control.sv",
+      "sha256": "3a70259f27e8f7c395a58d16df0e4f99fbaf1768337aea987f31d9f1f85881f5"
+    },
+    {
+      "role": "rtl",
+      "path": "fpga/sw_repo/tests/rtl/memory/tb_sram_regs.sv",
+      "sha256": "3fbd48ff916c9fcab470bf353a51328fbfb11fffdd94f0d1c9ca661a9e1959ed"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/run_host.py",
+      "sha256": "69381ca360caa16c1e2a275fe0b3e84defd64443ed331337900189244935b928"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/test_check_docs.py",
+      "sha256": "178d3019bcdc60016240fe71fd38d248e00a780c2ae9ec1266e266644e29eb8c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/test_distribution.py",
+      "sha256": "158e831588da9271712cc99236a0470f06a7ea0592f3e8ee2b1a3a5e4e9f52a8"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tests/test_register_schemas.py",
+      "sha256": "b973a3128b249be0b98530ccb2fd359a493764686838dd39b5064dc3e9314077"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/catalog_docs.py",
+      "sha256": "9e8b9d6912b4a780cc4c4df7bcc9f89ec31e3ec036373bb885c5c9c6978b00af"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/gamebub_memory_regions.py",
+      "sha256": "d0d58df684c6aa55f694b7ddfff3db38c680978da5837a31ab44e7dec904589b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/generate_docs.py",
+      "sha256": "b5f9b09c2ce43637397bd2666aab87d8e2e4e2ba90ab21af999bf01a900cd878"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/package_inputs.py",
+      "sha256": "0496416eac35196bd591f28a0bb1a95d2d005f615d3176a3527fc58fa087a84f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/package_ip.tcl",
+      "sha256": "249a9dcd5403fe1ea706162ae20eeac6004f1d3fbc3d6a8572970b7ad4ba63d2"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/tools/test_memory_regions.py",
+      "sha256": "77432f438ff237771f1a2c3980b577b85d77816f5707655b6d244be59dad8d55"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/README.md",
+      "sha256": "98dd467053a9ff5eb5f1141f78b8f34719aedf7df0ea1251c78d70ad0dffcb37"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/create_design.tcl",
+      "sha256": "0d6a13ee2d57a07062b9ce9e12f43fc4938cee56d10a5d7b88e08f01004e7ceb"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/create_workspace.py",
+      "sha256": "b4a27e54a3f7f6f566e20ef5636031620f21cc9be41c45cbe7d40df4daf50bf3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/inventory.json",
+      "sha256": "4ed584af22f08f4cdd011bbfc474d67f0238b323c7e8e4a223c3b02c44416ce2"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/reference_bd.tcl",
+      "sha256": "89c22d93b446ea93eed8cffd29e13cc7a7b3ed5899ebbb5b94a2baa01445d80a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/software/demo_program.h",
+      "sha256": "350ffc8f00fe26dbfa20e904bf9c064b865d15fdf6affa1976159552bdd249f1"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/test_native_examples.py",
+      "sha256": "2a97cbb10573cd178f08e00078ad043c6d5f3958812aeaab199411fdaeec0689"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/validate_catalog.tcl",
+      "sha256": "03e8caf25e008bddfc6270b3f10422ad115ce539990619021be772c0346ed40b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/validate_design.tcl",
+      "sha256": "3554e6e04487597fd4c70b508241803148e8f62b85c8033974382724c426188c"
+    }
+  ]
+}

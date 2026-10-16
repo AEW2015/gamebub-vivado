@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ip_presets schema="1.0">
+  <ip_preset preset_proc_name="clk_50mhz_preset">
+    <ip vendor="xilinx.com" library="ip" name="clk_wiz" ip_interface="clock_CLK_IN1">
+      <user_parameters>
+        <user_parameter name="CONFIG.PRIM_IN_FREQ" value="50"/>
+        <user_parameter name="CONFIG.PRIM_SOURCE" value="Single_ended_clock_capable_pin"/>
+      </user_parameters>
+    </ip>
+  </ip_preset>
+</ip_presets>

@@ -1,0 +1,88 @@
+{
+  "version": "1.5",
+  "version_1_5_change": "Unified 8 KiB CTRL_AXI: previous control offsets at +0x0000, previous CLOCK_AXI offsets at +0x1000. Added s4_ctrl_router, removed external CLOCK_AXI, and included pending lower-bank traffic in PARK safety. Preserved v1.4 PHY/MMCM arithmetic. Current evidence: vivado/gamebub_sdram_unified/handoff.json. No routed or hardware qualification inherited.",
+  "version_1_4_change": "100 MHz host/AXI/MMCM reference. Physical DIVCLK is twice the v1.3 logical profile D, preserving software frequency/phase profiles. Meter scale, observation default, sequencer timeout and transport timeout updated. Current hashes: vivado/gamebub_sdram_100/handoff.json. No routed/hardware qualification inherited from v1.3.",
+  "version_1_3_change": "Separate public CTRL_AXI register port from the exactly 32 MiB MEM_AXI memory aperture; fair serialized AXI-Lite adapter normalizes addresses into the existing private endpoint. Initial reconfiguration grant includes frontend idle. PHY/runtime-clock RTL unchanged from 1.2. Final build manifest binds current hashes.",
+  "current_source_binding": "Use the final build handoff manifest; entries below record ancestry, not modified-file hashes.",
+  "version_1_2_change": "Relative to gamebub_sdram_mem_v1_1, only src/s4_shared_axi.sv HDL changes: permit instruction RAM reads, retain instruction CSR/write rejection. IP/GUI version and description also updated. Existing PHY/runtime clocks unchanged.",
+  "ancestry_baseline_not_current_hashes": [
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\memory_test_pkg.sv",
+      "destination": "src\\memory_test_pkg.sv",
+      "sha256": "3a6049d86301e7219a0b86a71128b6dcb007b739aed08ce30bb2f617116045d4"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\oser4.sv",
+      "destination": "src\\oser4.sv",
+      "sha256": "6766b5e112e24e9824179550b058438c59a4e461c59d0893546dfcbc7d7b5a52"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\s4_shared_axi.sv",
+      "destination": "src\\s4_shared_axi.sv",
+      "sha256": "895e98e35a98edd444f59e5405f0dfd788c2ff838e2808547fc95f91916d44dc"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\s4_shared_backend.sv",
+      "destination": "src\\s4_shared_backend.sv",
+      "sha256": "e21f3356338364a349f77e60ba8e16f6bcf4b9c1bbad407ba15f62191b971e6a"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\s4_shared_mailbox.sv",
+      "destination": "src\\s4_shared_mailbox.sv",
+      "sha256": "418ac3f9c6528ab1428d1bdb773e2ae03b890105b93e8122c03617efa1eafff4"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\s4_shared_stack.sv",
+      "destination": "src\\s4_shared_stack.sv",
+      "sha256": "51bb13a74ab1414467f6bf91da1dc91a6b6b80d93ccde4a960427ba61647372f"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\s4_shared_top.sv",
+      "destination": "src\\s4_shared_top.sv",
+      "sha256": "f8e2745eb495d887df80922ba8773d1469e1c9705dacef21a76689f4a352fecf"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\sdram_serdes4_phy.sv",
+      "destination": "src\\sdram_serdes4_phy.sv",
+      "sha256": "0f76634b477dfae21d2e53d2d5d2480db248b42e95ca1a85a333efb191d590c1"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_clock_sequencer.sv",
+      "destination": "src\\serdes4_clock_sequencer.sv",
+      "sha256": "4d6d916cfc0607ef0d83ca46227248a5360acc38892ed44b40e4ae3d1ead499c"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_controller.sv",
+      "destination": "src\\serdes4_controller.sv",
+      "sha256": "bf989b7d9e65e1430dff02c61d1456aab8bf978b34475879987c9681cda86518"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_rate_meter.sv",
+      "destination": "src\\serdes4_rate_meter.sv",
+      "sha256": "5caed809fe54fc343f80c7d49d4ecca23dc14894d0b1cc22e5a5abb44b33413d"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_read_align.sv",
+      "destination": "src\\serdes4_read_align.sv",
+      "sha256": "688ed1d4797e87fd2d761b5ef12d12580fed261a6220d89719134190f3a9a5aa"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_runtime_clocks.sv",
+      "destination": "src\\serdes4_runtime_clocks.sv",
+      "sha256": "0fbeb24a65dc4e21eb559372d68b4c0d22668a2d2387e549701005dfa1c3c002"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_test_engine.sv",
+      "destination": "src\\serdes4_test_engine.sv",
+      "sha256": "dc0a9f57a38e15a2a8a9ed3466fe6298e654074673f87a8340c16552a835861b"
+    },
+    {
+      "source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\src\\serdes4_mmcm_ip\\serdes4_mmcm_ip.xci",
+      "destination": "src\\serdes4_mmcm_ip\\serdes4_mmcm_ip.xci",
+      "sha256": "12d6aba162f37cc464cb496cc249617e9603421485ad66e85a5f32b1d56842a1"
+    }
+  ],
+  "wrapper_source": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_sdram\\hdl\\gamebub_sdram.v",
+  "wrapper_change": "Module name only; unchanged underlying controller and PHY",
+  "generator": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\vivado\\gamebub_memory_ip\\prepare.py"
+}

@@ -1,0 +1,918 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<board schema_version="2.2" vendor="gamebub.org" name="gamebub_rev4" display_name="GameBub Rev4" url="https://github.com/gamebub/gamebub" preset_file="preset.xml">
+  <compatible_board_revisions>
+    <revision id="0">4</revision>
+  </compatible_board_revisions>
+  <file_version>2.0</file_version>
+  <description>GUI discovery revision: same Rev4 hardware, 198-pin electrical map, interfaces and clock preset as board file1.10. File version2.0 sorts above1.9 in Vivado2025.2 Latest selection. No RTL, physical board revision or timing qualification change.</description>
+  <images>
+    <image name="gamebub.png" display_name="GameBub" sub_type="board" resolution="480x160">
+      <description>Official GameBub project logo from docs/assets/logo.svg</description>
+    </image>
+  </images>
+  <components>
+    <component name="part0" display_name="XC7A100T" type="fpga" part_name="xc7a100tcsg324-1" pin_map_file="part0_pins.xml" vendor="xilinx">
+      <description>Artix-7 FPGA on GameBub Rev4</description>
+      <interfaces>
+        <interface mode="slave" name="clk_50mhz" type="xilinx.com:signal:clock_rtl:1.0" of_component="clk_50mhz" preset_proc="clk_50mhz_preset">
+          <description>Always-on 50 MHz FPGA clock</description>
+          <parameters>
+            <parameter name="frequency" value="50000000" />
+          </parameters>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="clk_wiz" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="CLK" physical_port="clk_50mhz" dir="in">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="clk_50mhz" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="buttons_12bits" type="xilinx.com:interface:gpio_rtl:1.0" of_component="buttons">
+          <description>Active-low A, B, X, Y, Up, Down, Left, Right, L, R, Start, Select buttons</description>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_I" physical_port="buttons_tri_i" dir="in" left="11" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="btn_a" />
+                <pin_map port_index="1" component_pin="btn_b" />
+                <pin_map port_index="2" component_pin="btn_x" />
+                <pin_map port_index="3" component_pin="btn_y" />
+                <pin_map port_index="4" component_pin="btn_up" />
+                <pin_map port_index="5" component_pin="btn_down" />
+                <pin_map port_index="6" component_pin="btn_left" />
+                <pin_map port_index="7" component_pin="btn_right" />
+                <pin_map port_index="8" component_pin="btn_l" />
+                <pin_map port_index="9" component_pin="btn_r" />
+                <pin_map port_index="10" component_pin="btn_start" />
+                <pin_map port_index="11" component_pin="btn_select" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="vibration" type="xilinx.com:interface:gpio_rtl:1.0" of_component="vibration_motor">
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_O" physical_port="vibration_tri_o" dir="out" left="1" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="vibrate_in1" />
+                <pin_map port_index="1" component_pin="vibrate_in2" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="pmod_4bits" type="xilinx.com:interface:gpio_rtl:1.0" of_component="pmod">
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_I" physical_port="pmod_tri_i" dir="in" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="pmod_0" />
+                <pin_map port_index="1" component_pin="pmod_1" />
+                <pin_map port_index="2" component_pin="pmod_2" />
+                <pin_map port_index="3" component_pin="pmod_3" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_O" physical_port="pmod_tri_o" dir="out" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="pmod_0" />
+                <pin_map port_index="1" component_pin="pmod_1" />
+                <pin_map port_index="2" component_pin="pmod_2" />
+                <pin_map port_index="3" component_pin="pmod_3" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_T" physical_port="pmod_tri_t" dir="out" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="pmod_0" />
+                <pin_map port_index="1" component_pin="pmod_1" />
+                <pin_map port_index="2" component_pin="pmod_2" />
+                <pin_map port_index="3" component_pin="pmod_3" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="testpoints_4bits" type="xilinx.com:interface:gpio_rtl:1.0" of_component="testpoints">
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_I" physical_port="tp_tri_i" dir="in" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="tp_0" />
+                <pin_map port_index="1" component_pin="tp_1" />
+                <pin_map port_index="2" component_pin="tp_2" />
+                <pin_map port_index="3" component_pin="tp_3" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_O" physical_port="tp_tri_o" dir="out" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="tp_0" />
+                <pin_map port_index="1" component_pin="tp_1" />
+                <pin_map port_index="2" component_pin="tp_2" />
+                <pin_map port_index="3" component_pin="tp_3" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_T" physical_port="tp_tri_t" dir="out" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="tp_0" />
+                <pin_map port_index="1" component_pin="tp_1" />
+                <pin_map port_index="2" component_pin="tp_2" />
+                <pin_map port_index="3" component_pin="tp_3" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="lcd_rgb888" type="gamebub.org:interface:lcd_rgb888_rtl:1.0" of_component="lcd">
+          <description>Native hardware pins; requires companion controller IP, not AXI GPIO</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_lcd_axis" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="R" physical_port="lcd_data_r" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_data_r_0" />
+                <pin_map port_index="1" component_pin="lcd_data_r_1" />
+                <pin_map port_index="2" component_pin="lcd_data_r_2" />
+                <pin_map port_index="3" component_pin="lcd_data_r_3" />
+                <pin_map port_index="4" component_pin="lcd_data_r_4" />
+                <pin_map port_index="5" component_pin="lcd_data_r_5" />
+                <pin_map port_index="6" component_pin="lcd_data_r_6" />
+                <pin_map port_index="7" component_pin="lcd_data_r_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="G" physical_port="lcd_data_g" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_data_g_0" />
+                <pin_map port_index="1" component_pin="lcd_data_g_1" />
+                <pin_map port_index="2" component_pin="lcd_data_g_2" />
+                <pin_map port_index="3" component_pin="lcd_data_g_3" />
+                <pin_map port_index="4" component_pin="lcd_data_g_4" />
+                <pin_map port_index="5" component_pin="lcd_data_g_5" />
+                <pin_map port_index="6" component_pin="lcd_data_g_6" />
+                <pin_map port_index="7" component_pin="lcd_data_g_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="B" physical_port="lcd_data_b" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_data_b_0" />
+                <pin_map port_index="1" component_pin="lcd_data_b_1" />
+                <pin_map port_index="2" component_pin="lcd_data_b_2" />
+                <pin_map port_index="3" component_pin="lcd_data_b_3" />
+                <pin_map port_index="4" component_pin="lcd_data_b_4" />
+                <pin_map port_index="5" component_pin="lcd_data_b_5" />
+                <pin_map port_index="6" component_pin="lcd_data_b_6" />
+                <pin_map port_index="7" component_pin="lcd_data_b_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DOTCLK" physical_port="lcd_dotclk" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_dotclk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="HSYNC" physical_port="lcd_hsync" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_hsync" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="VSYNC" physical_port="lcd_vsync" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_vsync" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DE" physical_port="lcd_data_en" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="lcd_data_en" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="dac_dsp" type="gamebub.org:interface:dac_dsp_rtl:1.0" of_component="dac">
+          <description>Native hardware pins; requires companion controller IP, not AXI GPIO</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_dac_audio" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="MCLK" physical_port="dac_mclk" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="dac_mclk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="WCLK" physical_port="dac_wclk" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="dac_wclk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BCLK" physical_port="dac_bclk" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="dac_bclk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DIN" physical_port="dac_din" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="dac_din" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="sdram" type="gamebub.org:interface:sdram_rtl:1.0" of_component="sdram">
+          <description>Native hardware pins; requires companion controller IP, not AXI GPIO</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_sdram_mem" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="A" physical_port="sdram_a" dir="out" left="12" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_a_0" />
+                <pin_map port_index="1" component_pin="sdram_a_1" />
+                <pin_map port_index="2" component_pin="sdram_a_2" />
+                <pin_map port_index="3" component_pin="sdram_a_3" />
+                <pin_map port_index="4" component_pin="sdram_a_4" />
+                <pin_map port_index="5" component_pin="sdram_a_5" />
+                <pin_map port_index="6" component_pin="sdram_a_6" />
+                <pin_map port_index="7" component_pin="sdram_a_7" />
+                <pin_map port_index="8" component_pin="sdram_a_8" />
+                <pin_map port_index="9" component_pin="sdram_a_9" />
+                <pin_map port_index="10" component_pin="sdram_a_10" />
+                <pin_map port_index="11" component_pin="sdram_a_11" />
+                <pin_map port_index="12" component_pin="sdram_a_12" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DQ" physical_port="sdram_dq" dir="inout" left="15" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_dq_0" />
+                <pin_map port_index="1" component_pin="sdram_dq_1" />
+                <pin_map port_index="2" component_pin="sdram_dq_2" />
+                <pin_map port_index="3" component_pin="sdram_dq_3" />
+                <pin_map port_index="4" component_pin="sdram_dq_4" />
+                <pin_map port_index="5" component_pin="sdram_dq_5" />
+                <pin_map port_index="6" component_pin="sdram_dq_6" />
+                <pin_map port_index="7" component_pin="sdram_dq_7" />
+                <pin_map port_index="8" component_pin="sdram_dq_8" />
+                <pin_map port_index="9" component_pin="sdram_dq_9" />
+                <pin_map port_index="10" component_pin="sdram_dq_10" />
+                <pin_map port_index="11" component_pin="sdram_dq_11" />
+                <pin_map port_index="12" component_pin="sdram_dq_12" />
+                <pin_map port_index="13" component_pin="sdram_dq_13" />
+                <pin_map port_index="14" component_pin="sdram_dq_14" />
+                <pin_map port_index="15" component_pin="sdram_dq_15" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BS" physical_port="sdram_bs" dir="out" left="1" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_bs_0" />
+                <pin_map port_index="1" component_pin="sdram_bs_1" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CKE" physical_port="sdram_cke" dir="out" left="1" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_cke_0" />
+                <pin_map port_index="1" component_pin="sdram_cke_1" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CS_N" physical_port="sdram_cs_n" dir="out" left="1" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_cs_n_0" />
+                <pin_map port_index="1" component_pin="sdram_cs_n_1" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CLK" physical_port="sdram_clk" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_clk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="WE_N" physical_port="sdram_we_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_we_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="LDQM" physical_port="sdram_ldqm" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_ldqm" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="UDQM" physical_port="sdram_udqm" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_udqm" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CAS_N" physical_port="sdram_cas_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_cas_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="RAS_N" physical_port="sdram_ras_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sdram_ras_n" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="sram" type="gamebub.org:interface:sram_rtl:1.0" of_component="sram">
+          <description>Native hardware pins; requires companion controller IP, not AXI GPIO</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_sram_mem" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="A" physical_port="sram_a" dir="out" left="17" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_a_0" />
+                <pin_map port_index="1" component_pin="sram_a_1" />
+                <pin_map port_index="2" component_pin="sram_a_2" />
+                <pin_map port_index="3" component_pin="sram_a_3" />
+                <pin_map port_index="4" component_pin="sram_a_4" />
+                <pin_map port_index="5" component_pin="sram_a_5" />
+                <pin_map port_index="6" component_pin="sram_a_6" />
+                <pin_map port_index="7" component_pin="sram_a_7" />
+                <pin_map port_index="8" component_pin="sram_a_8" />
+                <pin_map port_index="9" component_pin="sram_a_9" />
+                <pin_map port_index="10" component_pin="sram_a_10" />
+                <pin_map port_index="11" component_pin="sram_a_11" />
+                <pin_map port_index="12" component_pin="sram_a_12" />
+                <pin_map port_index="13" component_pin="sram_a_13" />
+                <pin_map port_index="14" component_pin="sram_a_14" />
+                <pin_map port_index="15" component_pin="sram_a_15" />
+                <pin_map port_index="16" component_pin="sram_a_16" />
+                <pin_map port_index="17" component_pin="sram_a_17" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="IO" physical_port="sram_io" dir="inout" left="15" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_io_0" />
+                <pin_map port_index="1" component_pin="sram_io_1" />
+                <pin_map port_index="2" component_pin="sram_io_2" />
+                <pin_map port_index="3" component_pin="sram_io_3" />
+                <pin_map port_index="4" component_pin="sram_io_4" />
+                <pin_map port_index="5" component_pin="sram_io_5" />
+                <pin_map port_index="6" component_pin="sram_io_6" />
+                <pin_map port_index="7" component_pin="sram_io_7" />
+                <pin_map port_index="8" component_pin="sram_io_8" />
+                <pin_map port_index="9" component_pin="sram_io_9" />
+                <pin_map port_index="10" component_pin="sram_io_10" />
+                <pin_map port_index="11" component_pin="sram_io_11" />
+                <pin_map port_index="12" component_pin="sram_io_12" />
+                <pin_map port_index="13" component_pin="sram_io_13" />
+                <pin_map port_index="14" component_pin="sram_io_14" />
+                <pin_map port_index="15" component_pin="sram_io_15" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CE_N" physical_port="sram_ce_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_ce_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="WE_N" physical_port="sram_we_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_we_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="OE_N" physical_port="sram_oe_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_oe_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="UB_N" physical_port="sram_ub_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_ub_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="LB_N" physical_port="sram_lb_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="sram_lb_n" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="slave" name="mcu_qspi" type="gamebub.org:interface:esp32_qspi_rtl:1.0" of_component="esp32_qspi">
+          <description>Dedicated modular controller; IRQ gate is active high on Rev4</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_v102" order="0" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="SCK" physical_port="mcu_spi_clk" dir="in">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="mcu_spi_clk" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CS_N" physical_port="mcu_spi_cs_n" dir="in">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="mcu_spi_cs_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DQ" physical_port="mcu_spi_d" dir="inout" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="mcu_spi_d_0" />
+                <pin_map port_index="1" component_pin="mcu_spi_d_1" />
+                <pin_map port_index="2" component_pin="mcu_spi_d_2" />
+                <pin_map port_index="3" component_pin="mcu_spi_d_3" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="mcu_irq_gate" type="gamebub.org:interface:esp32_irq_rtl:1.0" of_component="esp32_irq">
+          <description>Dedicated modular controller; IRQ gate is active high on Rev4</description>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_v102" order="0" />
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_irq" order="1" />
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="GATE" physical_port="mcu_irq_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="mcu_irq_n" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="cartridge" type="gamebub.org:interface:cartridge_rtl:1.0" of_component="cartridge">
+          <description>Cartridge slot (raw level-shifter interface); not automatically paired with AXI GPIO. No hardware programming by validation.</description>
+          <port_maps>
+            <port_map logical_port="BANK0" physical_port="cart_bank0" dir="inout" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank0_0" />
+                <pin_map port_index="1" component_pin="cart_bank0_1" />
+                <pin_map port_index="2" component_pin="cart_bank0_2" />
+                <pin_map port_index="3" component_pin="cart_bank0_3" />
+                <pin_map port_index="4" component_pin="cart_bank0_4" />
+                <pin_map port_index="5" component_pin="cart_bank0_5" />
+                <pin_map port_index="6" component_pin="cart_bank0_6" />
+                <pin_map port_index="7" component_pin="cart_bank0_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK1" physical_port="cart_bank1" dir="inout" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank1_0" />
+                <pin_map port_index="1" component_pin="cart_bank1_1" />
+                <pin_map port_index="2" component_pin="cart_bank1_2" />
+                <pin_map port_index="3" component_pin="cart_bank1_3" />
+                <pin_map port_index="4" component_pin="cart_bank1_4" />
+                <pin_map port_index="5" component_pin="cart_bank1_5" />
+                <pin_map port_index="6" component_pin="cart_bank1_6" />
+                <pin_map port_index="7" component_pin="cart_bank1_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK2" physical_port="cart_bank2" dir="inout" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank2_0" />
+                <pin_map port_index="1" component_pin="cart_bank2_1" />
+                <pin_map port_index="2" component_pin="cart_bank2_2" />
+                <pin_map port_index="3" component_pin="cart_bank2_3" />
+                <pin_map port_index="4" component_pin="cart_bank2_4" />
+                <pin_map port_index="5" component_pin="cart_bank2_5" />
+                <pin_map port_index="6" component_pin="cart_bank2_6" />
+                <pin_map port_index="7" component_pin="cart_bank2_7" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK3" physical_port="cart_bank3" dir="inout" left="3" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank3_0" />
+                <pin_map port_index="1" component_pin="cart_bank3_1" />
+                <pin_map port_index="2" component_pin="cart_bank3_2" />
+                <pin_map port_index="3" component_pin="cart_bank3_3" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="PIN30" physical_port="cart_pin30" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_pin30" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="PIN31" physical_port="cart_pin31" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_pin31" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK0_DIR" physical_port="cart_bank0_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank0_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK1_DIR" physical_port="cart_bank1_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank1_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK2_DIR" physical_port="cart_bank2_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank2_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="BANK3_DIR" physical_port="cart_bank3_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_bank3_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="PIN30_DIR" physical_port="cart_pin30_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_pin30_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="PIN31_DIR" physical_port="cart_pin31_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_pin31_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SWITCH" physical_port="cart_switch" dir="in">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_switch" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="OE_N" physical_port="cart_oe_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="cart_oe_n" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="link_port" type="gamebub.org:interface:link_port_rtl:1.0" of_component="link_port">
+          <description>Link port (raw level-shifter interface); not automatically paired with AXI GPIO. No hardware programming by validation.</description>
+          <port_maps>
+            <port_map logical_port="SO" physical_port="link_so" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_so" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SI" physical_port="link_si" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_si" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SD" physical_port="link_sd" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_sd" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SC" physical_port="link_sc" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_sc" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SO_DIR" physical_port="link_so_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_so_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SI_DIR" physical_port="link_si_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_si_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SD_DIR" physical_port="link_sd_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_sd_dir" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SC_DIR" physical_port="link_sc_dir" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="link_sc_dir" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="hdmi_tmds" type="gamebub.org:interface:hdmi_tmds_rtl:1.0" of_component="hdmi_tmds">
+          <description>HDMI TMDS pins (PHY required); not automatically paired with AXI GPIO. No hardware programming by validation.</description>
+          <port_maps>
+            <port_map logical_port="CLK_P" physical_port="hdmi_clk_p" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="hdmi_clk_p" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CLK_N" physical_port="hdmi_clk_n" dir="out">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="hdmi_clk_n" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DATA_P" physical_port="hdmi_data_p" dir="out" left="2" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="hdmi_data_p_0" />
+                <pin_map port_index="1" component_pin="hdmi_data_p_1" />
+                <pin_map port_index="2" component_pin="hdmi_data_p_2" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DATA_N" physical_port="hdmi_data_n" dir="out" left="2" right="0">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="hdmi_data_n_0" />
+                <pin_map port_index="1" component_pin="hdmi_data_n_1" />
+                <pin_map port_index="2" component_pin="hdmi_data_n_2" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+        <interface mode="master" name="usb_sbu" type="gamebub.org:interface:usb_sbu_rtl:1.0" of_component="usb_sbu">
+          <description>USB-C SBU sideband pins (not USB D+/D-); not automatically paired with AXI GPIO. No hardware programming by validation.</description>
+          <port_maps>
+            <port_map logical_port="SBU1" physical_port="usb_sbu_1" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="usb_sbu_1" />
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="SBU2" physical_port="usb_sbu_2" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="usb_sbu_2" />
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+      </interfaces>
+    </component>
+    <component name="clk_50mhz" display_name="50 MHz oscillator" type="chip" sub_type="system_clock" major_group="Clock Sources">
+      <parameters>
+        <parameter name="frequency" value="50000000" />
+      </parameters>
+      <component_modes>
+        <component_mode name="clk_50mhz" display_name="clk_50mhz">
+          <interfaces>
+            <interface name="clk_50mhz" />
+          </interfaces>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="clk_wiz" order="0" />
+          </preferred_ips>
+        </component_mode>
+      </component_modes>
+    </component>
+    <component name="buttons" display_name="Game controls" type="chip" sub_type="push_button" major_group="General Purpose Input or Output" />
+    <component name="lcd" display_name="LCD RGB888" type="chip" sub_type="lcd" major_group="Display" />
+    <component name="dac" display_name="Audio DAC" type="chip" sub_type="chip" major_group="Audio" />
+    <component name="vibration_motor" display_name="Vibration motor driver" type="chip" sub_type="chip" major_group="General Purpose Input or Output" />
+    <component name="pmod" display_name="PMOD" type="chip" sub_type="chip" major_group="Connectors" />
+    <component name="testpoints" display_name="Test points" type="chip" sub_type="chip" major_group="Connectors" />
+    <component name="sdram" display_name="SDRAM" type="chip" sub_type="chip" major_group="Memory" />
+    <component name="sram" display_name="SRAM" type="chip" sub_type="chip" major_group="Memory" />
+    <component name="esp32_qspi" display_name="ESP32 QSPI" type="chip" sub_type="chip" major_group="MCU Communication">
+      <component_modes>
+        <component_mode name="mcu_qspi" display_name="mcu_qspi">
+          <interfaces>
+            <interface name="mcu_qspi" />
+          </interfaces>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_v102" order="0" />
+          </preferred_ips>
+        </component_mode>
+      </component_modes>
+    </component>
+    <component name="esp32_irq" display_name="ESP32 IRQ gate" type="chip" sub_type="chip" major_group="MCU Communication">
+      <component_modes>
+        <component_mode name="mcu_irq_gate" display_name="mcu_irq_gate">
+          <interfaces>
+            <interface name="mcu_irq_gate" />
+          </interfaces>
+          <preferred_ips>
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_v102" order="0" />
+            <preferred_ip vendor="gamebub.org" library="ip" name="gamebub_esp32_irq" order="1" />
+          </preferred_ips>
+        </component_mode>
+      </component_modes>
+    </component>
+    <component name="cartridge" display_name="Cartridge slot (raw level-shifter interface)" type="chip" sub_type="chip" major_group="Connectors">
+      <description>Physical wiring only; no validated protocol controller or safe direction policy supplied.</description>
+    </component>
+    <component name="link_port" display_name="Link port (raw level-shifter interface)" type="chip" sub_type="chip" major_group="Connectors">
+      <description>Physical wiring only; no validated protocol controller or safe direction policy supplied.</description>
+    </component>
+    <component name="hdmi_tmds" display_name="HDMI TMDS pins (PHY required)" type="chip" sub_type="chip" major_group="Connectors">
+      <description>Physical wiring only; no validated protocol controller or safe direction policy supplied.</description>
+    </component>
+    <component name="usb_sbu" display_name="USB-C SBU sideband pins (not USB D+/D-)" type="chip" sub_type="chip" major_group="Connectors">
+      <description>Physical wiring only; no validated protocol controller or safe direction policy supplied.</description>
+    </component>
+  </components>
+  <jtag_chains>
+    <jtag_chain name="chain1">
+      <position name="0" component="part0" />
+    </jtag_chain>
+  </jtag_chains>
+  <connections>
+    <connection name="part0_buttons" component1="part0" component2="buttons">
+      <connection_map name="buttons_0" c1_st_index="75" c1_end_index="75" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="buttons_1" c1_st_index="76" c1_end_index="76" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="buttons_2" c1_st_index="77" c1_end_index="77" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="buttons_3" c1_st_index="78" c1_end_index="78" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="buttons_4" c1_st_index="79" c1_end_index="79" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="buttons_5" c1_st_index="80" c1_end_index="80" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="buttons_6" c1_st_index="81" c1_end_index="81" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="buttons_7" c1_st_index="82" c1_end_index="82" c2_st_index="7" c2_end_index="7" />
+      <connection_map name="buttons_8" c1_st_index="83" c1_end_index="83" c2_st_index="8" c2_end_index="8" />
+      <connection_map name="buttons_9" c1_st_index="84" c1_end_index="84" c2_st_index="9" c2_end_index="9" />
+      <connection_map name="buttons_10" c1_st_index="85" c1_end_index="85" c2_st_index="10" c2_end_index="10" />
+      <connection_map name="buttons_11" c1_st_index="86" c1_end_index="86" c2_st_index="11" c2_end_index="11" />
+    </connection>
+    <connection name="part0_cartridge" component1="part0" component2="cartridge">
+      <connection_map name="cartridge_0" c1_st_index="1" c1_end_index="1" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="cartridge_1" c1_st_index="2" c1_end_index="2" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="cartridge_2" c1_st_index="3" c1_end_index="3" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="cartridge_3" c1_st_index="4" c1_end_index="4" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="cartridge_4" c1_st_index="5" c1_end_index="5" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="cartridge_5" c1_st_index="6" c1_end_index="6" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="cartridge_6" c1_st_index="7" c1_end_index="7" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="cartridge_7" c1_st_index="8" c1_end_index="8" c2_st_index="7" c2_end_index="7" />
+      <connection_map name="cartridge_8" c1_st_index="9" c1_end_index="9" c2_st_index="8" c2_end_index="8" />
+      <connection_map name="cartridge_9" c1_st_index="10" c1_end_index="10" c2_st_index="9" c2_end_index="9" />
+      <connection_map name="cartridge_10" c1_st_index="11" c1_end_index="11" c2_st_index="10" c2_end_index="10" />
+      <connection_map name="cartridge_11" c1_st_index="12" c1_end_index="12" c2_st_index="11" c2_end_index="11" />
+      <connection_map name="cartridge_12" c1_st_index="13" c1_end_index="13" c2_st_index="12" c2_end_index="12" />
+      <connection_map name="cartridge_13" c1_st_index="14" c1_end_index="14" c2_st_index="13" c2_end_index="13" />
+      <connection_map name="cartridge_14" c1_st_index="15" c1_end_index="15" c2_st_index="14" c2_end_index="14" />
+      <connection_map name="cartridge_15" c1_st_index="16" c1_end_index="16" c2_st_index="15" c2_end_index="15" />
+      <connection_map name="cartridge_16" c1_st_index="17" c1_end_index="17" c2_st_index="16" c2_end_index="16" />
+      <connection_map name="cartridge_17" c1_st_index="18" c1_end_index="18" c2_st_index="17" c2_end_index="17" />
+      <connection_map name="cartridge_18" c1_st_index="19" c1_end_index="19" c2_st_index="18" c2_end_index="18" />
+      <connection_map name="cartridge_19" c1_st_index="20" c1_end_index="20" c2_st_index="19" c2_end_index="19" />
+      <connection_map name="cartridge_20" c1_st_index="21" c1_end_index="21" c2_st_index="20" c2_end_index="20" />
+      <connection_map name="cartridge_21" c1_st_index="22" c1_end_index="22" c2_st_index="21" c2_end_index="21" />
+      <connection_map name="cartridge_22" c1_st_index="23" c1_end_index="23" c2_st_index="22" c2_end_index="22" />
+      <connection_map name="cartridge_23" c1_st_index="24" c1_end_index="24" c2_st_index="23" c2_end_index="23" />
+      <connection_map name="cartridge_24" c1_st_index="25" c1_end_index="25" c2_st_index="24" c2_end_index="24" />
+      <connection_map name="cartridge_25" c1_st_index="26" c1_end_index="26" c2_st_index="25" c2_end_index="25" />
+      <connection_map name="cartridge_26" c1_st_index="27" c1_end_index="27" c2_st_index="26" c2_end_index="26" />
+      <connection_map name="cartridge_27" c1_st_index="28" c1_end_index="28" c2_st_index="27" c2_end_index="27" />
+      <connection_map name="cartridge_28" c1_st_index="29" c1_end_index="29" c2_st_index="28" c2_end_index="28" />
+      <connection_map name="cartridge_29" c1_st_index="30" c1_end_index="30" c2_st_index="29" c2_end_index="29" />
+      <connection_map name="cartridge_30" c1_st_index="31" c1_end_index="31" c2_st_index="30" c2_end_index="30" />
+      <connection_map name="cartridge_31" c1_st_index="32" c1_end_index="32" c2_st_index="31" c2_end_index="31" />
+      <connection_map name="cartridge_32" c1_st_index="33" c1_end_index="33" c2_st_index="32" c2_end_index="32" />
+      <connection_map name="cartridge_33" c1_st_index="34" c1_end_index="34" c2_st_index="33" c2_end_index="33" />
+      <connection_map name="cartridge_34" c1_st_index="35" c1_end_index="35" c2_st_index="34" c2_end_index="34" />
+      <connection_map name="cartridge_35" c1_st_index="36" c1_end_index="36" c2_st_index="35" c2_end_index="35" />
+      <connection_map name="cartridge_36" c1_st_index="37" c1_end_index="37" c2_st_index="36" c2_end_index="36" />
+      <connection_map name="cartridge_37" c1_st_index="38" c1_end_index="38" c2_st_index="37" c2_end_index="37" />
+    </connection>
+    <connection name="part0_clk_50mhz" component1="part0" component2="clk_50mhz">
+      <connection_map name="clk_50mhz_0" c1_st_index="0" c1_end_index="0" c2_st_index="0" c2_end_index="0" />
+    </connection>
+    <connection name="part0_dac" component1="part0" component2="dac">
+      <connection_map name="dac_0" c1_st_index="87" c1_end_index="87" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="dac_1" c1_st_index="88" c1_end_index="88" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="dac_2" c1_st_index="89" c1_end_index="89" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="dac_3" c1_st_index="90" c1_end_index="90" c2_st_index="3" c2_end_index="3" />
+    </connection>
+    <connection name="part0_esp32_irq" component1="part0" component2="esp32_irq">
+      <connection_map name="esp32_irq_0" c1_st_index="97" c1_end_index="97" c2_st_index="0" c2_end_index="0" />
+    </connection>
+    <connection name="part0_esp32_qspi" component1="part0" component2="esp32_qspi">
+      <connection_map name="esp32_qspi_0" c1_st_index="91" c1_end_index="91" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="esp32_qspi_1" c1_st_index="92" c1_end_index="92" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="esp32_qspi_2" c1_st_index="93" c1_end_index="93" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="esp32_qspi_3" c1_st_index="94" c1_end_index="94" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="esp32_qspi_4" c1_st_index="95" c1_end_index="95" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="esp32_qspi_5" c1_st_index="96" c1_end_index="96" c2_st_index="5" c2_end_index="5" />
+    </connection>
+    <connection name="part0_hdmi_tmds" component1="part0" component2="hdmi_tmds">
+      <connection_map name="hdmi_tmds_0" c1_st_index="98" c1_end_index="98" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="hdmi_tmds_1" c1_st_index="99" c1_end_index="99" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="hdmi_tmds_2" c1_st_index="100" c1_end_index="100" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="hdmi_tmds_3" c1_st_index="101" c1_end_index="101" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="hdmi_tmds_4" c1_st_index="102" c1_end_index="102" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="hdmi_tmds_5" c1_st_index="103" c1_end_index="103" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="hdmi_tmds_6" c1_st_index="104" c1_end_index="104" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="hdmi_tmds_7" c1_st_index="105" c1_end_index="105" c2_st_index="7" c2_end_index="7" />
+    </connection>
+    <connection name="part0_lcd" component1="part0" component2="lcd">
+      <connection_map name="lcd_0" c1_st_index="47" c1_end_index="47" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="lcd_1" c1_st_index="48" c1_end_index="48" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="lcd_2" c1_st_index="49" c1_end_index="49" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="lcd_3" c1_st_index="50" c1_end_index="50" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="lcd_4" c1_st_index="51" c1_end_index="51" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="lcd_5" c1_st_index="52" c1_end_index="52" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="lcd_6" c1_st_index="53" c1_end_index="53" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="lcd_7" c1_st_index="54" c1_end_index="54" c2_st_index="7" c2_end_index="7" />
+      <connection_map name="lcd_8" c1_st_index="55" c1_end_index="55" c2_st_index="8" c2_end_index="8" />
+      <connection_map name="lcd_9" c1_st_index="56" c1_end_index="56" c2_st_index="9" c2_end_index="9" />
+      <connection_map name="lcd_10" c1_st_index="57" c1_end_index="57" c2_st_index="10" c2_end_index="10" />
+      <connection_map name="lcd_11" c1_st_index="58" c1_end_index="58" c2_st_index="11" c2_end_index="11" />
+      <connection_map name="lcd_12" c1_st_index="59" c1_end_index="59" c2_st_index="12" c2_end_index="12" />
+      <connection_map name="lcd_13" c1_st_index="60" c1_end_index="60" c2_st_index="13" c2_end_index="13" />
+      <connection_map name="lcd_14" c1_st_index="61" c1_end_index="61" c2_st_index="14" c2_end_index="14" />
+      <connection_map name="lcd_15" c1_st_index="62" c1_end_index="62" c2_st_index="15" c2_end_index="15" />
+      <connection_map name="lcd_16" c1_st_index="63" c1_end_index="63" c2_st_index="16" c2_end_index="16" />
+      <connection_map name="lcd_17" c1_st_index="64" c1_end_index="64" c2_st_index="17" c2_end_index="17" />
+      <connection_map name="lcd_18" c1_st_index="65" c1_end_index="65" c2_st_index="18" c2_end_index="18" />
+      <connection_map name="lcd_19" c1_st_index="66" c1_end_index="66" c2_st_index="19" c2_end_index="19" />
+      <connection_map name="lcd_20" c1_st_index="67" c1_end_index="67" c2_st_index="20" c2_end_index="20" />
+      <connection_map name="lcd_21" c1_st_index="68" c1_end_index="68" c2_st_index="21" c2_end_index="21" />
+      <connection_map name="lcd_22" c1_st_index="69" c1_end_index="69" c2_st_index="22" c2_end_index="22" />
+      <connection_map name="lcd_23" c1_st_index="70" c1_end_index="70" c2_st_index="23" c2_end_index="23" />
+      <connection_map name="lcd_24" c1_st_index="71" c1_end_index="71" c2_st_index="24" c2_end_index="24" />
+      <connection_map name="lcd_25" c1_st_index="72" c1_end_index="72" c2_st_index="25" c2_end_index="25" />
+      <connection_map name="lcd_26" c1_st_index="73" c1_end_index="73" c2_st_index="26" c2_end_index="26" />
+      <connection_map name="lcd_27" c1_st_index="74" c1_end_index="74" c2_st_index="27" c2_end_index="27" />
+    </connection>
+    <connection name="part0_link_port" component1="part0" component2="link_port">
+      <connection_map name="link_port_0" c1_st_index="39" c1_end_index="39" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="link_port_1" c1_st_index="40" c1_end_index="40" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="link_port_2" c1_st_index="41" c1_end_index="41" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="link_port_3" c1_st_index="42" c1_end_index="42" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="link_port_4" c1_st_index="43" c1_end_index="43" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="link_port_5" c1_st_index="44" c1_end_index="44" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="link_port_6" c1_st_index="45" c1_end_index="45" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="link_port_7" c1_st_index="46" c1_end_index="46" c2_st_index="7" c2_end_index="7" />
+    </connection>
+    <connection name="part0_pmod" component1="part0" component2="pmod">
+      <connection_map name="pmod_0" c1_st_index="110" c1_end_index="110" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="pmod_1" c1_st_index="111" c1_end_index="111" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="pmod_2" c1_st_index="112" c1_end_index="112" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="pmod_3" c1_st_index="113" c1_end_index="113" c2_st_index="3" c2_end_index="3" />
+    </connection>
+    <connection name="part0_sdram" component1="part0" component2="sdram">
+      <connection_map name="sdram_0" c1_st_index="157" c1_end_index="157" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="sdram_1" c1_st_index="158" c1_end_index="158" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="sdram_2" c1_st_index="159" c1_end_index="159" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="sdram_3" c1_st_index="160" c1_end_index="160" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="sdram_4" c1_st_index="161" c1_end_index="161" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="sdram_5" c1_st_index="162" c1_end_index="162" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="sdram_6" c1_st_index="163" c1_end_index="163" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="sdram_7" c1_st_index="164" c1_end_index="164" c2_st_index="7" c2_end_index="7" />
+      <connection_map name="sdram_8" c1_st_index="165" c1_end_index="165" c2_st_index="8" c2_end_index="8" />
+      <connection_map name="sdram_9" c1_st_index="166" c1_end_index="166" c2_st_index="9" c2_end_index="9" />
+      <connection_map name="sdram_10" c1_st_index="167" c1_end_index="167" c2_st_index="10" c2_end_index="10" />
+      <connection_map name="sdram_11" c1_st_index="168" c1_end_index="168" c2_st_index="11" c2_end_index="11" />
+      <connection_map name="sdram_12" c1_st_index="169" c1_end_index="169" c2_st_index="12" c2_end_index="12" />
+      <connection_map name="sdram_13" c1_st_index="170" c1_end_index="170" c2_st_index="13" c2_end_index="13" />
+      <connection_map name="sdram_14" c1_st_index="171" c1_end_index="171" c2_st_index="14" c2_end_index="14" />
+      <connection_map name="sdram_15" c1_st_index="172" c1_end_index="172" c2_st_index="15" c2_end_index="15" />
+      <connection_map name="sdram_16" c1_st_index="173" c1_end_index="173" c2_st_index="16" c2_end_index="16" />
+      <connection_map name="sdram_17" c1_st_index="174" c1_end_index="174" c2_st_index="17" c2_end_index="17" />
+      <connection_map name="sdram_18" c1_st_index="175" c1_end_index="175" c2_st_index="18" c2_end_index="18" />
+      <connection_map name="sdram_19" c1_st_index="176" c1_end_index="176" c2_st_index="19" c2_end_index="19" />
+      <connection_map name="sdram_20" c1_st_index="177" c1_end_index="177" c2_st_index="20" c2_end_index="20" />
+      <connection_map name="sdram_21" c1_st_index="178" c1_end_index="178" c2_st_index="21" c2_end_index="21" />
+      <connection_map name="sdram_22" c1_st_index="179" c1_end_index="179" c2_st_index="22" c2_end_index="22" />
+      <connection_map name="sdram_23" c1_st_index="180" c1_end_index="180" c2_st_index="23" c2_end_index="23" />
+      <connection_map name="sdram_24" c1_st_index="181" c1_end_index="181" c2_st_index="24" c2_end_index="24" />
+      <connection_map name="sdram_25" c1_st_index="182" c1_end_index="182" c2_st_index="25" c2_end_index="25" />
+      <connection_map name="sdram_26" c1_st_index="183" c1_end_index="183" c2_st_index="26" c2_end_index="26" />
+      <connection_map name="sdram_27" c1_st_index="184" c1_end_index="184" c2_st_index="27" c2_end_index="27" />
+      <connection_map name="sdram_28" c1_st_index="185" c1_end_index="185" c2_st_index="28" c2_end_index="28" />
+      <connection_map name="sdram_29" c1_st_index="186" c1_end_index="186" c2_st_index="29" c2_end_index="29" />
+      <connection_map name="sdram_30" c1_st_index="187" c1_end_index="187" c2_st_index="30" c2_end_index="30" />
+      <connection_map name="sdram_31" c1_st_index="188" c1_end_index="188" c2_st_index="31" c2_end_index="31" />
+      <connection_map name="sdram_32" c1_st_index="189" c1_end_index="189" c2_st_index="32" c2_end_index="32" />
+      <connection_map name="sdram_33" c1_st_index="190" c1_end_index="190" c2_st_index="33" c2_end_index="33" />
+      <connection_map name="sdram_34" c1_st_index="191" c1_end_index="191" c2_st_index="34" c2_end_index="34" />
+      <connection_map name="sdram_35" c1_st_index="192" c1_end_index="192" c2_st_index="35" c2_end_index="35" />
+      <connection_map name="sdram_36" c1_st_index="193" c1_end_index="193" c2_st_index="36" c2_end_index="36" />
+      <connection_map name="sdram_37" c1_st_index="194" c1_end_index="194" c2_st_index="37" c2_end_index="37" />
+      <connection_map name="sdram_38" c1_st_index="195" c1_end_index="195" c2_st_index="38" c2_end_index="38" />
+      <connection_map name="sdram_39" c1_st_index="196" c1_end_index="196" c2_st_index="39" c2_end_index="39" />
+      <connection_map name="sdram_40" c1_st_index="197" c1_end_index="197" c2_st_index="40" c2_end_index="40" />
+    </connection>
+    <connection name="part0_sram" component1="part0" component2="sram">
+      <connection_map name="sram_0" c1_st_index="118" c1_end_index="118" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="sram_1" c1_st_index="119" c1_end_index="119" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="sram_2" c1_st_index="120" c1_end_index="120" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="sram_3" c1_st_index="121" c1_end_index="121" c2_st_index="3" c2_end_index="3" />
+      <connection_map name="sram_4" c1_st_index="122" c1_end_index="122" c2_st_index="4" c2_end_index="4" />
+      <connection_map name="sram_5" c1_st_index="123" c1_end_index="123" c2_st_index="5" c2_end_index="5" />
+      <connection_map name="sram_6" c1_st_index="124" c1_end_index="124" c2_st_index="6" c2_end_index="6" />
+      <connection_map name="sram_7" c1_st_index="125" c1_end_index="125" c2_st_index="7" c2_end_index="7" />
+      <connection_map name="sram_8" c1_st_index="126" c1_end_index="126" c2_st_index="8" c2_end_index="8" />
+      <connection_map name="sram_9" c1_st_index="127" c1_end_index="127" c2_st_index="9" c2_end_index="9" />
+      <connection_map name="sram_10" c1_st_index="128" c1_end_index="128" c2_st_index="10" c2_end_index="10" />
+      <connection_map name="sram_11" c1_st_index="129" c1_end_index="129" c2_st_index="11" c2_end_index="11" />
+      <connection_map name="sram_12" c1_st_index="130" c1_end_index="130" c2_st_index="12" c2_end_index="12" />
+      <connection_map name="sram_13" c1_st_index="131" c1_end_index="131" c2_st_index="13" c2_end_index="13" />
+      <connection_map name="sram_14" c1_st_index="132" c1_end_index="132" c2_st_index="14" c2_end_index="14" />
+      <connection_map name="sram_15" c1_st_index="133" c1_end_index="133" c2_st_index="15" c2_end_index="15" />
+      <connection_map name="sram_16" c1_st_index="134" c1_end_index="134" c2_st_index="16" c2_end_index="16" />
+      <connection_map name="sram_17" c1_st_index="135" c1_end_index="135" c2_st_index="17" c2_end_index="17" />
+      <connection_map name="sram_18" c1_st_index="136" c1_end_index="136" c2_st_index="18" c2_end_index="18" />
+      <connection_map name="sram_19" c1_st_index="137" c1_end_index="137" c2_st_index="19" c2_end_index="19" />
+      <connection_map name="sram_20" c1_st_index="138" c1_end_index="138" c2_st_index="20" c2_end_index="20" />
+      <connection_map name="sram_21" c1_st_index="139" c1_end_index="139" c2_st_index="21" c2_end_index="21" />
+      <connection_map name="sram_22" c1_st_index="140" c1_end_index="140" c2_st_index="22" c2_end_index="22" />
+      <connection_map name="sram_23" c1_st_index="141" c1_end_index="141" c2_st_index="23" c2_end_index="23" />
+      <connection_map name="sram_24" c1_st_index="142" c1_end_index="142" c2_st_index="24" c2_end_index="24" />
+      <connection_map name="sram_25" c1_st_index="143" c1_end_index="143" c2_st_index="25" c2_end_index="25" />
+      <connection_map name="sram_26" c1_st_index="144" c1_end_index="144" c2_st_index="26" c2_end_index="26" />
+      <connection_map name="sram_27" c1_st_index="145" c1_end_index="145" c2_st_index="27" c2_end_index="27" />
+      <connection_map name="sram_28" c1_st_index="146" c1_end_index="146" c2_st_index="28" c2_end_index="28" />
+      <connection_map name="sram_29" c1_st_index="147" c1_end_index="147" c2_st_index="29" c2_end_index="29" />
+      <connection_map name="sram_30" c1_st_index="148" c1_end_index="148" c2_st_index="30" c2_end_index="30" />
+      <connection_map name="sram_31" c1_st_index="149" c1_end_index="149" c2_st_index="31" c2_end_index="31" />
+      <connection_map name="sram_32" c1_st_index="150" c1_end_index="150" c2_st_index="32" c2_end_index="32" />
+      <connection_map name="sram_33" c1_st_index="151" c1_end_index="151" c2_st_index="33" c2_end_index="33" />
+      <connection_map name="sram_34" c1_st_index="152" c1_end_index="152" c2_st_index="34" c2_end_index="34" />
+      <connection_map name="sram_35" c1_st_index="153" c1_end_index="153" c2_st_index="35" c2_end_index="35" />
+      <connection_map name="sram_36" c1_st_index="154" c1_end_index="154" c2_st_index="36" c2_end_index="36" />
+      <connection_map name="sram_37" c1_st_index="155" c1_end_index="155" c2_st_index="37" c2_end_index="37" />
+      <connection_map name="sram_38" c1_st_index="156" c1_end_index="156" c2_st_index="38" c2_end_index="38" />
+    </connection>
+    <connection name="part0_testpoints" component1="part0" component2="testpoints">
+      <connection_map name="testpoints_0" c1_st_index="114" c1_end_index="114" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="testpoints_1" c1_st_index="115" c1_end_index="115" c2_st_index="1" c2_end_index="1" />
+      <connection_map name="testpoints_2" c1_st_index="116" c1_end_index="116" c2_st_index="2" c2_end_index="2" />
+      <connection_map name="testpoints_3" c1_st_index="117" c1_end_index="117" c2_st_index="3" c2_end_index="3" />
+    </connection>
+    <connection name="part0_usb_sbu" component1="part0" component2="usb_sbu">
+      <connection_map name="usb_sbu_0" c1_st_index="106" c1_end_index="106" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="usb_sbu_1" c1_st_index="107" c1_end_index="107" c2_st_index="1" c2_end_index="1" />
+    </connection>
+    <connection name="part0_vibration_motor" component1="part0" component2="vibration_motor">
+      <connection_map name="vibration_motor_0" c1_st_index="108" c1_end_index="108" c2_st_index="0" c2_end_index="0" />
+      <connection_map name="vibration_motor_1" c1_st_index="109" c1_end_index="109" c2_st_index="1" c2_end_index="1" />
+    </connection>
+  </connections>
+</board>

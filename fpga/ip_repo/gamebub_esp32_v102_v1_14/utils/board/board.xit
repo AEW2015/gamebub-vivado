@@ -1,0 +1,24 @@
+# GameBub native board constraints. Physical pin data comes from BOARD_PART.
+package require xilinx::board 1.0
+namespace import ::xilinx::board::*
+set f_xdc [add_ipfile -usedIn {synthesis implementation board} -force [current_inst]_board.xdc]
+puts_ipfile $f_xdc {# GameBub board constraints; Custom interfaces intentionally remain unbound.}
+if {[get_project_property BOARD] eq ""} {close_ipfile $f_xdc; return}
+set board_if [get_property PARAM_VALUE.QSPI_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if SCK qspi_sck 1
+ board_add_port_constraints $f_xdc $board_if CS_N qspi_cs_n 1
+ board_add_port_constraints $f_xdc $board_if DQ qspi_dq 4
+}
+set board_if [get_property PARAM_VALUE.BUTTONS_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if TRI_I buttons_n 12
+ if {$board_if eq "buttons_12bits"} {
+  puts_ipfile $f_xdc {set_property PULLUP true [get_ports {buttons_n[*]}]}
+ }
+}
+set board_if [get_property PARAM_VALUE.IRQ_BOARD_INTERFACE]
+if {$board_if ne "Custom" && $board_if ne ""} {
+ board_add_port_constraints $f_xdc $board_if GATE irq_gate 1
+}
+close_ipfile $f_xdc

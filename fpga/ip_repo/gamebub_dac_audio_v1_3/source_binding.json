@@ -1,0 +1,34 @@
+{
+  "version_1_2_change": "Metadata-only repair: remove duplicate 4 GiB reg0 block; retain one 4 KiB Reg segment. Clock remains 29361979 Hz for audio_clk and S_AXI. HDL identical to v1.1. Evidence: vivado/gamebub_full_011_fix/handoff.json.",
+  "baseline": [
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\speaker_peripheral.sv",
+      "sha256": "1d0e329dc32bfb9266c615d89bb8aaf709d04198471fbe32f7e5352fe8bba500"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\speaker_engine.sv",
+      "sha256": "cf2f9e68104131a96c35db994fe9653fb0a5b4880e8169ab6513f217f67b2ab1"
+    },
+    {
+      "path": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\ip_repo\\gamebub_peripherals\\src\\tone_sine.vh",
+      "sha256": "446d1bbddd98f8dbfbfb25497d64df5411c4cedc78dd7ebb6bd4dbb23710b65f"
+    }
+  ],
+  "modifications": {
+    "speaker_peripheral.sv": [
+      [
+        "parameter CLOCK_HZ=29361979",
+        "parameter CLOCK_HZ=29361979,DEFAULT_FREQUENCY=440,DEFAULT_LEVEL=10,DEFAULT_LIMIT_MS=5000"
+      ],
+      [
+        "cfg[0]<=440;cfg[1]<=10;",
+        "cfg[0]<=DEFAULT_FREQUENCY;cfg[1]<=DEFAULT_LEVEL;"
+      ],
+      [
+        "cfg[4]<=5000",
+        "cfg[4]<=DEFAULT_LIMIT_MS"
+      ]
+    ]
+  },
+  "wrapper": "D:\\codex_archive_2026\\gamebub\\gamebub-source\\fpga\\vivado\\gamebub_modular_ip\\prepare_sources.py"
+}

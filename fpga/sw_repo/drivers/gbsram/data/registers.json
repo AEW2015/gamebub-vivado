@@ -1,0 +1,26 @@
+{
+  "core": "gamebub.org:ip:gamebub_sram_mem:1.6",
+  "rtl_files": ["fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_test_regs.sv", "fpga/ip_repo/gamebub_sram_mem_v1_6/src/sram_shared_tester.sv"],
+  "registers": [
+    {"name":"ID","offset":"0x00","access":"RO","reset":"0x53524802","description":"Shared SRAM identity."},
+    {"name":"COMMAND","offset":"0x04","access":"WO","reset":0,"description":"One-hot W1 pulses START=1 STOP=2 APPLY=4 CLEAR=8 SNAPSHOT=16 ADOPT_PROFILE=32 RESTORE_PROFILE=64. Full WSTRB required; invalid/busy command returns SLVERR. Reads return zero."},
+    {"name":"STATUS","offset":"0x08","access":"RO","reset":0,"description":"bit0 armed, bit1 not quiescent, bit2 applying, bit3 fault."},
+    {"name":"SNAPSHOT_SEQUENCE","offset":"0x0c","access":"RO","reset":0,"description":"Increments on accepted SNAPSHOT."},
+    {"name":"CAPABILITIES","offset":"0x10","access":"RO","reset":"0x0003011f","description":"ABI1, fixed PHY clock, modes0..4; exact driver-supported value."},
+    {"name":"WORDS","offset":"0x14","access":"RO","reset":262144,"description":"Number of physical 16-bit SRAM words (512KiB)."},
+    {"name":"OWNERSHIP","offset":"0x18","access":"RO","reset":0,"description":"bit0 tester request, bit1 tester grant, bit2 clock_ready. Live."},
+    {"name":"PROFILE","offset":"0x1c","access":"RO","reset":0,"description":"bit0 profile passed, bit1 profile pending, bit2 normal timing differs from defaults."},
+    {"name":"SHADOW_BASE_WORD","offset":"0x20","access":"RW","reset":0,"description":"Physical 16-bit word offset, 0..262143."},
+    {"name":"SHADOW_COUNT_WORDS","offset":"0x24","access":"RW","reset":"DEFAULT_TEST_WORDS","description":"1..262144 words; base+count <=262144."},
+    {"name":"SHADOW_PATTERN_MODE","offset":"0x28","access":"RW","reset":"0x1d0f0008","description":"pattern[3:0]0..8, mode[6:4]0..4, bit7 reserved0, descending8, stop_on_error9, reserved[15:10]0, seed[31:16]."},
+    {"name":"SHADOW_TIMING0","offset":"0x2c","access":"RW","reset":"0x20202040","description":"READ,WE,SETUP,HOLD: four 8-bit slots, 1.25ns nominal slot resolution."},
+    {"name":"SHADOW_TIMING1","offset":"0x30","access":"RW","reset":"0x00002020","description":"REL[7:0],ADDR[15:8] slots; upper16 reserved0."},
+    {"name":"SHADOW_DWELL_MS","offset":"0x34","access":"RW","reset":0,"description":"0..60000ms."},
+    {"name":"SHADOW_RESERVED","offset":"0x38","access":"RW","reset":0,"description":"Must be zero for valid config."},
+    {"name":"SHADOW_METADATA","offset":"0x3c","access":"RW","reset":0,"description":"Opaque metadata word (RTL does not constrain it)."},
+    {"name":"ACTIVE_CONFIG","offset":"0x40","access":"RO","reset":"same as shadow","description":"Eight consecutive active configuration words through0x5c, changed by accepted APPLY when quiescent."},
+    {"name":"NORMAL_TIMINGS_LO","offset":"0x60","access":"RO","reset":"0x20202040","description":"Current normal-operation timing low32."},
+    {"name":"NORMAL_TIMINGS_HI","offset":"0x64","access":"RO","reset":"0x2020","description":"Current normal-operation timing high16."},
+    {"name":"SNAPSHOT","offset":"0x100","access":"RO","reset":0,"description":"64 consecutive frozen status words through0x1fc; SNAPSHOT command required. [0]status,[1]epoch,[2]work,[3]total,[4]passes,[5]completed,[6]aborts,[7]failures,[8..11]first error,[12..13]active cycles,[14..15]payload bytes,[16..17]elapsed cycles,[18]reads,[19]writes,[20]cursor,[21]host Hz,[22..29]config,[30]PHY Hz,[31]clock,[32..47]perDQ errors,[48]owner,[49..50]normal timing,[51]profile,[52..63]zero."}
+  ]
+}

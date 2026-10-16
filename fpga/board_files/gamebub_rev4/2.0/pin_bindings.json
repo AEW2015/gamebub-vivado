@@ -1,0 +1,3954 @@
+{
+  "source": "verilog\\handheld\\rev_4.xdc",
+  "source_sha256": "af2d5b6e9a157ed9636330cc1105180bd4bc7384e8c67d622119944b923953b8",
+  "pins": [
+    {
+      "index": "0",
+      "name": "clk_50mhz",
+      "loc": "P17",
+      "iostandard": "LVCMOS33",
+      "signal": "clk_50mhz"
+    },
+    {
+      "index": "1",
+      "name": "cart_bank0_0",
+      "loc": "A16",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[0]"
+    },
+    {
+      "index": "2",
+      "name": "cart_bank0_1",
+      "loc": "B16",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[1]"
+    },
+    {
+      "index": "3",
+      "name": "cart_bank0_2",
+      "loc": "D12",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[2]"
+    },
+    {
+      "index": "4",
+      "name": "cart_bank0_3",
+      "loc": "C12",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[3]"
+    },
+    {
+      "index": "5",
+      "name": "cart_bank0_4",
+      "loc": "D13",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[4]"
+    },
+    {
+      "index": "6",
+      "name": "cart_bank0_5",
+      "loc": "F13",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[5]"
+    },
+    {
+      "index": "7",
+      "name": "cart_bank0_6",
+      "loc": "C14",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[6]"
+    },
+    {
+      "index": "8",
+      "name": "cart_bank0_7",
+      "loc": "D14",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0[7]"
+    },
+    {
+      "index": "9",
+      "name": "cart_bank1_0",
+      "loc": "B11",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[0]"
+    },
+    {
+      "index": "10",
+      "name": "cart_bank1_1",
+      "loc": "B12",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[1]"
+    },
+    {
+      "index": "11",
+      "name": "cart_bank1_2",
+      "loc": "A13",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[2]"
+    },
+    {
+      "index": "12",
+      "name": "cart_bank1_3",
+      "loc": "B13",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[3]"
+    },
+    {
+      "index": "13",
+      "name": "cart_bank1_4",
+      "loc": "A14",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[4]"
+    },
+    {
+      "index": "14",
+      "name": "cart_bank1_5",
+      "loc": "B14",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[5]"
+    },
+    {
+      "index": "15",
+      "name": "cart_bank1_6",
+      "loc": "A15",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[6]"
+    },
+    {
+      "index": "16",
+      "name": "cart_bank1_7",
+      "loc": "C15",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1[7]"
+    },
+    {
+      "index": "17",
+      "name": "cart_bank2_0",
+      "loc": "D5",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[0]"
+    },
+    {
+      "index": "18",
+      "name": "cart_bank2_1",
+      "loc": "C5",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[1]"
+    },
+    {
+      "index": "19",
+      "name": "cart_bank2_2",
+      "loc": "C6",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[2]"
+    },
+    {
+      "index": "20",
+      "name": "cart_bank2_3",
+      "loc": "D7",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[3]"
+    },
+    {
+      "index": "21",
+      "name": "cart_bank2_4",
+      "loc": "C7",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[4]"
+    },
+    {
+      "index": "22",
+      "name": "cart_bank2_5",
+      "loc": "D8",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[5]"
+    },
+    {
+      "index": "23",
+      "name": "cart_bank2_6",
+      "loc": "D4",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[6]"
+    },
+    {
+      "index": "24",
+      "name": "cart_bank2_7",
+      "loc": "E5",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2[7]"
+    },
+    {
+      "index": "25",
+      "name": "cart_bank3_0",
+      "loc": "C4",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank3[0]"
+    },
+    {
+      "index": "26",
+      "name": "cart_bank3_1",
+      "loc": "B7",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank3[1]"
+    },
+    {
+      "index": "27",
+      "name": "cart_bank3_2",
+      "loc": "A6",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank3[2]"
+    },
+    {
+      "index": "28",
+      "name": "cart_bank3_3",
+      "loc": "B6",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank3[3]"
+    },
+    {
+      "index": "29",
+      "name": "cart_pin30",
+      "loc": "E15",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_pin30"
+    },
+    {
+      "index": "30",
+      "name": "cart_pin30_dir",
+      "loc": "C16",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_pin30_dir"
+    },
+    {
+      "index": "31",
+      "name": "cart_pin31",
+      "loc": "F16",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_pin31"
+    },
+    {
+      "index": "32",
+      "name": "cart_pin31_dir",
+      "loc": "F15",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_pin31_dir"
+    },
+    {
+      "index": "33",
+      "name": "cart_bank0_dir",
+      "loc": "D15",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank0_dir"
+    },
+    {
+      "index": "34",
+      "name": "cart_bank1_dir",
+      "loc": "A11",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank1_dir"
+    },
+    {
+      "index": "35",
+      "name": "cart_bank2_dir",
+      "loc": "F6",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank2_dir"
+    },
+    {
+      "index": "36",
+      "name": "cart_bank3_dir",
+      "loc": "B4",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_bank3_dir"
+    },
+    {
+      "index": "37",
+      "name": "cart_switch",
+      "loc": "J13",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_switch"
+    },
+    {
+      "index": "38",
+      "name": "cart_oe_n",
+      "loc": "A5",
+      "iostandard": "LVCMOS33",
+      "signal": "cart_oe_n"
+    },
+    {
+      "index": "39",
+      "name": "link_so",
+      "loc": "K15",
+      "iostandard": "LVCMOS33",
+      "signal": "link_so"
+    },
+    {
+      "index": "40",
+      "name": "link_si",
+      "loc": "J15",
+      "iostandard": "LVCMOS33",
+      "signal": "link_si"
+    },
+    {
+      "index": "41",
+      "name": "link_sd",
+      "loc": "H15",
+      "iostandard": "LVCMOS33",
+      "signal": "link_sd"
+    },
+    {
+      "index": "42",
+      "name": "link_sc",
+      "loc": "G16",
+      "iostandard": "LVCMOS33",
+      "signal": "link_sc"
+    },
+    {
+      "index": "43",
+      "name": "link_so_dir",
+      "loc": "K16",
+      "iostandard": "LVCMOS33",
+      "signal": "link_so_dir"
+    },
+    {
+      "index": "44",
+      "name": "link_si_dir",
+      "loc": "J14",
+      "iostandard": "LVCMOS33",
+      "signal": "link_si_dir"
+    },
+    {
+      "index": "45",
+      "name": "link_sd_dir",
+      "loc": "H14",
+      "iostandard": "LVCMOS33",
+      "signal": "link_sd_dir"
+    },
+    {
+      "index": "46",
+      "name": "link_sc_dir",
+      "loc": "G14",
+      "iostandard": "LVCMOS33",
+      "signal": "link_sc_dir"
+    },
+    {
+      "index": "47",
+      "name": "lcd_dotclk",
+      "loc": "T18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_dotclk"
+    },
+    {
+      "index": "48",
+      "name": "lcd_hsync",
+      "loc": "U18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_hsync"
+    },
+    {
+      "index": "49",
+      "name": "lcd_vsync",
+      "loc": "T16",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_vsync"
+    },
+    {
+      "index": "50",
+      "name": "lcd_data_en",
+      "loc": "R18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_en"
+    },
+    {
+      "index": "51",
+      "name": "lcd_data_b_0",
+      "loc": "R17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[0]"
+    },
+    {
+      "index": "52",
+      "name": "lcd_data_b_1",
+      "loc": "P18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[1]"
+    },
+    {
+      "index": "53",
+      "name": "lcd_data_b_2",
+      "loc": "N17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[2]"
+    },
+    {
+      "index": "54",
+      "name": "lcd_data_b_3",
+      "loc": "M17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[3]"
+    },
+    {
+      "index": "55",
+      "name": "lcd_data_b_4",
+      "loc": "M18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[4]"
+    },
+    {
+      "index": "56",
+      "name": "lcd_data_b_5",
+      "loc": "L16",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[5]"
+    },
+    {
+      "index": "57",
+      "name": "lcd_data_b_6",
+      "loc": "L18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[6]"
+    },
+    {
+      "index": "58",
+      "name": "lcd_data_b_7",
+      "loc": "K17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_b[7]"
+    },
+    {
+      "index": "59",
+      "name": "lcd_data_g_0",
+      "loc": "J17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[0]"
+    },
+    {
+      "index": "60",
+      "name": "lcd_data_g_1",
+      "loc": "J18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[1]"
+    },
+    {
+      "index": "61",
+      "name": "lcd_data_g_2",
+      "loc": "H16",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[2]"
+    },
+    {
+      "index": "62",
+      "name": "lcd_data_g_3",
+      "loc": "H17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[3]"
+    },
+    {
+      "index": "63",
+      "name": "lcd_data_g_4",
+      "loc": "G18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[4]"
+    },
+    {
+      "index": "64",
+      "name": "lcd_data_g_5",
+      "loc": "G17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[5]"
+    },
+    {
+      "index": "65",
+      "name": "lcd_data_g_6",
+      "loc": "F18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[6]"
+    },
+    {
+      "index": "66",
+      "name": "lcd_data_g_7",
+      "loc": "E17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_g[7]"
+    },
+    {
+      "index": "67",
+      "name": "lcd_data_r_0",
+      "loc": "E18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[0]"
+    },
+    {
+      "index": "68",
+      "name": "lcd_data_r_1",
+      "loc": "E16",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[1]"
+    },
+    {
+      "index": "69",
+      "name": "lcd_data_r_2",
+      "loc": "D18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[2]"
+    },
+    {
+      "index": "70",
+      "name": "lcd_data_r_3",
+      "loc": "D17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[3]"
+    },
+    {
+      "index": "71",
+      "name": "lcd_data_r_4",
+      "loc": "C17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[4]"
+    },
+    {
+      "index": "72",
+      "name": "lcd_data_r_5",
+      "loc": "B18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[5]"
+    },
+    {
+      "index": "73",
+      "name": "lcd_data_r_6",
+      "loc": "B17",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[6]"
+    },
+    {
+      "index": "74",
+      "name": "lcd_data_r_7",
+      "loc": "A18",
+      "iostandard": "LVCMOS33",
+      "signal": "lcd_data_r[7]"
+    },
+    {
+      "index": "75",
+      "name": "btn_a",
+      "loc": "L6",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_a"
+    },
+    {
+      "index": "76",
+      "name": "btn_b",
+      "loc": "K6",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_b"
+    },
+    {
+      "index": "77",
+      "name": "btn_x",
+      "loc": "M6",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_x"
+    },
+    {
+      "index": "78",
+      "name": "btn_y",
+      "loc": "N5",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_y"
+    },
+    {
+      "index": "79",
+      "name": "btn_up",
+      "loc": "N16",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_up"
+    },
+    {
+      "index": "80",
+      "name": "btn_down",
+      "loc": "L13",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_down"
+    },
+    {
+      "index": "81",
+      "name": "btn_left",
+      "loc": "L14",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_left"
+    },
+    {
+      "index": "82",
+      "name": "btn_right",
+      "loc": "M16",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_right"
+    },
+    {
+      "index": "83",
+      "name": "btn_l",
+      "loc": "K13",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_l"
+    },
+    {
+      "index": "84",
+      "name": "btn_r",
+      "loc": "K5",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_r"
+    },
+    {
+      "index": "85",
+      "name": "btn_start",
+      "loc": "H6",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_start"
+    },
+    {
+      "index": "86",
+      "name": "btn_select",
+      "loc": "H5",
+      "iostandard": "LVCMOS33",
+      "signal": "btn_select"
+    },
+    {
+      "index": "87",
+      "name": "dac_mclk",
+      "loc": "T15",
+      "iostandard": "LVCMOS33",
+      "signal": "dac_mclk"
+    },
+    {
+      "index": "88",
+      "name": "dac_wclk",
+      "loc": "R15",
+      "iostandard": "LVCMOS33",
+      "signal": "dac_wclk"
+    },
+    {
+      "index": "89",
+      "name": "dac_bclk",
+      "loc": "R16",
+      "iostandard": "LVCMOS33",
+      "signal": "dac_bclk"
+    },
+    {
+      "index": "90",
+      "name": "dac_din",
+      "loc": "P15",
+      "iostandard": "LVCMOS33",
+      "signal": "dac_din"
+    },
+    {
+      "index": "91",
+      "name": "mcu_spi_clk",
+      "loc": "T14",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_clk"
+    },
+    {
+      "index": "92",
+      "name": "mcu_spi_cs_n",
+      "loc": "U17",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_cs_n"
+    },
+    {
+      "index": "93",
+      "name": "mcu_spi_d_0",
+      "loc": "V15",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_d[0]"
+    },
+    {
+      "index": "94",
+      "name": "mcu_spi_d_1",
+      "loc": "V16",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_d[1]"
+    },
+    {
+      "index": "95",
+      "name": "mcu_spi_d_2",
+      "loc": "U16",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_d[2]"
+    },
+    {
+      "index": "96",
+      "name": "mcu_spi_d_3",
+      "loc": "V17",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_spi_d[3]"
+    },
+    {
+      "index": "97",
+      "name": "mcu_irq_n",
+      "loc": "N15",
+      "iostandard": "LVCMOS33",
+      "signal": "mcu_irq_n"
+    },
+    {
+      "index": "98",
+      "name": "hdmi_clk_p",
+      "loc": "C2",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_clk_p"
+    },
+    {
+      "index": "99",
+      "name": "hdmi_clk_n",
+      "loc": "C1",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_clk_n"
+    },
+    {
+      "index": "100",
+      "name": "hdmi_data_p_0",
+      "loc": "A4",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_p[0]"
+    },
+    {
+      "index": "101",
+      "name": "hdmi_data_n_0",
+      "loc": "A3",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_n[0]"
+    },
+    {
+      "index": "102",
+      "name": "hdmi_data_p_1",
+      "loc": "B3",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_p[1]"
+    },
+    {
+      "index": "103",
+      "name": "hdmi_data_n_1",
+      "loc": "B2",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_n[1]"
+    },
+    {
+      "index": "104",
+      "name": "hdmi_data_p_2",
+      "loc": "B1",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_p[2]"
+    },
+    {
+      "index": "105",
+      "name": "hdmi_data_n_2",
+      "loc": "A1",
+      "iostandard": "TMDS_33",
+      "signal": "hdmi_data_n[2]"
+    },
+    {
+      "index": "106",
+      "name": "usb_sbu_1",
+      "loc": "G13",
+      "iostandard": "LVCMOS33",
+      "signal": "usb_sbu_1"
+    },
+    {
+      "index": "107",
+      "name": "usb_sbu_2",
+      "loc": "F14",
+      "iostandard": "LVCMOS33",
+      "signal": "usb_sbu_2"
+    },
+    {
+      "index": "108",
+      "name": "vibrate_in1",
+      "loc": "F5",
+      "iostandard": "LVCMOS33",
+      "signal": "vibrate_in1"
+    },
+    {
+      "index": "109",
+      "name": "vibrate_in2",
+      "loc": "G6",
+      "iostandard": "LVCMOS33",
+      "signal": "vibrate_in2"
+    },
+    {
+      "index": "110",
+      "name": "pmod_0",
+      "loc": "V14",
+      "iostandard": "LVCMOS33",
+      "signal": "pmod[0]"
+    },
+    {
+      "index": "111",
+      "name": "pmod_1",
+      "loc": "U14",
+      "iostandard": "LVCMOS33",
+      "signal": "pmod[1]"
+    },
+    {
+      "index": "112",
+      "name": "pmod_2",
+      "loc": "U13",
+      "iostandard": "LVCMOS33",
+      "signal": "pmod[2]"
+    },
+    {
+      "index": "113",
+      "name": "pmod_3",
+      "loc": "R13",
+      "iostandard": "LVCMOS33",
+      "signal": "pmod[3]"
+    },
+    {
+      "index": "114",
+      "name": "tp_0",
+      "loc": "M14",
+      "iostandard": "LVCMOS33",
+      "signal": "tp[0]"
+    },
+    {
+      "index": "115",
+      "name": "tp_1",
+      "loc": "M13",
+      "iostandard": "LVCMOS33",
+      "signal": "tp[1]"
+    },
+    {
+      "index": "116",
+      "name": "tp_2",
+      "loc": "N14",
+      "iostandard": "LVCMOS33",
+      "signal": "tp[2]"
+    },
+    {
+      "index": "117",
+      "name": "tp_3",
+      "loc": "P14",
+      "iostandard": "LVCMOS33",
+      "signal": "tp[3]"
+    },
+    {
+      "index": "118",
+      "name": "sram_a_0",
+      "loc": "V1",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[0]"
+    },
+    {
+      "index": "119",
+      "name": "sram_a_1",
+      "loc": "U2",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[1]"
+    },
+    {
+      "index": "120",
+      "name": "sram_a_2",
+      "loc": "V2",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[2]"
+    },
+    {
+      "index": "121",
+      "name": "sram_a_3",
+      "loc": "U3",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[3]"
+    },
+    {
+      "index": "122",
+      "name": "sram_a_4",
+      "loc": "U4",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[4]"
+    },
+    {
+      "index": "123",
+      "name": "sram_a_5",
+      "loc": "V10",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[5]"
+    },
+    {
+      "index": "124",
+      "name": "sram_a_6",
+      "loc": "U11",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[6]"
+    },
+    {
+      "index": "125",
+      "name": "sram_a_7",
+      "loc": "V11",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[7]"
+    },
+    {
+      "index": "126",
+      "name": "sram_a_8",
+      "loc": "U12",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[8]"
+    },
+    {
+      "index": "127",
+      "name": "sram_a_9",
+      "loc": "V12",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[9]"
+    },
+    {
+      "index": "128",
+      "name": "sram_a_10",
+      "loc": "T1",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[10]"
+    },
+    {
+      "index": "129",
+      "name": "sram_a_11",
+      "loc": "U1",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[11]"
+    },
+    {
+      "index": "130",
+      "name": "sram_a_12",
+      "loc": "R3",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[12]"
+    },
+    {
+      "index": "131",
+      "name": "sram_a_13",
+      "loc": "P5",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[13]"
+    },
+    {
+      "index": "132",
+      "name": "sram_a_14",
+      "loc": "T3",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[14]"
+    },
+    {
+      "index": "133",
+      "name": "sram_a_15",
+      "loc": "R11",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[15]"
+    },
+    {
+      "index": "134",
+      "name": "sram_a_16",
+      "loc": "R12",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[16]"
+    },
+    {
+      "index": "135",
+      "name": "sram_a_17",
+      "loc": "T13",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_a[17]"
+    },
+    {
+      "index": "136",
+      "name": "sram_io_0",
+      "loc": "T5",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[0]"
+    },
+    {
+      "index": "137",
+      "name": "sram_io_1",
+      "loc": "V5",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[1]"
+    },
+    {
+      "index": "138",
+      "name": "sram_io_2",
+      "loc": "U6",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[2]"
+    },
+    {
+      "index": "139",
+      "name": "sram_io_3",
+      "loc": "V6",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[3]"
+    },
+    {
+      "index": "140",
+      "name": "sram_io_4",
+      "loc": "U7",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[4]"
+    },
+    {
+      "index": "141",
+      "name": "sram_io_5",
+      "loc": "V7",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[5]"
+    },
+    {
+      "index": "142",
+      "name": "sram_io_6",
+      "loc": "U8",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[6]"
+    },
+    {
+      "index": "143",
+      "name": "sram_io_7",
+      "loc": "U9",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[7]"
+    },
+    {
+      "index": "144",
+      "name": "sram_io_8",
+      "loc": "T4",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[8]"
+    },
+    {
+      "index": "145",
+      "name": "sram_io_9",
+      "loc": "R5",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[9]"
+    },
+    {
+      "index": "146",
+      "name": "sram_io_10",
+      "loc": "R6",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[10]"
+    },
+    {
+      "index": "147",
+      "name": "sram_io_11",
+      "loc": "T6",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[11]"
+    },
+    {
+      "index": "148",
+      "name": "sram_io_12",
+      "loc": "R7",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[12]"
+    },
+    {
+      "index": "149",
+      "name": "sram_io_13",
+      "loc": "R8",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[13]"
+    },
+    {
+      "index": "150",
+      "name": "sram_io_14",
+      "loc": "T8",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[14]"
+    },
+    {
+      "index": "151",
+      "name": "sram_io_15",
+      "loc": "T9",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_io[15]"
+    },
+    {
+      "index": "152",
+      "name": "sram_ce_n",
+      "loc": "V4",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_ce_n"
+    },
+    {
+      "index": "153",
+      "name": "sram_we_n",
+      "loc": "V9",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_we_n"
+    },
+    {
+      "index": "154",
+      "name": "sram_oe_n",
+      "loc": "T11",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_oe_n"
+    },
+    {
+      "index": "155",
+      "name": "sram_ub_n",
+      "loc": "R10",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_ub_n"
+    },
+    {
+      "index": "156",
+      "name": "sram_lb_n",
+      "loc": "T10",
+      "iostandard": "LVCMOS33",
+      "signal": "sram_lb_n"
+    },
+    {
+      "index": "157",
+      "name": "sdram_dq_0",
+      "loc": "R2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[0]"
+    },
+    {
+      "index": "158",
+      "name": "sdram_dq_1",
+      "loc": "R1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[1]"
+    },
+    {
+      "index": "159",
+      "name": "sdram_dq_2",
+      "loc": "P2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[2]"
+    },
+    {
+      "index": "160",
+      "name": "sdram_dq_3",
+      "loc": "N2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[3]"
+    },
+    {
+      "index": "161",
+      "name": "sdram_dq_4",
+      "loc": "N1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[4]"
+    },
+    {
+      "index": "162",
+      "name": "sdram_dq_5",
+      "loc": "M2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[5]"
+    },
+    {
+      "index": "163",
+      "name": "sdram_dq_6",
+      "loc": "M1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[6]"
+    },
+    {
+      "index": "164",
+      "name": "sdram_dq_7",
+      "loc": "L3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[7]"
+    },
+    {
+      "index": "165",
+      "name": "sdram_dq_8",
+      "loc": "L4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[8]"
+    },
+    {
+      "index": "166",
+      "name": "sdram_dq_9",
+      "loc": "L5",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[9]"
+    },
+    {
+      "index": "167",
+      "name": "sdram_dq_10",
+      "loc": "M4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[10]"
+    },
+    {
+      "index": "168",
+      "name": "sdram_dq_11",
+      "loc": "M3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[11]"
+    },
+    {
+      "index": "169",
+      "name": "sdram_dq_12",
+      "loc": "N6",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[12]"
+    },
+    {
+      "index": "170",
+      "name": "sdram_dq_13",
+      "loc": "N4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[13]"
+    },
+    {
+      "index": "171",
+      "name": "sdram_dq_14",
+      "loc": "P3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[14]"
+    },
+    {
+      "index": "172",
+      "name": "sdram_dq_15",
+      "loc": "P4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_dq[15]"
+    },
+    {
+      "index": "173",
+      "name": "sdram_a_0",
+      "loc": "G2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[0]"
+    },
+    {
+      "index": "174",
+      "name": "sdram_a_1",
+      "loc": "F1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[1]"
+    },
+    {
+      "index": "175",
+      "name": "sdram_a_2",
+      "loc": "E2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[2]"
+    },
+    {
+      "index": "176",
+      "name": "sdram_a_3",
+      "loc": "E1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[3]"
+    },
+    {
+      "index": "177",
+      "name": "sdram_a_4",
+      "loc": "E7",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[4]"
+    },
+    {
+      "index": "178",
+      "name": "sdram_a_5",
+      "loc": "D3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[5]"
+    },
+    {
+      "index": "179",
+      "name": "sdram_a_6",
+      "loc": "D2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[6]"
+    },
+    {
+      "index": "180",
+      "name": "sdram_a_7",
+      "loc": "E6",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[7]"
+    },
+    {
+      "index": "181",
+      "name": "sdram_a_8",
+      "loc": "E3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[8]"
+    },
+    {
+      "index": "182",
+      "name": "sdram_a_9",
+      "loc": "F3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[9]"
+    },
+    {
+      "index": "183",
+      "name": "sdram_a_10",
+      "loc": "G1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[10]"
+    },
+    {
+      "index": "184",
+      "name": "sdram_a_11",
+      "loc": "F4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[11]"
+    },
+    {
+      "index": "185",
+      "name": "sdram_a_12",
+      "loc": "G3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_a[12]"
+    },
+    {
+      "index": "186",
+      "name": "sdram_bs_0",
+      "loc": "H1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_bs[0]"
+    },
+    {
+      "index": "187",
+      "name": "sdram_bs_1",
+      "loc": "H2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_bs[1]"
+    },
+    {
+      "index": "188",
+      "name": "sdram_clk",
+      "loc": "J5",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_clk"
+    },
+    {
+      "index": "189",
+      "name": "sdram_we_n",
+      "loc": "K2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_we_n"
+    },
+    {
+      "index": "190",
+      "name": "sdram_ldqm",
+      "loc": "L1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_ldqm"
+    },
+    {
+      "index": "191",
+      "name": "sdram_udqm",
+      "loc": "K3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_udqm"
+    },
+    {
+      "index": "192",
+      "name": "sdram_cas_n",
+      "loc": "K1",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_cas_n"
+    },
+    {
+      "index": "193",
+      "name": "sdram_ras_n",
+      "loc": "J2",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_ras_n"
+    },
+    {
+      "index": "194",
+      "name": "sdram_cke_0",
+      "loc": "J4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_cke[0]"
+    },
+    {
+      "index": "195",
+      "name": "sdram_cke_1",
+      "loc": "H4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_cke[1]"
+    },
+    {
+      "index": "196",
+      "name": "sdram_cs_n_0",
+      "loc": "J3",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_cs_n[0]"
+    },
+    {
+      "index": "197",
+      "name": "sdram_cs_n_1",
+      "loc": "G4",
+      "iostandard": "LVCMOS33",
+      "signal": "sdram_cs_n[1]"
+    }
+  ],
+  "mappings": [
+    {
+      "interface": "clk_50mhz",
+      "logical": "CLK",
+      "bit": 0,
+      "component_pin": "clk_50mhz",
+      "signal": "clk_50mhz",
+      "loc": "P17",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 0,
+      "component_pin": "btn_a",
+      "signal": "btn_a",
+      "loc": "L6",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 1,
+      "component_pin": "btn_b",
+      "signal": "btn_b",
+      "loc": "K6",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 2,
+      "component_pin": "btn_x",
+      "signal": "btn_x",
+      "loc": "M6",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 3,
+      "component_pin": "btn_y",
+      "signal": "btn_y",
+      "loc": "N5",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 4,
+      "component_pin": "btn_up",
+      "signal": "btn_up",
+      "loc": "N16",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 5,
+      "component_pin": "btn_down",
+      "signal": "btn_down",
+      "loc": "L13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 6,
+      "component_pin": "btn_left",
+      "signal": "btn_left",
+      "loc": "L14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 7,
+      "component_pin": "btn_right",
+      "signal": "btn_right",
+      "loc": "M16",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 8,
+      "component_pin": "btn_l",
+      "signal": "btn_l",
+      "loc": "K13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 9,
+      "component_pin": "btn_r",
+      "signal": "btn_r",
+      "loc": "K5",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 10,
+      "component_pin": "btn_start",
+      "signal": "btn_start",
+      "loc": "H6",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "buttons_12bits",
+      "logical": "TRI_I",
+      "bit": 11,
+      "component_pin": "btn_select",
+      "signal": "btn_select",
+      "loc": "H5",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "vibration",
+      "logical": "TRI_O",
+      "bit": 0,
+      "component_pin": "vibrate_in1",
+      "signal": "vibrate_in1",
+      "loc": "F5",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "vibration",
+      "logical": "TRI_O",
+      "bit": 1,
+      "component_pin": "vibrate_in2",
+      "signal": "vibrate_in2",
+      "loc": "G6",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_I",
+      "bit": 0,
+      "component_pin": "pmod_0",
+      "signal": "pmod[0]",
+      "loc": "V14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_I",
+      "bit": 1,
+      "component_pin": "pmod_1",
+      "signal": "pmod[1]",
+      "loc": "U14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_I",
+      "bit": 2,
+      "component_pin": "pmod_2",
+      "signal": "pmod[2]",
+      "loc": "U13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_I",
+      "bit": 3,
+      "component_pin": "pmod_3",
+      "signal": "pmod[3]",
+      "loc": "R13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_O",
+      "bit": 0,
+      "component_pin": "pmod_0",
+      "signal": "pmod[0]",
+      "loc": "V14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_O",
+      "bit": 1,
+      "component_pin": "pmod_1",
+      "signal": "pmod[1]",
+      "loc": "U14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_O",
+      "bit": 2,
+      "component_pin": "pmod_2",
+      "signal": "pmod[2]",
+      "loc": "U13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_O",
+      "bit": 3,
+      "component_pin": "pmod_3",
+      "signal": "pmod[3]",
+      "loc": "R13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_T",
+      "bit": 0,
+      "component_pin": "pmod_0",
+      "signal": "pmod[0]",
+      "loc": "V14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_T",
+      "bit": 1,
+      "component_pin": "pmod_1",
+      "signal": "pmod[1]",
+      "loc": "U14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_T",
+      "bit": 2,
+      "component_pin": "pmod_2",
+      "signal": "pmod[2]",
+      "loc": "U13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "pmod_4bits",
+      "logical": "TRI_T",
+      "bit": 3,
+      "component_pin": "pmod_3",
+      "signal": "pmod[3]",
+      "loc": "R13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_I",
+      "bit": 0,
+      "component_pin": "tp_0",
+      "signal": "tp[0]",
+      "loc": "M14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_I",
+      "bit": 1,
+      "component_pin": "tp_1",
+      "signal": "tp[1]",
+      "loc": "M13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_I",
+      "bit": 2,
+      "component_pin": "tp_2",
+      "signal": "tp[2]",
+      "loc": "N14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_I",
+      "bit": 3,
+      "component_pin": "tp_3",
+      "signal": "tp[3]",
+      "loc": "P14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_O",
+      "bit": 0,
+      "component_pin": "tp_0",
+      "signal": "tp[0]",
+      "loc": "M14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_O",
+      "bit": 1,
+      "component_pin": "tp_1",
+      "signal": "tp[1]",
+      "loc": "M13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_O",
+      "bit": 2,
+      "component_pin": "tp_2",
+      "signal": "tp[2]",
+      "loc": "N14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_O",
+      "bit": 3,
+      "component_pin": "tp_3",
+      "signal": "tp[3]",
+      "loc": "P14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_T",
+      "bit": 0,
+      "component_pin": "tp_0",
+      "signal": "tp[0]",
+      "loc": "M14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_T",
+      "bit": 1,
+      "component_pin": "tp_1",
+      "signal": "tp[1]",
+      "loc": "M13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_T",
+      "bit": 2,
+      "component_pin": "tp_2",
+      "signal": "tp[2]",
+      "loc": "N14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "testpoints_4bits",
+      "logical": "TRI_T",
+      "bit": 3,
+      "component_pin": "tp_3",
+      "signal": "tp[3]",
+      "loc": "P14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 0,
+      "component_pin": "lcd_data_r_0",
+      "signal": "lcd_data_r[0]",
+      "loc": "E18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 1,
+      "component_pin": "lcd_data_r_1",
+      "signal": "lcd_data_r[1]",
+      "loc": "E16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 2,
+      "component_pin": "lcd_data_r_2",
+      "signal": "lcd_data_r[2]",
+      "loc": "D18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 3,
+      "component_pin": "lcd_data_r_3",
+      "signal": "lcd_data_r[3]",
+      "loc": "D17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 4,
+      "component_pin": "lcd_data_r_4",
+      "signal": "lcd_data_r[4]",
+      "loc": "C17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 5,
+      "component_pin": "lcd_data_r_5",
+      "signal": "lcd_data_r[5]",
+      "loc": "B18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 6,
+      "component_pin": "lcd_data_r_6",
+      "signal": "lcd_data_r[6]",
+      "loc": "B17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "R",
+      "bit": 7,
+      "component_pin": "lcd_data_r_7",
+      "signal": "lcd_data_r[7]",
+      "loc": "A18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 0,
+      "component_pin": "lcd_data_g_0",
+      "signal": "lcd_data_g[0]",
+      "loc": "J17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 1,
+      "component_pin": "lcd_data_g_1",
+      "signal": "lcd_data_g[1]",
+      "loc": "J18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 2,
+      "component_pin": "lcd_data_g_2",
+      "signal": "lcd_data_g[2]",
+      "loc": "H16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 3,
+      "component_pin": "lcd_data_g_3",
+      "signal": "lcd_data_g[3]",
+      "loc": "H17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 4,
+      "component_pin": "lcd_data_g_4",
+      "signal": "lcd_data_g[4]",
+      "loc": "G18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 5,
+      "component_pin": "lcd_data_g_5",
+      "signal": "lcd_data_g[5]",
+      "loc": "G17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 6,
+      "component_pin": "lcd_data_g_6",
+      "signal": "lcd_data_g[6]",
+      "loc": "F18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "G",
+      "bit": 7,
+      "component_pin": "lcd_data_g_7",
+      "signal": "lcd_data_g[7]",
+      "loc": "E17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 0,
+      "component_pin": "lcd_data_b_0",
+      "signal": "lcd_data_b[0]",
+      "loc": "R17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 1,
+      "component_pin": "lcd_data_b_1",
+      "signal": "lcd_data_b[1]",
+      "loc": "P18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 2,
+      "component_pin": "lcd_data_b_2",
+      "signal": "lcd_data_b[2]",
+      "loc": "N17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 3,
+      "component_pin": "lcd_data_b_3",
+      "signal": "lcd_data_b[3]",
+      "loc": "M17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 4,
+      "component_pin": "lcd_data_b_4",
+      "signal": "lcd_data_b[4]",
+      "loc": "M18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 5,
+      "component_pin": "lcd_data_b_5",
+      "signal": "lcd_data_b[5]",
+      "loc": "L16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 6,
+      "component_pin": "lcd_data_b_6",
+      "signal": "lcd_data_b[6]",
+      "loc": "L18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "B",
+      "bit": 7,
+      "component_pin": "lcd_data_b_7",
+      "signal": "lcd_data_b[7]",
+      "loc": "K17",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "DOTCLK",
+      "bit": 0,
+      "component_pin": "lcd_dotclk",
+      "signal": "lcd_dotclk",
+      "loc": "T18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "HSYNC",
+      "bit": 0,
+      "component_pin": "lcd_hsync",
+      "signal": "lcd_hsync",
+      "loc": "U18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "VSYNC",
+      "bit": 0,
+      "component_pin": "lcd_vsync",
+      "signal": "lcd_vsync",
+      "loc": "T16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "lcd_rgb888",
+      "logical": "DE",
+      "bit": 0,
+      "component_pin": "lcd_data_en",
+      "signal": "lcd_data_en",
+      "loc": "R18",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "dac_dsp",
+      "logical": "MCLK",
+      "bit": 0,
+      "component_pin": "dac_mclk",
+      "signal": "dac_mclk",
+      "loc": "T15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "dac_dsp",
+      "logical": "WCLK",
+      "bit": 0,
+      "component_pin": "dac_wclk",
+      "signal": "dac_wclk",
+      "loc": "R15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "dac_dsp",
+      "logical": "BCLK",
+      "bit": 0,
+      "component_pin": "dac_bclk",
+      "signal": "dac_bclk",
+      "loc": "R16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "dac_dsp",
+      "logical": "DIN",
+      "bit": 0,
+      "component_pin": "dac_din",
+      "signal": "dac_din",
+      "loc": "P15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 0,
+      "component_pin": "sdram_a_0",
+      "signal": "sdram_a[0]",
+      "loc": "G2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 1,
+      "component_pin": "sdram_a_1",
+      "signal": "sdram_a[1]",
+      "loc": "F1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 2,
+      "component_pin": "sdram_a_2",
+      "signal": "sdram_a[2]",
+      "loc": "E2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 3,
+      "component_pin": "sdram_a_3",
+      "signal": "sdram_a[3]",
+      "loc": "E1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 4,
+      "component_pin": "sdram_a_4",
+      "signal": "sdram_a[4]",
+      "loc": "E7",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 5,
+      "component_pin": "sdram_a_5",
+      "signal": "sdram_a[5]",
+      "loc": "D3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 6,
+      "component_pin": "sdram_a_6",
+      "signal": "sdram_a[6]",
+      "loc": "D2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 7,
+      "component_pin": "sdram_a_7",
+      "signal": "sdram_a[7]",
+      "loc": "E6",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 8,
+      "component_pin": "sdram_a_8",
+      "signal": "sdram_a[8]",
+      "loc": "E3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 9,
+      "component_pin": "sdram_a_9",
+      "signal": "sdram_a[9]",
+      "loc": "F3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 10,
+      "component_pin": "sdram_a_10",
+      "signal": "sdram_a[10]",
+      "loc": "G1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 11,
+      "component_pin": "sdram_a_11",
+      "signal": "sdram_a[11]",
+      "loc": "F4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "A",
+      "bit": 12,
+      "component_pin": "sdram_a_12",
+      "signal": "sdram_a[12]",
+      "loc": "G3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 0,
+      "component_pin": "sdram_dq_0",
+      "signal": "sdram_dq[0]",
+      "loc": "R2",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 1,
+      "component_pin": "sdram_dq_1",
+      "signal": "sdram_dq[1]",
+      "loc": "R1",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 2,
+      "component_pin": "sdram_dq_2",
+      "signal": "sdram_dq[2]",
+      "loc": "P2",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 3,
+      "component_pin": "sdram_dq_3",
+      "signal": "sdram_dq[3]",
+      "loc": "N2",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 4,
+      "component_pin": "sdram_dq_4",
+      "signal": "sdram_dq[4]",
+      "loc": "N1",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 5,
+      "component_pin": "sdram_dq_5",
+      "signal": "sdram_dq[5]",
+      "loc": "M2",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 6,
+      "component_pin": "sdram_dq_6",
+      "signal": "sdram_dq[6]",
+      "loc": "M1",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 7,
+      "component_pin": "sdram_dq_7",
+      "signal": "sdram_dq[7]",
+      "loc": "L3",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 8,
+      "component_pin": "sdram_dq_8",
+      "signal": "sdram_dq[8]",
+      "loc": "L4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 9,
+      "component_pin": "sdram_dq_9",
+      "signal": "sdram_dq[9]",
+      "loc": "L5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 10,
+      "component_pin": "sdram_dq_10",
+      "signal": "sdram_dq[10]",
+      "loc": "M4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 11,
+      "component_pin": "sdram_dq_11",
+      "signal": "sdram_dq[11]",
+      "loc": "M3",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 12,
+      "component_pin": "sdram_dq_12",
+      "signal": "sdram_dq[12]",
+      "loc": "N6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 13,
+      "component_pin": "sdram_dq_13",
+      "signal": "sdram_dq[13]",
+      "loc": "N4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 14,
+      "component_pin": "sdram_dq_14",
+      "signal": "sdram_dq[14]",
+      "loc": "P3",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "DQ",
+      "bit": 15,
+      "component_pin": "sdram_dq_15",
+      "signal": "sdram_dq[15]",
+      "loc": "P4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sdram",
+      "logical": "BS",
+      "bit": 0,
+      "component_pin": "sdram_bs_0",
+      "signal": "sdram_bs[0]",
+      "loc": "H1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "BS",
+      "bit": 1,
+      "component_pin": "sdram_bs_1",
+      "signal": "sdram_bs[1]",
+      "loc": "H2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CKE",
+      "bit": 0,
+      "component_pin": "sdram_cke_0",
+      "signal": "sdram_cke[0]",
+      "loc": "J4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CKE",
+      "bit": 1,
+      "component_pin": "sdram_cke_1",
+      "signal": "sdram_cke[1]",
+      "loc": "H4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CS_N",
+      "bit": 0,
+      "component_pin": "sdram_cs_n_0",
+      "signal": "sdram_cs_n[0]",
+      "loc": "J3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CS_N",
+      "bit": 1,
+      "component_pin": "sdram_cs_n_1",
+      "signal": "sdram_cs_n[1]",
+      "loc": "G4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CLK",
+      "bit": 0,
+      "component_pin": "sdram_clk",
+      "signal": "sdram_clk",
+      "loc": "J5",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "WE_N",
+      "bit": 0,
+      "component_pin": "sdram_we_n",
+      "signal": "sdram_we_n",
+      "loc": "K2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "LDQM",
+      "bit": 0,
+      "component_pin": "sdram_ldqm",
+      "signal": "sdram_ldqm",
+      "loc": "L1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "UDQM",
+      "bit": 0,
+      "component_pin": "sdram_udqm",
+      "signal": "sdram_udqm",
+      "loc": "K3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "CAS_N",
+      "bit": 0,
+      "component_pin": "sdram_cas_n",
+      "signal": "sdram_cas_n",
+      "loc": "K1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sdram",
+      "logical": "RAS_N",
+      "bit": 0,
+      "component_pin": "sdram_ras_n",
+      "signal": "sdram_ras_n",
+      "loc": "J2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 0,
+      "component_pin": "sram_a_0",
+      "signal": "sram_a[0]",
+      "loc": "V1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 1,
+      "component_pin": "sram_a_1",
+      "signal": "sram_a[1]",
+      "loc": "U2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 2,
+      "component_pin": "sram_a_2",
+      "signal": "sram_a[2]",
+      "loc": "V2",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 3,
+      "component_pin": "sram_a_3",
+      "signal": "sram_a[3]",
+      "loc": "U3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 4,
+      "component_pin": "sram_a_4",
+      "signal": "sram_a[4]",
+      "loc": "U4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 5,
+      "component_pin": "sram_a_5",
+      "signal": "sram_a[5]",
+      "loc": "V10",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 6,
+      "component_pin": "sram_a_6",
+      "signal": "sram_a[6]",
+      "loc": "U11",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 7,
+      "component_pin": "sram_a_7",
+      "signal": "sram_a[7]",
+      "loc": "V11",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 8,
+      "component_pin": "sram_a_8",
+      "signal": "sram_a[8]",
+      "loc": "U12",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 9,
+      "component_pin": "sram_a_9",
+      "signal": "sram_a[9]",
+      "loc": "V12",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 10,
+      "component_pin": "sram_a_10",
+      "signal": "sram_a[10]",
+      "loc": "T1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 11,
+      "component_pin": "sram_a_11",
+      "signal": "sram_a[11]",
+      "loc": "U1",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 12,
+      "component_pin": "sram_a_12",
+      "signal": "sram_a[12]",
+      "loc": "R3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 13,
+      "component_pin": "sram_a_13",
+      "signal": "sram_a[13]",
+      "loc": "P5",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 14,
+      "component_pin": "sram_a_14",
+      "signal": "sram_a[14]",
+      "loc": "T3",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 15,
+      "component_pin": "sram_a_15",
+      "signal": "sram_a[15]",
+      "loc": "R11",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 16,
+      "component_pin": "sram_a_16",
+      "signal": "sram_a[16]",
+      "loc": "R12",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "A",
+      "bit": 17,
+      "component_pin": "sram_a_17",
+      "signal": "sram_a[17]",
+      "loc": "T13",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 0,
+      "component_pin": "sram_io_0",
+      "signal": "sram_io[0]",
+      "loc": "T5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 1,
+      "component_pin": "sram_io_1",
+      "signal": "sram_io[1]",
+      "loc": "V5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 2,
+      "component_pin": "sram_io_2",
+      "signal": "sram_io[2]",
+      "loc": "U6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 3,
+      "component_pin": "sram_io_3",
+      "signal": "sram_io[3]",
+      "loc": "V6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 4,
+      "component_pin": "sram_io_4",
+      "signal": "sram_io[4]",
+      "loc": "U7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 5,
+      "component_pin": "sram_io_5",
+      "signal": "sram_io[5]",
+      "loc": "V7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 6,
+      "component_pin": "sram_io_6",
+      "signal": "sram_io[6]",
+      "loc": "U8",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 7,
+      "component_pin": "sram_io_7",
+      "signal": "sram_io[7]",
+      "loc": "U9",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 8,
+      "component_pin": "sram_io_8",
+      "signal": "sram_io[8]",
+      "loc": "T4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 9,
+      "component_pin": "sram_io_9",
+      "signal": "sram_io[9]",
+      "loc": "R5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 10,
+      "component_pin": "sram_io_10",
+      "signal": "sram_io[10]",
+      "loc": "R6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 11,
+      "component_pin": "sram_io_11",
+      "signal": "sram_io[11]",
+      "loc": "T6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 12,
+      "component_pin": "sram_io_12",
+      "signal": "sram_io[12]",
+      "loc": "R7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 13,
+      "component_pin": "sram_io_13",
+      "signal": "sram_io[13]",
+      "loc": "R8",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 14,
+      "component_pin": "sram_io_14",
+      "signal": "sram_io[14]",
+      "loc": "T8",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "IO",
+      "bit": 15,
+      "component_pin": "sram_io_15",
+      "signal": "sram_io[15]",
+      "loc": "T9",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "sram",
+      "logical": "CE_N",
+      "bit": 0,
+      "component_pin": "sram_ce_n",
+      "signal": "sram_ce_n",
+      "loc": "V4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "WE_N",
+      "bit": 0,
+      "component_pin": "sram_we_n",
+      "signal": "sram_we_n",
+      "loc": "V9",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "OE_N",
+      "bit": 0,
+      "component_pin": "sram_oe_n",
+      "signal": "sram_oe_n",
+      "loc": "T11",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "UB_N",
+      "bit": 0,
+      "component_pin": "sram_ub_n",
+      "signal": "sram_ub_n",
+      "loc": "R10",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "sram",
+      "logical": "LB_N",
+      "bit": 0,
+      "component_pin": "sram_lb_n",
+      "signal": "sram_lb_n",
+      "loc": "T10",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "SCK",
+      "bit": 0,
+      "component_pin": "mcu_spi_clk",
+      "signal": "mcu_spi_clk",
+      "loc": "T14",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "CS_N",
+      "bit": 0,
+      "component_pin": "mcu_spi_cs_n",
+      "signal": "mcu_spi_cs_n",
+      "loc": "U17",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "DQ",
+      "bit": 0,
+      "component_pin": "mcu_spi_d_0",
+      "signal": "mcu_spi_d[0]",
+      "loc": "V15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "DQ",
+      "bit": 1,
+      "component_pin": "mcu_spi_d_1",
+      "signal": "mcu_spi_d[1]",
+      "loc": "V16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "DQ",
+      "bit": 2,
+      "component_pin": "mcu_spi_d_2",
+      "signal": "mcu_spi_d[2]",
+      "loc": "U16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "mcu_qspi",
+      "logical": "DQ",
+      "bit": 3,
+      "component_pin": "mcu_spi_d_3",
+      "signal": "mcu_spi_d[3]",
+      "loc": "V17",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "mcu_irq_gate",
+      "logical": "GATE",
+      "bit": 0,
+      "component_pin": "mcu_irq_n",
+      "signal": "mcu_irq_n",
+      "loc": "N15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 0,
+      "component_pin": "cart_bank0_0",
+      "signal": "cart_bank0[0]",
+      "loc": "A16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 1,
+      "component_pin": "cart_bank0_1",
+      "signal": "cart_bank0[1]",
+      "loc": "B16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 2,
+      "component_pin": "cart_bank0_2",
+      "signal": "cart_bank0[2]",
+      "loc": "D12",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 3,
+      "component_pin": "cart_bank0_3",
+      "signal": "cart_bank0[3]",
+      "loc": "C12",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 4,
+      "component_pin": "cart_bank0_4",
+      "signal": "cart_bank0[4]",
+      "loc": "D13",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 5,
+      "component_pin": "cart_bank0_5",
+      "signal": "cart_bank0[5]",
+      "loc": "F13",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 6,
+      "component_pin": "cart_bank0_6",
+      "signal": "cart_bank0[6]",
+      "loc": "C14",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0",
+      "bit": 7,
+      "component_pin": "cart_bank0_7",
+      "signal": "cart_bank0[7]",
+      "loc": "D14",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 0,
+      "component_pin": "cart_bank1_0",
+      "signal": "cart_bank1[0]",
+      "loc": "B11",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 1,
+      "component_pin": "cart_bank1_1",
+      "signal": "cart_bank1[1]",
+      "loc": "B12",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 2,
+      "component_pin": "cart_bank1_2",
+      "signal": "cart_bank1[2]",
+      "loc": "A13",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 3,
+      "component_pin": "cart_bank1_3",
+      "signal": "cart_bank1[3]",
+      "loc": "B13",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 4,
+      "component_pin": "cart_bank1_4",
+      "signal": "cart_bank1[4]",
+      "loc": "A14",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 5,
+      "component_pin": "cart_bank1_5",
+      "signal": "cart_bank1[5]",
+      "loc": "B14",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 6,
+      "component_pin": "cart_bank1_6",
+      "signal": "cart_bank1[6]",
+      "loc": "A15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1",
+      "bit": 7,
+      "component_pin": "cart_bank1_7",
+      "signal": "cart_bank1[7]",
+      "loc": "C15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 0,
+      "component_pin": "cart_bank2_0",
+      "signal": "cart_bank2[0]",
+      "loc": "D5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 1,
+      "component_pin": "cart_bank2_1",
+      "signal": "cart_bank2[1]",
+      "loc": "C5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 2,
+      "component_pin": "cart_bank2_2",
+      "signal": "cart_bank2[2]",
+      "loc": "C6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 3,
+      "component_pin": "cart_bank2_3",
+      "signal": "cart_bank2[3]",
+      "loc": "D7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 4,
+      "component_pin": "cart_bank2_4",
+      "signal": "cart_bank2[4]",
+      "loc": "C7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 5,
+      "component_pin": "cart_bank2_5",
+      "signal": "cart_bank2[5]",
+      "loc": "D8",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 6,
+      "component_pin": "cart_bank2_6",
+      "signal": "cart_bank2[6]",
+      "loc": "D4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2",
+      "bit": 7,
+      "component_pin": "cart_bank2_7",
+      "signal": "cart_bank2[7]",
+      "loc": "E5",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK3",
+      "bit": 0,
+      "component_pin": "cart_bank3_0",
+      "signal": "cart_bank3[0]",
+      "loc": "C4",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK3",
+      "bit": 1,
+      "component_pin": "cart_bank3_1",
+      "signal": "cart_bank3[1]",
+      "loc": "B7",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK3",
+      "bit": 2,
+      "component_pin": "cart_bank3_2",
+      "signal": "cart_bank3[2]",
+      "loc": "A6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK3",
+      "bit": 3,
+      "component_pin": "cart_bank3_3",
+      "signal": "cart_bank3[3]",
+      "loc": "B6",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "PIN30",
+      "bit": 0,
+      "component_pin": "cart_pin30",
+      "signal": "cart_pin30",
+      "loc": "E15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "PIN31",
+      "bit": 0,
+      "component_pin": "cart_pin31",
+      "signal": "cart_pin31",
+      "loc": "F16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK0_DIR",
+      "bit": 0,
+      "component_pin": "cart_bank0_dir",
+      "signal": "cart_bank0_dir",
+      "loc": "D15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK1_DIR",
+      "bit": 0,
+      "component_pin": "cart_bank1_dir",
+      "signal": "cart_bank1_dir",
+      "loc": "A11",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK2_DIR",
+      "bit": 0,
+      "component_pin": "cart_bank2_dir",
+      "signal": "cart_bank2_dir",
+      "loc": "F6",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "BANK3_DIR",
+      "bit": 0,
+      "component_pin": "cart_bank3_dir",
+      "signal": "cart_bank3_dir",
+      "loc": "B4",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "PIN30_DIR",
+      "bit": 0,
+      "component_pin": "cart_pin30_dir",
+      "signal": "cart_pin30_dir",
+      "loc": "C16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "PIN31_DIR",
+      "bit": 0,
+      "component_pin": "cart_pin31_dir",
+      "signal": "cart_pin31_dir",
+      "loc": "F15",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "SWITCH",
+      "bit": 0,
+      "component_pin": "cart_switch",
+      "signal": "cart_switch",
+      "loc": "J13",
+      "iostandard": "LVCMOS33",
+      "direction": "in"
+    },
+    {
+      "interface": "cartridge",
+      "logical": "OE_N",
+      "bit": 0,
+      "component_pin": "cart_oe_n",
+      "signal": "cart_oe_n",
+      "loc": "A5",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SO",
+      "bit": 0,
+      "component_pin": "link_so",
+      "signal": "link_so",
+      "loc": "K15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SI",
+      "bit": 0,
+      "component_pin": "link_si",
+      "signal": "link_si",
+      "loc": "J15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SD",
+      "bit": 0,
+      "component_pin": "link_sd",
+      "signal": "link_sd",
+      "loc": "H15",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SC",
+      "bit": 0,
+      "component_pin": "link_sc",
+      "signal": "link_sc",
+      "loc": "G16",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SO_DIR",
+      "bit": 0,
+      "component_pin": "link_so_dir",
+      "signal": "link_so_dir",
+      "loc": "K16",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SI_DIR",
+      "bit": 0,
+      "component_pin": "link_si_dir",
+      "signal": "link_si_dir",
+      "loc": "J14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SD_DIR",
+      "bit": 0,
+      "component_pin": "link_sd_dir",
+      "signal": "link_sd_dir",
+      "loc": "H14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "link_port",
+      "logical": "SC_DIR",
+      "bit": 0,
+      "component_pin": "link_sc_dir",
+      "signal": "link_sc_dir",
+      "loc": "G14",
+      "iostandard": "LVCMOS33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "CLK_P",
+      "bit": 0,
+      "component_pin": "hdmi_clk_p",
+      "signal": "hdmi_clk_p",
+      "loc": "C2",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "CLK_N",
+      "bit": 0,
+      "component_pin": "hdmi_clk_n",
+      "signal": "hdmi_clk_n",
+      "loc": "C1",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_P",
+      "bit": 0,
+      "component_pin": "hdmi_data_p_0",
+      "signal": "hdmi_data_p[0]",
+      "loc": "A4",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_P",
+      "bit": 1,
+      "component_pin": "hdmi_data_p_1",
+      "signal": "hdmi_data_p[1]",
+      "loc": "B3",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_P",
+      "bit": 2,
+      "component_pin": "hdmi_data_p_2",
+      "signal": "hdmi_data_p[2]",
+      "loc": "B1",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_N",
+      "bit": 0,
+      "component_pin": "hdmi_data_n_0",
+      "signal": "hdmi_data_n[0]",
+      "loc": "A3",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_N",
+      "bit": 1,
+      "component_pin": "hdmi_data_n_1",
+      "signal": "hdmi_data_n[1]",
+      "loc": "B2",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "hdmi_tmds",
+      "logical": "DATA_N",
+      "bit": 2,
+      "component_pin": "hdmi_data_n_2",
+      "signal": "hdmi_data_n[2]",
+      "loc": "A1",
+      "iostandard": "TMDS_33",
+      "direction": "out"
+    },
+    {
+      "interface": "usb_sbu",
+      "logical": "SBU1",
+      "bit": 0,
+      "component_pin": "usb_sbu_1",
+      "signal": "usb_sbu_1",
+      "loc": "G13",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    },
+    {
+      "interface": "usb_sbu",
+      "logical": "SBU2",
+      "bit": 0,
+      "component_pin": "usb_sbu_2",
+      "signal": "usb_sbu_2",
+      "loc": "F14",
+      "iostandard": "LVCMOS33",
+      "direction": "inout"
+    }
+  ],
+  "probe_interfaces": [
+    {
+      "name": "clk_50mhz",
+      "type": "xilinx.com:signal:clock_rtl:1.0",
+      "mode": "slave",
+      "ports": [
+        [
+          "CLK",
+          "probe_pad_0"
+        ]
+      ]
+    },
+    {
+      "name": "buttons_12bits",
+      "type": "xilinx.com:interface:gpio_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "TRI_I",
+          "probe_pad_1"
+        ]
+      ]
+    },
+    {
+      "name": "vibration",
+      "type": "xilinx.com:interface:gpio_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "TRI_O",
+          "probe_pad_2"
+        ]
+      ]
+    },
+    {
+      "name": "pmod_4bits",
+      "type": "xilinx.com:interface:gpio_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "TRI_I",
+          "probe_pad_3"
+        ],
+        [
+          "TRI_O",
+          "probe_pad_4"
+        ],
+        [
+          "TRI_T",
+          "probe_pad_5"
+        ]
+      ]
+    },
+    {
+      "name": "testpoints_4bits",
+      "type": "xilinx.com:interface:gpio_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "TRI_I",
+          "probe_pad_6"
+        ],
+        [
+          "TRI_O",
+          "probe_pad_7"
+        ],
+        [
+          "TRI_T",
+          "probe_pad_8"
+        ]
+      ]
+    },
+    {
+      "name": "lcd_rgb888",
+      "type": "gamebub.org:interface:lcd_rgb888_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "R",
+          "probe_pad_9"
+        ],
+        [
+          "G",
+          "probe_pad_10"
+        ],
+        [
+          "B",
+          "probe_pad_11"
+        ],
+        [
+          "DOTCLK",
+          "probe_pad_12"
+        ],
+        [
+          "HSYNC",
+          "probe_pad_13"
+        ],
+        [
+          "VSYNC",
+          "probe_pad_14"
+        ],
+        [
+          "DE",
+          "probe_pad_15"
+        ]
+      ]
+    },
+    {
+      "name": "dac_dsp",
+      "type": "gamebub.org:interface:dac_dsp_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "MCLK",
+          "probe_pad_16"
+        ],
+        [
+          "WCLK",
+          "probe_pad_17"
+        ],
+        [
+          "BCLK",
+          "probe_pad_18"
+        ],
+        [
+          "DIN",
+          "probe_pad_19"
+        ]
+      ]
+    },
+    {
+      "name": "sdram",
+      "type": "gamebub.org:interface:sdram_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "A",
+          "probe_pad_20"
+        ],
+        [
+          "DQ",
+          "probe_pad_21"
+        ],
+        [
+          "BS",
+          "probe_pad_22"
+        ],
+        [
+          "CKE",
+          "probe_pad_23"
+        ],
+        [
+          "CS_N",
+          "probe_pad_24"
+        ],
+        [
+          "CLK",
+          "probe_pad_25"
+        ],
+        [
+          "WE_N",
+          "probe_pad_26"
+        ],
+        [
+          "LDQM",
+          "probe_pad_27"
+        ],
+        [
+          "UDQM",
+          "probe_pad_28"
+        ],
+        [
+          "CAS_N",
+          "probe_pad_29"
+        ],
+        [
+          "RAS_N",
+          "probe_pad_30"
+        ]
+      ]
+    },
+    {
+      "name": "sram",
+      "type": "gamebub.org:interface:sram_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "A",
+          "probe_pad_31"
+        ],
+        [
+          "IO",
+          "probe_pad_32"
+        ],
+        [
+          "CE_N",
+          "probe_pad_33"
+        ],
+        [
+          "WE_N",
+          "probe_pad_34"
+        ],
+        [
+          "OE_N",
+          "probe_pad_35"
+        ],
+        [
+          "UB_N",
+          "probe_pad_36"
+        ],
+        [
+          "LB_N",
+          "probe_pad_37"
+        ]
+      ]
+    },
+    {
+      "name": "mcu_qspi",
+      "type": "gamebub.org:interface:esp32_qspi_rtl:1.0",
+      "mode": "slave",
+      "ports": [
+        [
+          "SCK",
+          "probe_pad_38"
+        ],
+        [
+          "CS_N",
+          "probe_pad_39"
+        ],
+        [
+          "DQ",
+          "probe_pad_40"
+        ]
+      ]
+    },
+    {
+      "name": "mcu_irq_gate",
+      "type": "gamebub.org:interface:esp32_irq_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "GATE",
+          "probe_pad_41"
+        ]
+      ]
+    },
+    {
+      "name": "cartridge",
+      "type": "gamebub.org:interface:cartridge_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "BANK0",
+          "probe_pad_42"
+        ],
+        [
+          "BANK1",
+          "probe_pad_43"
+        ],
+        [
+          "BANK2",
+          "probe_pad_44"
+        ],
+        [
+          "BANK3",
+          "probe_pad_45"
+        ],
+        [
+          "PIN30",
+          "probe_pad_46"
+        ],
+        [
+          "PIN31",
+          "probe_pad_47"
+        ],
+        [
+          "BANK0_DIR",
+          "probe_pad_48"
+        ],
+        [
+          "BANK1_DIR",
+          "probe_pad_49"
+        ],
+        [
+          "BANK2_DIR",
+          "probe_pad_50"
+        ],
+        [
+          "BANK3_DIR",
+          "probe_pad_51"
+        ],
+        [
+          "PIN30_DIR",
+          "probe_pad_52"
+        ],
+        [
+          "PIN31_DIR",
+          "probe_pad_53"
+        ],
+        [
+          "SWITCH",
+          "probe_pad_54"
+        ],
+        [
+          "OE_N",
+          "probe_pad_55"
+        ]
+      ]
+    },
+    {
+      "name": "link_port",
+      "type": "gamebub.org:interface:link_port_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "SO",
+          "probe_pad_56"
+        ],
+        [
+          "SI",
+          "probe_pad_57"
+        ],
+        [
+          "SD",
+          "probe_pad_58"
+        ],
+        [
+          "SC",
+          "probe_pad_59"
+        ],
+        [
+          "SO_DIR",
+          "probe_pad_60"
+        ],
+        [
+          "SI_DIR",
+          "probe_pad_61"
+        ],
+        [
+          "SD_DIR",
+          "probe_pad_62"
+        ],
+        [
+          "SC_DIR",
+          "probe_pad_63"
+        ]
+      ]
+    },
+    {
+      "name": "hdmi_tmds",
+      "type": "gamebub.org:interface:hdmi_tmds_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "CLK_P",
+          "probe_pad_64"
+        ],
+        [
+          "CLK_N",
+          "probe_pad_65"
+        ],
+        [
+          "DATA_P",
+          "probe_pad_66"
+        ],
+        [
+          "DATA_N",
+          "probe_pad_67"
+        ]
+      ]
+    },
+    {
+      "name": "usb_sbu",
+      "type": "gamebub.org:interface:usb_sbu_rtl:1.0",
+      "mode": "master",
+      "ports": [
+        [
+          "SBU1",
+          "probe_pad_68"
+        ],
+        [
+          "SBU2",
+          "probe_pad_69"
+        ]
+      ]
+    }
+  ],
+  "old_versions_sha256": {
+    "gamebub_rev4\\1.0\\board.xml": "5eb708cc55ec51846f0d140bbb9f70bcb6935f8faa724850ce1cc307f2a0cb7e",
+    "gamebub_rev4\\1.0\\part0_pins.xml": "4abd782ba22ccb9f3cf8cda4124a26976e2b639e140f1158dd1b18c7dad7a711",
+    "gamebub_rev4\\1.0\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.1\\board.xml": "8a7434e013c2b65b50558fefb0506d2de4f37f8d2864443670d9bb02b3d2a124",
+    "gamebub_rev4\\1.1\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.1\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.1\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.2\\board.xml": "5e6ae82c727d36c34deb63cd9184f7b7ae830a8042789d1364e53ce87477df6d",
+    "gamebub_rev4\\1.2\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.2\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.2\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.3\\board.xml": "ef0a28ac350df20e6dec910528430531cad7ea76fa514e3e551b933c66178354",
+    "gamebub_rev4\\1.3\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.3\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.3\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.4\\board.xml": "3bbbaf97b18a664cda4fdbed660399f9013f8d0bc5893c708d3c5a9acb8e14f6",
+    "gamebub_rev4\\1.4\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.4\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.4\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.5\\board.xml": "027723325278a50d76e2253d6074dda0f8eff9fa9fa39670fb85a7cb23638c90",
+    "gamebub_rev4\\1.5\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.5\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.5\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.6\\board.xml": "db0c91a455a79b25b119346d6ba37176b00324f5446e4fc56423061348512ee6",
+    "gamebub_rev4\\1.6\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.6\\part0_pins.xml": "7bc2b68e056a1424c84615482cf1ac349699c0fdcccdbfe5337b90bd462108f8",
+    "gamebub_rev4\\1.6\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa",
+    "gamebub_rev4\\1.7\\board.xml": "9df8a5f75df6927ec02dd4c20619018e823dbc6e0ee453d6a115b5008ba4d635",
+    "gamebub_rev4\\1.7\\gamebub.png": "31ad335f0d7d01451e2c113caec5a83db4fbe29d94c2a60df2c92e42883c7eaf",
+    "gamebub_rev4\\1.7\\part0_pins.xml": "2d6823c20bd0ae1b80a0c5dfd62e9867780432faea65a8d9e3416973decd1641",
+    "gamebub_rev4\\1.7\\preset.xml": "75ee67dc7e813c1f57f950d5ffa2b81ee8c8aae96685eccf5f122bfb243aa0aa"
+  }
+}

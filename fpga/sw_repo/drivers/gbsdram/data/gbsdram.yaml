@@ -1,0 +1,38 @@
+%YAML 1.2
+---
+title: GameBub SDR SDRAM control driver
+description: Unified 8 KiB CTRL_AXI binding; MEM_AXI requires separate linker registration.
+type: driver
+properties:
+  compatible:
+    OneOf:
+      - items:
+          - enum:
+              - xlnx,gamebub-sdram-mem-1.6
+  reg:
+    description: CTRL_AXI CSR address (not MEM_AXI RAM)
+config:
+  - GBSdram_Config
+required:
+  - compatible
+  - reg
+examples:
+  gbsdram_probe_example.c:
+    - reg
+  gbsdram_scratch_example.c:
+    - dependency_files:
+        - gbsdram_example_setup.h
+    - reg
+  gbsdram_test_example.c:
+    - dependency_files:
+        - gbsdram_example_setup.h
+    - reg
+  gbsdram_instruction_example.c:
+    - dependency_files:
+        - gbsdram_example_setup.h
+    - reg
+  gbsdram_timing_example.c:
+    - dependency_files:
+        - gbsdram_example_setup.h
+    - reg
+...
