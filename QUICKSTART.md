@@ -1,5 +1,7 @@
 <!-- SPDX-License-Identifier: 0BSD -->
 
+For the `20261016_cdc2` IP constraint repair and fresh-project checks, see the [CDC update guide](docs/vivado/cdc-constraint-update.md). The board remains Rev4 / board-file 2.0.
+
 # Vivado and Vitis 2025.2 quickstart
 
 ## Requirements

@@ -20,6 +20,13 @@ set wrapper [make_wrapper -files [get_files */top.bd] -top]
 add_files -norecurse $wrapper
 set_property top top_wrapper [current_fileset]
 update_compile_order -fileset sources_1
+# Fail early when a stale/mispackaged IP omits its CDC constraints. This is
+# discovery evidence, not proof that the implemented endpoint queries match.
+foreach cdc_name {esp32_cdc.xdc sdram_cdc.xdc} {
+ set cdc_files [get_files -all -quiet *$cdc_name]
+ if {[llength $cdc_files]!=1} {error "Expected one packaged $cdc_name, found $cdc_files"}
+ puts "GAMEBUB_PACKAGED_CONSTRAINT_DISCOVERED=$cdc_files ORDER=[get_property PROCESSING_ORDER $cdc_files]"
+}
 write_hw_platform -fixed -force -file $out/gamebub_demo.xsa
 puts GAMEBUB_DOCUMENTED_REFERENCE_XSA_PASS
 close_project

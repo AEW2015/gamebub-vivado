@@ -72,6 +72,11 @@
       "status": "pass",
       "evidence": "skills/README.md",
       "scope": "Skill structure, local references and documented PowerShell syntax only; Ross not installed or hardware tested"
+    },
+    "cdc_constraint_package_20261016": {
+      "status": "pass",
+      "evidence": "docs/vivado/cdc-constraint-validation.json",
+      "scope": "Packaging/endpoint checks only; fresh routed timing and external I/O remain pending"
     }
   },
   "execution_record_hashes": {
@@ -160,7 +165,7 @@
     {
       "role": "source",
       "path": "QUICKSTART.md",
-      "sha256": "99bccdf489e5c7fbdad7ee8644077b42ace296c9fd80cf1b4299fc7397ea37ec"
+      "sha256": "73e71664d1ac8aada7d6995b8865e309ea80ce644c7d78d7869e29317cd5198d"
     },
     {
       "role": "source",
@@ -170,7 +175,7 @@
     {
       "role": "source",
       "path": "docs/vivado/README.md",
-      "sha256": "790205fb77b1a10cf80d1c79ea874933da3b77e7a7743e0db2610a35b8a28a1c"
+      "sha256": "5160fc6787253f3edc755472b80e85da5cc838ef42aee27344be5906315a89c2"
     },
     {
       "role": "source",
@@ -186,6 +191,16 @@
       "role": "source",
       "path": "docs/vivado/app-tester-validation.json",
       "sha256": "84098bed28442756d65e90f5dfb36e75b52e52112261fa40ac62fd69a9006c73"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/cdc-constraint-update.md",
+      "sha256": "3fc80baeccfe4c74f337eb141f44573554ca42c21796ff195646edaa02b51d38"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/cdc-constraint-validation.json",
+      "sha256": "1c24598bb8b0b6298f5cecc45002a12f9785d509517cb6c65ed5ea56c9e40b65"
     },
     {
       "role": "source",
@@ -235,7 +250,7 @@
     {
       "role": "source",
       "path": "docs/vivado/ips/esp32/catalog.md",
-      "sha256": "58b66db603ccb2a8073772d5f383d9f4a4f3436f0570eabdbd191bc70c77d941"
+      "sha256": "bb96e72a2faa6613cdac1f44661bde0456380505f2c59f14955c42bf8d4ce1d2"
     },
     {
       "role": "source",
@@ -290,7 +305,7 @@
     {
       "role": "source",
       "path": "docs/vivado/ips/sdram/catalog.md",
-      "sha256": "4929bd5fdb5051e3c122a89608f4920c4a8f0016780f7902fe5b99ad5970a8ca"
+      "sha256": "564b01cb8695fdbeec8394f0d85fc38d1904f1b6c40edd96b0436a33a2533c1c"
     },
     {
       "role": "source",
@@ -430,7 +445,7 @@
     {
       "role": "source",
       "path": "fpga/board_files/install_gamebub_current_repositories.tcl",
-      "sha256": "267a89af5ee36bc9537635d2ce2ceaaddc1fecd35b2399335c2577d022df2830"
+      "sha256": "a4f69709d3b8183558e3083cfe8a8c7a618d67db56b7adf30f23acdea88fd114"
     },
     {
       "role": "source",
@@ -560,7 +575,7 @@
     {
       "role": "source",
       "path": "fpga/ip_repo/TODO.md",
-      "sha256": "311797de5a11e78950b78deb5dc20ea0197e2fe559e44828080cc186a2ed2845"
+      "sha256": "ff9fd6ef28e4d240f32525391bee315f0a0f310c4e7b83e425c0bc267e7e8bdf"
     },
     {
       "role": "source",
@@ -730,12 +745,12 @@
     {
       "role": "source",
       "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/component.xml",
-      "sha256": "59b607003844a76d32d341294fdb26ef76c852db4bb4523e5576d2b51143da3d"
+      "sha256": "bc866f9bbe9c1bd08034680bf974dfd30dfbe9922ea3e79f04e8f1337178f71d"
     },
     {
       "role": "constraints",
       "path": "fpga/ip_repo/gamebub_esp32_v102_v1_14/constraints/esp32_cdc.xdc",
-      "sha256": "2b5f9e44b565a19a31c9150a82def27a11f8dc95af9896f50bfa3d1ff975436c"
+      "sha256": "8f347f850f112c752b29c9c47f8379ae3a1ac01e75b77bfd61e796491eed35d2"
     },
     {
       "role": "source",
@@ -875,7 +890,12 @@
     {
       "role": "source",
       "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/component.xml",
-      "sha256": "7974e53fe818d20926bcca22aa212f379dfe59b8fff2b15988f7f77f07a550a3"
+      "sha256": "869cd5b971e3d654c1e3c96272f03b022401c8238f3cca0bce8be2bfaba9c341"
+    },
+    {
+      "role": "source",
+      "path": "fpga/ip_repo/gamebub_sdram_mem_v1_6/constraints/sdram_cdc.xdc",
+      "sha256": "2856ca5cb0ed9e905be86981274b4da2245b2eb6f005c36377ce3c0915c2cd88"
     },
     {
       "role": "source",
@@ -2309,6 +2329,11 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/tests/test_cdc_package.py",
+      "sha256": "f5a08c420b10c2afdf0a5518696fa241670c6e1d515ab18b58db9fa2891d5647"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/tests/test_check_docs.py",
       "sha256": "178d3019bcdc60016240fe71fd38d248e00a780c2ae9ec1266e266644e29eb8c"
     },
@@ -2370,7 +2395,7 @@
     {
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/create_design.tcl",
-      "sha256": "0d6a13ee2d57a07062b9ce9e12f43fc4938cee56d10a5d7b88e08f01004e7ceb"
+      "sha256": "51834a9d4ab9a5588a12f847ef5606b01a2f4058cb45c15fb203489fecdc85fe"
     },
     {
       "role": "source",
@@ -2411,6 +2436,11 @@
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/validate_design.tcl",
       "sha256": "3554e6e04487597fd4c70b508241803148e8f62b85c8033974382724c426188c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/validate_routed_cdc.tcl",
+      "sha256": "5b76c898f4b268931600a39ece62eb24ea455cda726484e859053ee091bcd3e2"
     },
     {
       "role": "source",

@@ -4,6 +4,8 @@ Build a Rev4 GameBub system from independent Vivado IP and program it with bare-
 
 ## Start here
 
+**2026-10-16 CDC package update:** use the [fresh-build instructions](cdc-constraint-update.md) for release `20261016_cdc2`. Board-file version remains 2.0; ESP32/SDRAM package core revisions are now 2. Read its execution record before treating it as routed timing signoff.
+
 1. [Create the Vivado project](getting-started.md).
 2. [Connect clocks and resets](clocks-resets.md).
 3. [Create a Vitis workspace and build separate applications](vitis-workflow.md).

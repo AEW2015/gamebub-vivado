@@ -4,7 +4,7 @@ Generated reference to the packaged IP metadata. It describes declarations in `c
 
 - VLNV: `gamebub.org:ip:gamebub_sdram_mem:1.6`
 - Component version: `1.6`
-- Component metadata SHA-256: `7974e53fe818d20926bcca22aa212f379dfe59b8fff2b15988f7f77f07a550a3`
+- Component metadata SHA-256: `869cd5b971e3d654c1e3c96272f03b022401c8238f3cca0bce8be2bfaba9c341`
 - Source: [`component.xml`](../../../../fpga/ip_repo/gamebub_sdram_mem_v1_6/component.xml)
 
 ## User parameters

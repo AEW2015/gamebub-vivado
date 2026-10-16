@@ -1,0 +1,60 @@
+{
+  "release": "20261016_cdc2",
+  "date": "2026-10-16",
+  "overall": "INCOMPLETE",
+  "scope": "Constraint packaging and application to existing C001 placement/routing; not a new routed build or hardware qualification",
+  "hardware_programmed": false,
+  "rtl_changed": false,
+  "checks": {
+    "native_ipx_integrity": "PASS: both revised packages, Vivado 2025.2",
+    "native_catalog": "PASS: eight packages",
+    "fresh_bd_generation": "PASS: both scoped packaged XDC files discovered LATE; metadata XSA exported",
+    "host_unittests": "PASS: 24 tests",
+    "memory_control_rtl": "PASS: two cases",
+    "esp32_control_rtl": "PASS: overlay disabled and enabled",
+    "sdram_endpoint_budgets": "PASS: 353 request endpoints at 16 ns, 1159 response at 20 ns, 24 endpoints each Gray meter at 16 ns",
+    "esp32_first_stage": "PASS: audit3 overlay_first_stage.rpt explicitly reports Timing Exception: False Path and infinite slack",
+    "routed_checkpoint_audit": "INCOMPLETE: payload checks and explicit ESP32 false-path report pass; full script stopped on incorrect SLACK-property assertion, replaced by explicit report exception check; final summary rerun pending",
+    "fresh_routed_timing": "NOT RUN",
+    "external_io_qualification": "NOT COMPLETE"
+  },
+  "remaining": [
+    "Original C001 contains a genuine TPG internal setup violation of -0.039 ns; constraints must not hide it",
+    "Rebuild affected generated IP and reroute before accepting a new bitstream",
+    "External interface delays and dynamic clock profiles require separate qualification"
+  ],
+  "raw_evidence_root": "D:/xup_2026/bub",
+  "raw_logs_included": false,
+  "attempts": [
+    "audit1: failed audit-script endpoint selector, corrected before retry",
+    "audit2: SDRAM budgets passed; ESP32 first-stage exception check failed, selector repaired before retry",
+    "audit3: final constraint selector applied; check script incorrectly rejected Vivado infinite-slack false-path object, corrected before audit4",
+    "audit4: native report again proves False Path; SLACK-property assertion still rejected object; final script checks explicit native exception report instead"
+  ],
+  "artifacts": [
+    {
+      "path": "D:/xup_2026/bub/repair-cdc-package2.console.log",
+      "sha256": "c6eed9ad4392bfb7b7ba4676b7453b2597329d8a812ddb46bf8d3802a9f8f1fb"
+    },
+    {
+      "path": "D:/xup_2026/bub/cdc2-catalog2.console.log",
+      "sha256": "34603dedffbac00d3798af80a828fcf974b40e9712e745faa4ef2e2db4e0611f"
+    },
+    {
+      "path": "D:/xup_2026/bub/cdc2-fresh-reference2.console.log",
+      "sha256": "d798451874344be4288ed8beb247814221323a72e822ef93bf2655d58bff496a"
+    },
+    {
+      "path": "D:/xup_2026/bub/cdc2-host2.log",
+      "sha256": "ad69f62108d07d77f6fc16ca154b54713bfea9dc21c1e11e94fdf095e4e40982"
+    },
+    {
+      "path": "D:/xup_2026/bub/c001-packaged-cdc-audit3/endpoint_checks.txt",
+      "sha256": "19a72e13f3017d3e2c3b57a786a457f0bb1a030a38ac5de34d270db67f3cb879"
+    },
+    {
+      "path": "D:/xup_2026/bub/c001-packaged-cdc-audit3/overlay_first_stage.rpt",
+      "sha256": "35730f12acfc48ce7329c3c5ebc7dd960957098576c9bb27045c78a5d19c1b29"
+    }
+  ]
+}

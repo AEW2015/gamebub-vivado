@@ -6,5 +6,6 @@
 - Prove native SDT external-memory linker discovery rather than relying only on the XSA-derived helper.
 - Finish manual GUI example-design/import acceptance and verify new-VLNV driver compatibility before publishing upgraded catalog versions.
 - Review every project's related-clock interrupt crossings, packaged CDC exceptions and external-I/O budgets during routed sign-off; do not add blanket false paths.
-- Reconcile legacy packaged integration HTML (some refers to board file 1.10) with the canonical [GitHub guides](../../docs/vivado/README.md), which use board file 2.0. Keep functional IP metadata/RTL unchanged until an explicitly versioned package upgrade is qualified.
+- CDC release `20261016_cdc2` packages the SDRAM budgets and repairs ESP32 CPU-overlay XDC parsing; see [constraint update and remaining timing gates](../../docs/vivado/cdc-constraint-update.md). Fresh-route/TPG and external-I/O qualification are not implied by successful packaging.
+- Reconcile legacy packaged integration HTML (some refers to board file 1.10) with the canonical [GitHub guides](../../docs/vivado/README.md), which use board file 2.0. Keep protocol RTL unchanged until an explicitly versioned functional package upgrade is qualified; the constraint-only core-revision-2 changes are recorded separately.
 - Continue ESP32 menu-state/ownership compatibility work separately from successful volume-overlay tests. Do not imply that all installed ESP32 firmware/menu modes are interchangeable.

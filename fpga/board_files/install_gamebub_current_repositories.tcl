@@ -2,6 +2,8 @@
 # This curated distribution does not include historical packages/installers.
 # Keep historical projects with their original repository and upgrade privately.
 set gb_current_board_dir [file dirname [file normalize [info script]]]
+set gb_current_constraint_release 20261016_cdc2
+puts "GAMEBUB_CONSTRAINT_RELEASE=$gb_current_constraint_release"
 if {[regexp {\s} $gb_current_board_dir]} {
  puts {WARNING: Vivado 2025.2 child synthesis runs flatten board repository paths containing whitespace. GUI generation may work while launch_runs later cannot find the board. Install this source bundle in a path without spaces; do not patch generated AMD run scripts.}
 }

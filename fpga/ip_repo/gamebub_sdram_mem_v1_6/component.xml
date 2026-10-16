@@ -716,7 +716,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea9b608b</spirit:value>
+            <spirit:value>65a19c00</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1880,6 +1880,16 @@
     <spirit:fileSet>
       <spirit:name>xilinx_implementation_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>constraints/sdram_cdc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>SCOPED_TO_REF_gamebub_sdram_mem</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>late</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/serdes4_mmcm_ip/serdes4_mmcm_ip.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
@@ -1897,7 +1907,7 @@
       <spirit:name>xilinx_implementation_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
             <xilinx:mode xilinx:name="create_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -1920,7 +1930,7 @@
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>GUI/board packaging revision: native Board tab, organized settings and validation; protocol RTL, register ABI, clock requirements and constraints unchanged from 1.5.</spirit:description>
+  <spirit:description>Native Board tab and unified control aperture. Core revision 2 packages scoped mailbox, rate-meter, reset and PHY-margin CDC constraints. Protocol RTL, register ABI and clock requirements are unchanged.</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_BASE_ADDR</spirit:name>
@@ -1980,14 +1990,14 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-10-16T09:34:40Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-10-16T19:27:44Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2025.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="58db65d1"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="1153c9d9"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ba1914dc"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="809de6aa"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="74f2237f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f4f8fd26"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="81ca8556"/>

@@ -5,5 +5,6 @@ set_false_path -to [get_pins {endpoint/sck_sync_reg[0]/D endpoint/cs_sync_reg[0]
 set_false_path -to [get_pins -hier -filter {NAME =~ */dq_meta_reg*/D || NAME =~ */buttons_meta_reg*/D}]
 # cpu_irq is now registered in service_clk. Destination-domain synchronization
 # belongs to the receiving interrupt controller, not a blanket exception here.
-set cpu_overlay_meta [get_pins -quiet -hier -regexp {.*cpu_enable_sync_reg\[0\]/D}]
-if {[llength $cpu_overlay_meta]} {set_false_path -to $cpu_overlay_meta}
+# Optional CPU layer can be optimized away. Pure XDC only: Vivado rejects
+# procedural 'if' here and previously skipped the synchronizer exception.
+set_false_path -quiet -to [get_pins -quiet -of_objects [get_cells -quiet -hier -filter {NAME =~ */cpu_enable_sync_reg?0?}] -filter {REF_PIN_NAME == D}]
