@@ -1,4 +1,10 @@
 /* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/**
+ * @file app_tester_settings.h
+ * @brief App Tester scratch reservations and opt-out safety switches.
+ *
+ * License details: LICENSE.md at repository root.
+ */
 #ifndef GAMEBUB_TEMPLATE_SETTINGS_H
 #define GAMEBUB_TEMPLATE_SETTINGS_H
 /* App Tester only: pressing A on SRAM/SDRAM overwrites this 4-KiB range.

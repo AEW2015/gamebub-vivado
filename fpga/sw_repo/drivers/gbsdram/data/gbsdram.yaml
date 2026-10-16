@@ -1,3 +1,8 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+# Vitis SDT binding: ordered required properties populate the driver's config.
+# reg binds control registers; a RAM MEM_AXI aperture is separate from this CSR.
+# Importable example names/dependencies below must match files in ../examples.
+# License details: LICENSE.md at repository root.
 %YAML 1.2
 ---
 title: GameBub SDR SDRAM control driver

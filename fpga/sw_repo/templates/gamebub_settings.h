@@ -1,4 +1,10 @@
 /* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/**
+ * @file gamebub_settings.h
+ * @brief Conservative safety defaults for standalone Vitis examples.
+ *
+ * License details: LICENSE.md at repository root.
+ */
 #ifndef GAMEBUB_TEMPLATE_SETTINGS_H
 #define GAMEBUB_TEMPLATE_SETTINGS_H
 /* Build/import never runs the program. Deliberately running audio/vibration

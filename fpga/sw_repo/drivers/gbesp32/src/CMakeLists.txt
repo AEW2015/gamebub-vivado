@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+# BSP driver library: collect public headers and implementation sources below.
+# Vitis supplies the SDT instance table and AMD standalone/common build helpers.
+# License details: LICENSE.md at repository root.
 cmake_minimum_required(VERSION 3.15)
 project(gbesp32)
 find_package(common)

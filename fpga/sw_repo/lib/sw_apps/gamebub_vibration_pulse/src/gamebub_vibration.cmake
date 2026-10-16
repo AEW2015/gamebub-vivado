@@ -1,4 +1,8 @@
 # SPDX-License-Identifier: CERN-OHL-S-2.0
+# Validate the selected motor GPIO before generating an actuator application.
+# License details: LICENSE.md at repository root.
+# Required metadata is reg, GPIO width, all-outputs, in that order. A general
+# GPIO/button block at another address is not a safe motor-control substitute.
 list(LENGTH GPIO0_PROP_LIST gpio_properties)
 if(NOT gpio_properties EQUAL 3)
   message(FATAL_ERROR "Vibration requires GPIO reg, width and all-outputs metadata")

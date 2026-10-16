@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: CERN-OHL-S-2.0
+# Native Vitis application metadata; generated from templates/apps.json.
+# License details: LICENSE.md at repository root.
 %YAML 1.2
 ---
 title: "GameBub - Vibration pulse (bounded)"

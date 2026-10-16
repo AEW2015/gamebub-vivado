@@ -1,10 +1,25 @@
+/* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/**
+ * @file gbsram_scratch_example.c
+ * @brief Destructive CPU scratch test, disabled until BRAM/cache/client safety is confirmed.
+ *
+ * License details: LICENSE.md at repository root.
+ */
 #include "gbsram_example_setup.h"
-int main(void) {
+
+int main(void)
+{
 #ifdef GBSRAM_EXAMPLE_ARMED
- GBSram s;GBSram_Reservation r;u32 fail=0;int rc=setup(&s,&r);
- if(rc==XST_SUCCESS)rc=GBSram_ScratchTest(&s,&r,&fail);
- xil_printf(rc==XST_SUCCESS?"GBSRAM_SCRATCH_PASS\r\n":"GBSRAM_SCRATCH_FAIL\r\n");return rc;
+    GBSram s;
+    GBSram_Reservation r;
+    u32 fail = 0;
+    int rc = setup(&s, &r);
+    if (rc == XST_SUCCESS)
+        rc = GBSram_ScratchTest(&s, &r, &fail);
+    xil_printf(rc == XST_SUCCESS ? "GBSRAM_SCRATCH_PASS\r\n" : "GBSRAM_SCRATCH_FAIL\r\n");
+    return rc;
 #else
- xil_printf("GBSRAM_SCRATCH_DISABLED: reserve scratch and confirm BRAM/client safety\r\n");return XST_FAILURE;
+    xil_printf("GBSRAM_SCRATCH_DISABLED: reserve scratch and confirm BRAM/client safety\r\n");
+    return XST_FAILURE;
 #endif
 }

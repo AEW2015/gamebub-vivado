@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+# BSP Import Examples build: Vitis supplies instance/example metadata and linker.
+# Building an ELF never runs it; review each example's safety settings first.
+# License details: LICENSE.md at repository root.
 cmake_minimum_required(VERSION 3.15)
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/GbaudioExample.cmake")
   include(${CMAKE_CURRENT_SOURCE_DIR}/GbaudioExample.cmake)

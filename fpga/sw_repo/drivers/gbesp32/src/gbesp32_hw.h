@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/* License details: LICENSE.md at repository root. */
 #ifndef GBESP32_HW_H
 #define GBESP32_HW_H
 /** @file gbesp32_hw.h Register constants for gamebub_esp32_v102 1.14. */

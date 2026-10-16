@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+# C/C++ software style. License details: LICENSE.md at repository root.
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+BreakBeforeBraces: Linux
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+SortIncludes: Never
+ReflowComments: true
+SeparateDefinitionBlocks: Always

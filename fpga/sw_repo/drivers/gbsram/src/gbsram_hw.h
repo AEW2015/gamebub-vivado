@@ -1,3 +1,10 @@
+/* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/**
+ * @file gbsram_hw.h
+ * @brief Register offsets, capability masks and command encodings; not RAM addresses.
+ *
+ * License details: LICENSE.md at repository root.
+ */
 /* GameBub SRAM v1.6 register contract; see data/registers.json. */
 #ifndef GBSRAM_HW_H
 #define GBSRAM_HW_H

@@ -1,17 +1,22 @@
 # Copyright (C) 2023 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 # Adapted from the installed Vitis 2025.2 hello_world application CMake template.
+# Native application build; license details: LICENSE.md at repository root.
 cmake_minimum_required(VERSION 3.16)
 include(${CMAKE_CURRENT_SOURCE_DIR}/Gamebub_sdram_instructionExample.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/UserConfig.cmake)
 set(APP_NAME gamebub_sdram_instruction)
 project(${APP_NAME})
 enable_language(C ASM CXX)
+# Vitis supplies common.cmake and the standalone BSP libraries. Do not copy or
+# relicense AMD's standalone/xil/xiltimer sources into this custom repository.
 find_package(common)
 collect(PROJECT_LIB_DEPS xilstandalone)
 collect(PROJECT_LIB_DEPS xil)
 collect(PROJECT_LIB_DEPS gcc)
 collect(PROJECT_LIB_DEPS c)
+# Resolve one instance per driver from this platform's generated metadata.
+# The bindings helper also selects local BRAM for code/data/stack/heap.
 set(GB_NATIVE_DEPS gbsdram)
 set(GB_NATIVE_IRQ 0)
 include(${CMAKE_CURRENT_SOURCE_DIR}/gamebub_bindings.cmake)
@@ -21,10 +26,13 @@ list(APPEND _sources ${USER_COMPILE_SOURCES})
 collector_list(_deps PROJECT_LIB_DEPS)
 list(APPEND _deps ${USER_LINK_LIBRARIES})
 string(REPLACE ";" ",-l" _deps "${_deps}")
+# Let Vitis generate the linker script using the BRAM settings above. Merely
+# binding external RAM addresses does not reserve a safe scratch span there.
 linker_gen("${CMAKE_CURRENT_SOURCE_DIR}/linker_files/")
 string(APPEND CMAKE_C_FLAGS ${USER_COMPILE_OPTIONS})
 string(APPEND CMAKE_CXX_FLAGS ${USER_COMPILE_OPTIONS})
 string(APPEND CMAKE_C_LINK_FLAGS ${USER_LINK_OPTIONS})
+# Rebuild this application when the selected platform's BSP changes.
 add_dependency_on_bsp(_sources)
 add_executable(${APP_NAME}.elf ${_sources})
 set_target_properties(${APP_NAME}.elf PROPERTIES LINK_DEPENDS ${USER_LINKER_SCRIPT})

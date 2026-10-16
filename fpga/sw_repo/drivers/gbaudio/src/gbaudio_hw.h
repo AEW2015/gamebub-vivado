@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/* License details: LICENSE.md at repository root. */
 #ifndef GBAUDIO_HW_H
 #define GBAUDIO_HW_H
 /** @file gbaudio_hw.h Register constants for gamebub_dac_audio 1.3. */

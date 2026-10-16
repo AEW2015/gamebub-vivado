@@ -1,3 +1,6 @@
+# BSP Import Examples build: Vitis supplies instance/example metadata and linker.
+# Building an ELF never runs it; review each example's safety settings first.
+# License details: LICENSE.md at repository root.
 # CMake shape follows AMD embeddedsw gpio_v4_12 example build interface.
 # Original template Copyright (C) 2023-2024 Advanced Micro Devices, Inc.
 # Copyright (c) 2021 Xilinx, Inc. SPDX-License-Identifier: MIT

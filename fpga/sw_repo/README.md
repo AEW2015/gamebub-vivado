@@ -15,6 +15,33 @@ Native **application templates** live under `lib/sw_apps`: add this software-rep
 
 Driver-local `examples` and BSP **Import Examples** remain a separate path. The [original workspace builder](../vivado/gamebub_ipi_demo/create_workspace.py) also creates separately openable Vitis applications and binds their platform configuration. Inspect generated config/driver lists to confirm native BSP binding.
 
+## Source readability and maintenance
+
+Canonical driver code is in `drivers/*/src`; BSP-import examples are in
+`drivers/*/examples`. Shared app code/settings are in `templates` and
+`../vivado/gamebub_ipi_demo/software/demo_program.h`. The 20 sidebar applications
+in `lib/sw_apps` are generated copies: change their canonical inputs, not each
+copy. See [software source conventions](../../docs/vivado/software-style.md).
+
+File headers identify purpose and licensing; API comments describe units,
+ownership and safety. Inline comments explain sequencing and limitations.
+Existing AMD MIT notices are retained. AMD standalone, timer, console and other
+vendor BSP libraries remain tool-supplied; this repository documents how it uses
+them rather than modifying their source.
+
+The checked-in `.clang-format` uses four spaces, a 100-column target and expanded
+control flow. With `clang-format` installed (this pass used **23.1.3**):
+
+```powershell
+python fpga/sw_repo/tools/format_sources.py
+python fpga/sw_repo/tools/format_sources.py --check
+```
+
+Use `--clang-format C:/path/to/clang-format.exe` if it is not on PATH. The write
+command formats canonical C and regenerates the applications. `--check` changes
+nothing. Formatting/comments do not change register maps, default safety flags,
+scratch ranges, linker placement or FPGA hardware.
+
 ## Host and documentation checks
 
 Run from the repository root:

@@ -1,3 +1,10 @@
+/* SPDX-License-Identifier: CERN-OHL-S-2.0 */
+/**
+ * @file gbsdram_hw.h
+ * @brief Register offsets, capability masks and command encodings; not RAM addresses.
+ *
+ * License details: LICENSE.md at repository root.
+ */
 #ifndef GBSDRAM_HW_H
 #define GBSDRAM_HW_H
 #define GBSDRAM_ID 0x53345331U
