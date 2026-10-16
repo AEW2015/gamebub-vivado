@@ -10,3 +10,5 @@ vitis -s fpga/vivado/gamebub_ipi_demo/create_workspace.py D:/builds/gamebub-sdk-
 ```
 
 Use the [GitHub developer guide](../../../docs/vivado/README.md) and its [validation ledger](../../../docs/vivado/validation.md). The diagram is a software/documentation fixture, not a newly timing-qualified hardware release. It has 16 KiB BRAM; each ELF must fit its map and stack. A metadata-only XSA cannot program the board.
+
+For native GUI example selection, use the [Vitis Examples sidebar walkthrough](../../../docs/vivado/vitis-examples.md). `test_app_templates.py` verifies actual template discovery/create/build without the original builder's manual source-import path.

@@ -4,6 +4,8 @@ Use Vitis Unified IDE 2025.2, an XSA from the matching diagram and the [software
 
 ## Create components
 
+For the native Examples sidebar, follow the [application-template walkthrough](vitis-examples.md). Register the same `fpga/sw_repo` root through **Embedded SW Repositories...**, then create an application from a **GameBub -** template. The original workspace-builder path below remains available.
+
 Create a platform from XSA, select the MicroBlaze V processor and standalone OS, and select MDM for stdin/stdout. Add `fpga/sw_repo` as a **workspace-local embedded software repository** before building the platform. Inspect the generated BSP driver list and configuration: loading a YAML file into a folder is not proof that SDT matched the device.
 
 Each demo should appear as a separate application component. The automated entrypoint is:

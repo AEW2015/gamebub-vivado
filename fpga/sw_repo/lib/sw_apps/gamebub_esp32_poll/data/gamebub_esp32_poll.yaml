@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+%YAML 1.2
+---
+title: "GameBub - Buttons (polled)"
+type: apps
+description: "Standalone MicroBlaze V GameBub example; building never runs hardware."
+supported_processors:
+  - microblaze_riscv
+supported_os:
+  - standalone
+depends_libs:
+  xiltimer: {}
+depends:
+  gbesp32:
+    - reg
+required_mem:
+  bram:
+    size: 0x4000
+linker_constraints:
+  heap: 0x0
+  stack: 0x800
+...

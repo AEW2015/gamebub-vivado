@@ -21,6 +21,7 @@ jobs:
           python fpga/sw_repo/tools/test_memory_regions.py
           python fpga/sw_repo/tools/generate_docs.py --check
           python fpga/sw_repo/tools/catalog_docs.py --check
+          python fpga/sw_repo/tools/generate_app_templates.py --check
           python fpga/sw_repo/tests/check_docs.py
       - name: Download pinned portable Doxygen
         run: |

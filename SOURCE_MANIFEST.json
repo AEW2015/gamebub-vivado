@@ -1,6 +1,6 @@
 {
   "overall": "PASS",
-  "scope": "Source import and locally executed build/control-test checks only; NOT hardware qualification",
+  "scope": "Source package, native Vitis application templates and locally executed build/control checks only; NOT hardware qualification",
   "date": "2026-10-16",
   "tools": "Vivado/Vitis 2025.2; C11 GCC host tests; Icarus Verilog RTL tests; Doxygen 1.18.0",
   "raw_logs_included": false,
@@ -55,6 +55,14 @@
     "markdown_and_api_docs": {
       "status": "pass",
       "evidence": "docs/vivado/public-import.md"
+    },
+    "native_application_templates": {
+      "status": "pass",
+      "evidence": "docs/vivado/native-template-validation.json"
+    },
+    "portable_checks_19_plus_7": {
+      "status": "pass",
+      "evidence": "docs/vivado/vitis-examples.md"
     }
   },
   "execution_record_hashes": {
@@ -89,6 +97,14 @@
     "audio_rtl": {
       "sha256": "d753fbb4dfa11157b7a61a990bda2304721793210fe281de0ae3e993f3ddfd65",
       "included_in_git": false
+    },
+    "native_application_templates": {
+      "sha256": "0b82990a806a4a00911bb1f427251d861e04d3961c25183d9cfccbda4f04e29a",
+      "included_in_git": false
+    },
+    "native_template_host_tests": {
+      "sha256": "49f5ca9799327cb9d6f669ccb03d86ac55c9ed17cc986c8203f50a95eb992fe2",
+      "included_in_git": false
     }
   },
   "artifacts": [
@@ -100,7 +116,7 @@
     {
       "role": "source",
       "path": ".github/workflows/gamebub-sdk.yml",
-      "sha256": "7abeeca5d1af2e943c568d34ded3a9ff38a47579e98d7275fe59670933bcb68f"
+      "sha256": "d198e928f3f5947fa82f81ae025b7cb81c8daafa4905228d41e2ae94f582856f"
     },
     {
       "role": "source",
@@ -110,7 +126,7 @@
     {
       "role": "source",
       "path": "LICENSE.md",
-      "sha256": "eda0b0e1c1071b73a5c588d935f94f2d371bcaed98a246e70d9fd06fa4d565b7"
+      "sha256": "1f2d4b57f377e52c50c9b99cc86277e0896a3182eb87debb5ffae23abf53c137"
     },
     {
       "role": "source",
@@ -129,18 +145,23 @@
     },
     {
       "role": "source",
+      "path": "LICENSES/MIT.txt",
+      "sha256": "49c991ee18f6921b8796f1355dbb1dd6d69efb2c4d7a322a81945d2b55174e12"
+    },
+    {
+      "role": "source",
       "path": "QUICKSTART.md",
-      "sha256": "c3a3eafaabf8e9d3afd6dabd96e8f6017fb44acee5956f422eb21d5b0b54fc87"
+      "sha256": "99bccdf489e5c7fbdad7ee8644077b42ace296c9fd80cf1b4299fc7397ea37ec"
     },
     {
       "role": "source",
       "path": "README.md",
-      "sha256": "0fea9149caebdc2f7a19e09faf12120fe2137aa2527f43229a47e2675c37b3fe"
+      "sha256": "81bd719162fa357a4721effb167840d3a1c7f1ee2f100645f9eac562d47bc6c0"
     },
     {
       "role": "source",
       "path": "docs/vivado/README.md",
-      "sha256": "e39846ad9f4524bb0ccc508283c31923a0013cb1358c9b6772eba851f2a5da1e"
+      "sha256": "6946739c03bee096cbfef7e3f818ac7b71cd543b1e6aee0b43867e06114badf4"
     },
     {
       "role": "source",
@@ -309,8 +330,13 @@
     },
     {
       "role": "source",
+      "path": "docs/vivado/native-template-validation.json",
+      "sha256": "c4edda877296428fb4961abc6d1b14cddbb31c1962f9eafb1a47077e6866ad36"
+    },
+    {
+      "role": "source",
       "path": "docs/vivado/public-import.md",
-      "sha256": "f38b5d7fdfacbd5d15f50d976c6404f47b8e65b95f511ff8dd7305be763f5624"
+      "sha256": "2eb533739668fc97fccbe7fbacffc54efcc1657c74709956e539bdbd51975171"
     },
     {
       "role": "source",
@@ -320,12 +346,17 @@
     {
       "role": "source",
       "path": "docs/vivado/validation.md",
-      "sha256": "fed2c67d41ba39363637db4c3755e5491abf136c61bf363ad132bb926a25f48d"
+      "sha256": "d57ddfc6d47f2637e4b5d802bebb8165c8cca858e3e690d874a6bc40ceeefd4d"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/vitis-examples.md",
+      "sha256": "9a3f7bda4f6da8004d0aff412a680857c3e5ea502078e5420f681cd6e37ee85f"
     },
     {
       "role": "source",
       "path": "docs/vivado/vitis-workflow.md",
-      "sha256": "305b05b59a54a0fc6aa6feccb57e1d11a13d97357eb0b6fb4e28bb2fcdd9540c"
+      "sha256": "500971f7080c12cb948d033ce03a7d9ae80bf7bec16d3dec5b1f869ebb397875"
     },
     {
       "role": "source",
@@ -1135,7 +1166,7 @@
     {
       "role": "source",
       "path": "fpga/sw_repo/README.md",
-      "sha256": "b5eb3f71ab174fdbe6d50fff676897aa9984444fa00b9678d2ee79116604507e"
+      "sha256": "6db75974d964537aee1988f7b98a97b002a495c8deda65a7ebd97feb677ba022"
     },
     {
       "role": "source",
@@ -1489,8 +1520,638 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/README.md",
+      "sha256": "c05ce24b8afba68fdf150f9f95d10e137edc5881a094c34ba29523db217bb456"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/data/gamebub_audio_tone.yaml",
+      "sha256": "0d140f64d89fe5d5635e86b53d1c3b4ef941b573f5baac2fe74ab7df2e73c3cc"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/CMakeLists.txt",
+      "sha256": "0370a52b8269b9be64b2990fe549d19146130467d9be0081dfbd216ff6a85183"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/main.c",
+      "sha256": "8eac1f53394fb7c53ddca126ad147c8f149a632a9465f1bb237c4f5b91abf5c6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/data/gamebub_buttons_irq.yaml",
+      "sha256": "8841731cd0a1e83b63214b590a13c174bd71953a514a358dbf74a0fbd2814480"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/CMakeLists.txt",
+      "sha256": "4fa0ddc243d107b222938733fcb55f0bb39a824e89d2f7d9dcc01946f5bfce95"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/main.c",
+      "sha256": "29468e71f11c93cb5ff30074d62f9a79417bf544a84fc19e9ad9cf1fc8a631ac"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/data/gamebub_cpu_overlay.yaml",
+      "sha256": "05ac6b6fd3f984488acfc6abfb59e9d319544d09d40ff5278c6f6bd7f18ccf1a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/CMakeLists.txt",
+      "sha256": "cf02a05941256c09970571779c415042e277def54f57470410ddf4387789454d"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/main.c",
+      "sha256": "94e2c6f900a52f935226d2d469051e7a1fe55c658ec4d70c743ed3c7cfc52488"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/data/gamebub_custom_demo.yaml",
+      "sha256": "a62783e62846fcccfa5faf493cb459d9bcc601257704440e85b92d334deb6b7a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/CMakeLists.txt",
+      "sha256": "b54ebd2f7145d7f1369cc032303dbed307f52d482fe525189820a74b161b793e"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/main.c",
+      "sha256": "96467e9ebd7ec52920315d035fd5356ef614dcf5d58c0d02de965df36faccb24"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/data/gamebub_esp32_poll.yaml",
+      "sha256": "501a3850e920cfc2ff8700ab65f8c7c53844d43d0bda85ad0381d1a913087312"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/CMakeLists.txt",
+      "sha256": "319ca6c936484ea04474df6a2f7d9e3d92ac67f70bdf45ea3558fe4420111b76"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/main.c",
+      "sha256": "009ca0f970bd1a2d826db32793eb22913ea73ac0854625aa61eb5b458355b6a6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/data/gamebub_hello_jtag.yaml",
+      "sha256": "12f3b0120cf5f95def76ab2280fc58a35e46e784639ca0ab02aa5384e3d47f70"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/CMakeLists.txt",
+      "sha256": "8f1be28e8baf4942029812f44b6953b4dd2e857ce4e2903e79dbaf9dbd947478"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/main.c",
+      "sha256": "a0729a8b328719acf9ab9ae5bec52843b2c29d498e4ef59e8a11fc3aef44ca54"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/data/gamebub_qspi_diagnostics.yaml",
+      "sha256": "191576ccf81e16a74f6e32fbbede3d94c0cddc8041628a8bf88eb1674613d37b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/CMakeLists.txt",
+      "sha256": "e27e08e659281bd1c47e3c3092816ea4b33c3641b1e0656deb094f95a6530c69"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/main.c",
+      "sha256": "b4ebfa5bd1d00a4d87edb61fdee43a1e76c2cb1fa845ee8d655b25fe7771292c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/data/gamebub_sdram_instruction.yaml",
+      "sha256": "2642fc81b50f6d2c48cb17cf721a767b1e1aec915e4eb94c6f04dab427690af2"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/CMakeLists.txt",
+      "sha256": "894bb4091d1b14f02805aa52693388c34afc05acd739b2f4dbb8f50c96b5c7d1"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/driver_example.inc",
+      "sha256": "a22bec7ca623cdb9347ab12f29f0386b73956f83d6755e32285285ef382c9d2c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gbsdram_example_setup.h",
+      "sha256": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/main.c",
+      "sha256": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/data/gamebub_sdram_probe.yaml",
+      "sha256": "748eb848c232839e7e5c99f1209128e65ae32f4ccf9e7d8bc1f0da99e6d6bc8c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/CMakeLists.txt",
+      "sha256": "10bf9c5f2e0fd43b1e9d41f69d4a3da240b175bdcd9a4d5495c6af8e150d8d1f"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/main.c",
+      "sha256": "86c168d7f97dbc219e7508d38d0a21b7ca7f8da7497bbf6da08c94c998a2847c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/data/gamebub_sdram_scratch.yaml",
+      "sha256": "ae293e5589b707bd80e67d624f76ab235777593dd4ed5ea22132e74b175d825a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/CMakeLists.txt",
+      "sha256": "8ec19d7ca37ac3189fc78663c521dc2943690dbf83ca3d03d5601488a0f2b3e7"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/main.c",
+      "sha256": "f2e71f1d6a360f62a7b7c256bf096b82f77b7c3e8b153941472653e243fd5050"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/data/gamebub_sdram_test.yaml",
+      "sha256": "bde33bfe9bae4610570def26de59fd264ca76b76785d2cbb3985ecc5ba660e06"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/CMakeLists.txt",
+      "sha256": "38fa17e224f6d6540b91389e0232c0395b74aa142abddd8cac8c9339a1baf572"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/driver_example.inc",
+      "sha256": "c1e2942d0533fb48549a8762858ced88470431fb7fa469b9c2ee2884fe0d6384"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gbsdram_example_setup.h",
+      "sha256": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/main.c",
+      "sha256": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/data/gamebub_sdram_timing.yaml",
+      "sha256": "c21ab9fe4282dccd195b77f853f3f604080a17cfc7d7c0defff260e3e7ff28f3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/CMakeLists.txt",
+      "sha256": "03b8bcc72a771b3afa50bedf268d3aa8819b8db340e8d23bc0f85e5247c3fbb3"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/driver_example.inc",
+      "sha256": "04ce3e181df4747b1de91204b90b4fa9d629d3c1808457a893d107ca10215e19"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gbsdram_example_setup.h",
+      "sha256": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/main.c",
+      "sha256": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/data/gamebub_sram_instruction.yaml",
+      "sha256": "987586e6820817354e2053ea4f62b342132072749d073d3843f74729f9cc7525"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/CMakeLists.txt",
+      "sha256": "576ad1c961c95104b715e417147706514e4e5d4f8e40960f676d1c338f3c85f9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/driver_example.inc",
+      "sha256": "3fdf8bcb2359e0853b6bd47064002230f74d53665e0f129bc14ab5912334c844"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gbsram_example_setup.h",
+      "sha256": "a14afd8eb0c0a7e97fc24f0ce61065ad8b8f6a090d65adf26d18264e2f756a83"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/main.c",
+      "sha256": "19fbcb0ea548b580adc3a52f10cfb0d241961c4600613e62d9f4757e1efbb616"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/data/gamebub_sram_probe.yaml",
+      "sha256": "58b5339d039a1dd6f3fd5ae4b68e4fc414065b2e6fe722b965580628c869d133"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/CMakeLists.txt",
+      "sha256": "a9b372cf6951b64133567538b5cf398b556f576d48a6bd03e30e80d362bca599"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/main.c",
+      "sha256": "78e2ed62ce0047cdb2db198993b819ae0092043fff8c20446580ddc6176a56f9"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/data/gamebub_sram_scratch.yaml",
+      "sha256": "6f1ec17a55c20b4615150bbb09b33d14283981ee856618938eabc97d99b2e9b6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/CMakeLists.txt",
+      "sha256": "e172069c61e7a5307eb0df7cb48d737f470680389d21dbd0e5364932307b44fb"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/main.c",
+      "sha256": "29dc4fe04a02cacd1f7505e9f556e3d74d1ec2c05c374668a7d17d88f5aca62a"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/data/gamebub_sram_test.yaml",
+      "sha256": "7c58b10a0defc6ba704d4da0b05bc0ca863a5c6dde7145f77d9b1a3ca2449cc5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/CMakeLists.txt",
+      "sha256": "86b0ac73caff3ac48cc81128e309786107a29ecccb30f3a01dedbf02374fc2fa"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/driver_example.inc",
+      "sha256": "374e46ee03d95190e37d60ddca863460a6efe6bb25bbd622b2bd86d0eb83cba6"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gbsram_example_setup.h",
+      "sha256": "a14afd8eb0c0a7e97fc24f0ce61065ad8b8f6a090d65adf26d18264e2f756a83"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/main.c",
+      "sha256": "19fbcb0ea548b580adc3a52f10cfb0d241961c4600613e62d9f4757e1efbb616"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/data/gamebub_tpg_bars.yaml",
+      "sha256": "092cbfdf7ea4ae3d2feacfa055f1180cbe1d5da43037a3a3410661886efc6e9c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/CMakeLists.txt",
+      "sha256": "100d82d115308f858eff4354fac8fc2ee65f553847ed0918b5ccd238b31920b1"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/main.c",
+      "sha256": "4beefcd206b2e918bcb79e6b4bc206434d1c4d104ff2a92111676e2b0e09cd76"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/data/gamebub_tpg_patterns.yaml",
+      "sha256": "6fbdd636c467673a156ac162ef8b7528165ced9d90f68180544c5639407a4433"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/CMakeLists.txt",
+      "sha256": "19a53b21b953ee2295b2644b68913cd61efc84c84283393b7324984ff9550eea"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/main.c",
+      "sha256": "29b09926766d9f664bd02c0f6ba0ff5422766debe20bd87d66fe0b08b21552f2"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/data/gamebub_vibration_pulse.yaml",
+      "sha256": "fef3c17b590c51b763affc6741c0e680ef033963713262e39d1c0e4a9c1acf26"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/CMakeLists.txt",
+      "sha256": "deff4b6428aee5fc9a097afcf764cb16733e72eaa187e17eb2e0e11ed05ec2d5"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/demo_program.h",
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_vibration.cmake",
+      "sha256": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/main.c",
+      "sha256": "4909ea4acb3ebe128dc4d44b86f7623983ed6b2af3f6e1b2953a78b60219e6fc"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/requirements-docs.txt",
       "sha256": "77b474adc271726ed6136e8e1a8d05a38fe6ab25079667b46034852b58d6910b"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/templates/CMakeLists.txt.in",
+      "sha256": "3e60b3c4220a840eb3fe11d5903d487ffb7addc56ed5a3eaab15e0754c8acc64"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/templates/apps.json",
+      "sha256": "76882b741be1ab20fbe622b75a837f0416b5e3eee1134d463b424b5e6823c752"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/templates/gamebub_bindings.cmake",
+      "sha256": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/templates/gamebub_settings.h",
+      "sha256": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321"
+    },
+    {
+      "role": "source",
+      "path": "fpga/sw_repo/templates/gamebub_vibration.cmake",
+      "sha256": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca"
     },
     {
       "role": "source",
@@ -1569,6 +2230,11 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/tests/test_app_templates.py",
+      "sha256": "59b7da22c901f64cd886b0b6663c599e72cd8ed9fff1f59a2c5a08e2cab8d801"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/tests/test_check_docs.py",
       "sha256": "178d3019bcdc60016240fe71fd38d248e00a780c2ae9ec1266e266644e29eb8c"
     },
@@ -1594,6 +2260,11 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/tools/generate_app_templates.py",
+      "sha256": "9d6e991afa217da6fa898199e67c7d71d381a4d2fcf4d8a714a3de55de07a5ee"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/tools/generate_docs.py",
       "sha256": "b5f9b09c2ce43637397bd2666aab87d8e2e4e2ba90ab21af999bf01a900cd878"
     },
@@ -1615,7 +2286,7 @@
     {
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/README.md",
-      "sha256": "98dd467053a9ff5eb5f1141f78b8f34719aedf7df0ea1251c78d70ad0dffcb37"
+      "sha256": "1e4bd77c8f8b27b2e860a7380eea25d194af29eb6e15fd6514b4f228cc66d203"
     },
     {
       "role": "source",
@@ -1640,7 +2311,12 @@
     {
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/software/demo_program.h",
-      "sha256": "350ffc8f00fe26dbfa20e904bf9c064b865d15fdf6affa1976159552bdd249f1"
+      "sha256": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46"
+    },
+    {
+      "role": "source",
+      "path": "fpga/vivado/gamebub_ipi_demo/test_app_templates.py",
+      "sha256": "acb06215fbb0d71dcc22c54fc84dc05fa3e5125d04037c740a2ad358bc535544"
     },
     {
       "role": "source",
@@ -1657,5 +2333,6 @@
       "path": "fpga/vivado/gamebub_ipi_demo/validate_design.tcl",
       "sha256": "3554e6e04487597fd4c70b508241803148e8f62b85c8033974382724c426188c"
     }
-  ]
+  ],
+  "native_application_templates": 19
 }

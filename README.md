@@ -41,6 +41,8 @@ See the [step-by-step quickstart](QUICKSTART.md) for the GUI flow, reference blo
 | Drivers, examples and tests | [fpga/sw_repo](fpga/sw_repo/README.md) |
 | Reproducible reference design and workspace builder | [fpga/vivado/gamebub_ipi_demo](fpga/vivado/gamebub_ipi_demo/README.md) |
 
+To select and build individual applications in Vitis, use the [Examples sidebar walkthrough](docs/vivado/vitis-examples.md). Register `fpga/sw_repo` through **Embedded SW Repositories...**; native templates are listed under **Embedded Software Examples**.
+
 ## Status
 
 This is a source/software candidate targeting Vivado/Vitis 2025.2. It includes the current board package, eight selected IP packages, four custom drivers and a builder for 19 separate Vitis applications. Optional version-bumped IP packaging candidates and historical lab projects are deliberately excluded.

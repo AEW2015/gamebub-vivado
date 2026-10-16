@@ -7,6 +7,7 @@ Build a Rev4 GameBub system from independent Vivado IP and program it with bare-
 1. [Create the Vivado project](getting-started.md).
 2. [Connect clocks and resets](clocks-resets.md).
 3. [Create a Vitis workspace and build separate applications](vitis-workflow.md).
+   For GUI selection, use the [Vitis Examples sidebar walkthrough](vitis-examples.md).
 4. Read [memory ownership and caches](memory-cache.md) before using SRAM or SDRAM.
 5. Use the [troubleshooting guide](troubleshooting.md) when validation, software discovery or physical output differs from expectations.
 

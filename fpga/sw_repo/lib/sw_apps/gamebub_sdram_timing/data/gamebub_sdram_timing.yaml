@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+%YAML 1.2
+---
+title: "GameBub - SDRAM timing controls (guarded)"
+type: apps
+description: "Standalone MicroBlaze V GameBub example; building never runs hardware. Destructive/retiming operations are disabled until explicitly configured."
+supported_processors:
+  - microblaze_riscv
+supported_os:
+  - standalone
+depends_libs:
+  xiltimer: {}
+depends:
+  gbsdram:
+    - reg
+required_mem:
+  bram:
+    size: 0x4000
+linker_constraints:
+  heap: 0x0
+  stack: 0x800
+...

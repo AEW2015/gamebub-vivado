@@ -4,6 +4,8 @@
 
 This checkout is a curated source import of the GameBub Vivado/Vitis software/documentation candidate. It is not a dump of the development workspace or a new hardware-qualified release.
 
+This page records the initial import. The subsequent [native Vitis application-template update](vitis-examples.md) adds sidebar discovery and creation/build for all 19 examples; its executed results are recorded separately.
+
 ## Included
 
 - Rev4 board-file 2.0, custom interface definitions and the current-repositories installer.

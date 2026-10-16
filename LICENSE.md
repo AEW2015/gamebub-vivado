@@ -33,6 +33,8 @@ AMD/Xilinx software, generated products, dependencies, and other third-party mat
 
 Do not replace third-party licenses or notices with 0BSD. Before importing source, identify its provenance and applicable license, retain required notices, and document any exceptions.
 
+The application-template CMake files adapted from AMD's installed 2025.2 examples retain their MIT identifiers and AMD copyright notices. See [the MIT text](LICENSES/MIT.txt). This exception does not relicense the surrounding GameBub RTL, drivers or application code.
+
 ## Trademarks
 
 Copyright licenses do not grant rights to GameBub, AMD, Xilinx, or other names and logos. This repository is an independent community project and does not claim endorsement by those owners.

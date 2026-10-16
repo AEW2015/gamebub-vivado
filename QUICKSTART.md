@@ -76,6 +76,10 @@ write_bd_tcl -force C:/fpga-builds/review_bd.tcl
 
 ## 4. Build the Vitis examples
 
+For native sidebar selection, follow [GameBub in the Vitis Examples sidebar](docs/vivado/vitis-examples.md): add `fpga/sw_repo` through **Embedded SW Repositories...**, build your platform, then select a **GameBub -** template under **Embedded Software Examples** and create/build the application. The templates are separate from BSP driver Import Examples.
+
+The original scripted workspace builder is also available:
+
 From a Vitis-configured terminal, at the repository root:
 
 ```powershell

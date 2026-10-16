@@ -11,7 +11,9 @@ This repository supplies independent-core C drivers for Vivado/Vitis 2025.2. Rea
 
 LCD, FIFO, reset and fixed clock generators need no invented register driver. Reuse AMD `XV_tpg`, `XGpio`, `XIntc` and the MDM `uartlite`/standalone console stack. Add this folder as a LOCAL embedded software repository before creating/building the Vitis platform. Use generated SDT configuration, not hardcoded addresses from a different project.
 
-Driver-local `examples` are callable functions; the [workspace builder](../vivado/gamebub_ipi_demo/create_workspace.py) creates separately openable Vitis applications and binds their platform configuration. YAML example discovery and manual component generation are separately reported gates. Inspect platform generated config/driver lists to confirm real BSP binding.
+Native **application templates** live under `lib/sw_apps`: add this software-repository root through **Embedded SW Repositories...**, then select a **GameBub -** entry under **Embedded Software Examples**. See the [sidebar walkthrough](../../docs/vivado/vitis-examples.md). These templates use normal application creation and Build, without manually copying C files.
+
+Driver-local `examples` and BSP **Import Examples** remain a separate path. The [original workspace builder](../vivado/gamebub_ipi_demo/create_workspace.py) also creates separately openable Vitis applications and binds their platform configuration. Inspect generated config/driver lists to confirm native BSP binding.
 
 ## Host and documentation checks
 
@@ -21,6 +23,7 @@ Run from the repository root:
 python fpga/sw_repo/tests/run_host.py --output-dir D:/builds/gamebub-host-001
 python fpga/sw_repo/tools/generate_docs.py --check
 python fpga/sw_repo/tools/catalog_docs.py --check
+python fpga/sw_repo/tools/generate_app_templates.py --check
 python fpga/sw_repo/tests/check_docs.py
 python fpga/sw_repo/tools/generate_docs.py --html D:/builds/gamebub-docs-001 --doxygen C:/tools/doxygen/doxygen.exe
 ```

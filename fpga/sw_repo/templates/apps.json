@@ -1,0 +1,21 @@
+[
+  {"name":"hello_jtag","title":"Hello JTAG UART","kind":1,"drivers":{"uartlite":["reg"]}},
+  {"name":"esp32_poll","title":"Buttons (polled)","kind":2,"drivers":{"gbesp32":["reg"]}},
+  {"name":"qspi_diagnostics","title":"ESP32 QSPI diagnostics","kind":3,"drivers":{"gbesp32":["reg"]}},
+  {"name":"cpu_overlay","title":"CPU overlay","kind":4,"drivers":{"gbesp32":["reg"]}},
+  {"name":"tpg_bars","title":"LCD color bars","kind":5,"drivers":{"v_tpg":["reg"]}},
+  {"name":"tpg_patterns","title":"LCD test patterns","kind":6,"drivers":{"v_tpg":["reg"]}},
+  {"name":"audio_tone","title":"Audio tone (bounded)","kind":7,"drivers":{"gbaudio":["reg"]}},
+  {"name":"vibration_pulse","title":"Vibration pulse (bounded)","kind":8,"drivers":{"gpio":["reg","xlnx,gpio-width","xlnx,all-outputs"]}},
+  {"name":"sram_probe","title":"SRAM read-only probe","kind":9,"drivers":{"gbsram":["reg"]}},
+  {"name":"sdram_probe","title":"SDRAM read-only probe","kind":10,"drivers":{"gbsdram":["reg"]}},
+  {"name":"buttons_irq","title":"Buttons interrupt","kind":11,"drivers":{"gbesp32":["reg","interrupts"],"intc":["reg"]}},
+  {"name":"custom_demo","title":"Custom buttons + overlay demo","kind":12,"drivers":{"gbesp32":["reg"]}},
+  {"name":"sram_scratch","title":"SRAM scratch (guarded)","kind":13,"drivers":{"gbsram":["reg"]},"guarded":true},
+  {"name":"sdram_scratch","title":"SDRAM scratch (guarded)","kind":14,"drivers":{"gbsdram":["reg"]},"guarded":true},
+  {"name":"sram_instruction","title":"SRAM copied instructions (guarded)","drivers":{"gbsram":["reg"]},"example":"gbsram_instruction_example.c","guarded":true},
+  {"name":"sram_test","title":"SRAM controller test (guarded)","drivers":{"gbsram":["reg"]},"example":"gbsram_test_example.c","guarded":true},
+  {"name":"sdram_instruction","title":"SDRAM copied instructions (guarded)","drivers":{"gbsdram":["reg"]},"example":"gbsdram_instruction_example.c","guarded":true},
+  {"name":"sdram_test","title":"SDRAM controller test (guarded)","drivers":{"gbsdram":["reg"]},"example":"gbsdram_test_example.c","guarded":true},
+  {"name":"sdram_timing","title":"SDRAM timing controls (guarded)","drivers":{"gbsdram":["reg"]},"example":"gbsdram_timing_example.c","guarded":true}
+]

@@ -1,0 +1,395 @@
+{
+  "status": "PASS",
+  "scope": "Native Vitis 2025.2 application-template discovery, creation and build only; not physical execution",
+  "hardware_access": "none",
+  "native_templates_discovered": 19,
+  "native_templates_built": 19,
+  "copied_source_files_verified": 101,
+  "maximum_elf_load_end": 14432,
+  "bram_bytes": 16384,
+  "platform_reused_matching_xsa": true,
+  "xsa_sha256": "319b7a1beae5dfad2d7f3f9ab0e73f9d8b0fdea040f5db59ec39b0d31f7e3d22",
+  "source_bindings": {
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/data/gamebub_vibration_pulse.yaml": "fef3c17b590c51b763affc6741c0e680ef033963713262e39d1c0e4a9c1acf26",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/CMakeLists.txt": "deff4b6428aee5fc9a097afcf764cb16733e72eaa187e17eb2e0e11ed05ec2d5",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/gamebub_vibration.cmake": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca",
+    "fpga/sw_repo/lib/sw_apps/gamebub_vibration_pulse/src/main.c": "4909ea4acb3ebe128dc4d44b86f7623983ed6b2af3f6e1b2953a78b60219e6fc",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/data/gamebub_tpg_patterns.yaml": "6fbdd636c467673a156ac162ef8b7528165ced9d90f68180544c5639407a4433",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/CMakeLists.txt": "19a53b21b953ee2295b2644b68913cd61efc84c84283393b7324984ff9550eea",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_patterns/src/main.c": "29b09926766d9f664bd02c0f6ba0ff5422766debe20bd87d66fe0b08b21552f2",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/data/gamebub_tpg_bars.yaml": "092cbfdf7ea4ae3d2feacfa055f1180cbe1d5da43037a3a3410661886efc6e9c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/CMakeLists.txt": "100d82d115308f858eff4354fac8fc2ee65f553847ed0918b5ccd238b31920b1",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_tpg_bars/src/main.c": "4beefcd206b2e918bcb79e6b4bc206434d1c4d104ff2a92111676e2b0e09cd76",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/data/gamebub_sram_test.yaml": "7c58b10a0defc6ba704d4da0b05bc0ca863a5c6dde7145f77d9b1a3ca2449cc5",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/CMakeLists.txt": "86b0ac73caff3ac48cc81128e309786107a29ecccb30f3a01dedbf02374fc2fa",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/driver_example.inc": "374e46ee03d95190e37d60ddca863460a6efe6bb25bbd622b2bd86d0eb83cba6",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/gbsram_example_setup.h": "a14afd8eb0c0a7e97fc24f0ce61065ad8b8f6a090d65adf26d18264e2f756a83",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_test/src/main.c": "19fbcb0ea548b580adc3a52f10cfb0d241961c4600613e62d9f4757e1efbb616",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/data/gamebub_sram_scratch.yaml": "6f1ec17a55c20b4615150bbb09b33d14283981ee856618938eabc97d99b2e9b6",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/CMakeLists.txt": "e172069c61e7a5307eb0df7cb48d737f470680389d21dbd0e5364932307b44fb",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_scratch/src/main.c": "29dc4fe04a02cacd1f7505e9f556e3d74d1ec2c05c374668a7d17d88f5aca62a",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/data/gamebub_sram_probe.yaml": "58b5339d039a1dd6f3fd5ae4b68e4fc414065b2e6fe722b965580628c869d133",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/CMakeLists.txt": "a9b372cf6951b64133567538b5cf398b556f576d48a6bd03e30e80d362bca599",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_probe/src/main.c": "78e2ed62ce0047cdb2db198993b819ae0092043fff8c20446580ddc6176a56f9",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/data/gamebub_sram_instruction.yaml": "987586e6820817354e2053ea4f62b342132072749d073d3843f74729f9cc7525",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/CMakeLists.txt": "576ad1c961c95104b715e417147706514e4e5d4f8e40960f676d1c338f3c85f9",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/driver_example.inc": "3fdf8bcb2359e0853b6bd47064002230f74d53665e0f129bc14ab5912334c844",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/gbsram_example_setup.h": "a14afd8eb0c0a7e97fc24f0ce61065ad8b8f6a090d65adf26d18264e2f756a83",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sram_instruction/src/main.c": "19fbcb0ea548b580adc3a52f10cfb0d241961c4600613e62d9f4757e1efbb616",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/data/gamebub_sdram_timing.yaml": "c21ab9fe4282dccd195b77f853f3f604080a17cfc7d7c0defff260e3e7ff28f3",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/CMakeLists.txt": "03b8bcc72a771b3afa50bedf268d3aa8819b8db340e8d23bc0f85e5247c3fbb3",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/driver_example.inc": "04ce3e181df4747b1de91204b90b4fa9d629d3c1808457a893d107ca10215e19",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/gbsdram_example_setup.h": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_timing/src/main.c": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/data/gamebub_sdram_test.yaml": "bde33bfe9bae4610570def26de59fd264ca76b76785d2cbb3985ecc5ba660e06",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/CMakeLists.txt": "38fa17e224f6d6540b91389e0232c0395b74aa142abddd8cac8c9339a1baf572",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/driver_example.inc": "c1e2942d0533fb48549a8762858ced88470431fb7fa469b9c2ee2884fe0d6384",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/gbsdram_example_setup.h": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_test/src/main.c": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/data/gamebub_sdram_scratch.yaml": "ae293e5589b707bd80e67d624f76ab235777593dd4ed5ea22132e74b175d825a",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/CMakeLists.txt": "8ec19d7ca37ac3189fc78663c521dc2943690dbf83ca3d03d5601488a0f2b3e7",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_scratch/src/main.c": "f2e71f1d6a360f62a7b7c256bf096b82f77b7c3e8b153941472653e243fd5050",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/data/gamebub_sdram_probe.yaml": "748eb848c232839e7e5c99f1209128e65ae32f4ccf9e7d8bc1f0da99e6d6bc8c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/CMakeLists.txt": "10bf9c5f2e0fd43b1e9d41f69d4a3da240b175bdcd9a4d5495c6af8e150d8d1f",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_probe/src/main.c": "86c168d7f97dbc219e7508d38d0a21b7ca7f8da7497bbf6da08c94c998a2847c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/data/gamebub_sdram_instruction.yaml": "2642fc81b50f6d2c48cb17cf721a767b1e1aec915e4eb94c6f04dab427690af2",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/CMakeLists.txt": "894bb4091d1b14f02805aa52693388c34afc05acd739b2f4dbb8f50c96b5c7d1",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/driver_example.inc": "a22bec7ca623cdb9347ab12f29f0386b73956f83d6755e32285285ef382c9d2c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/gbsdram_example_setup.h": "d65f76a0118ecedf4eccae331761e655f8cda3149c0f7df73c15b01189041692",
+    "fpga/sw_repo/lib/sw_apps/gamebub_sdram_instruction/src/main.c": "12ac4a0837cb0f60d840266ac15b66c2462f9d09afa1d08020892d54e8c73803",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/data/gamebub_qspi_diagnostics.yaml": "191576ccf81e16a74f6e32fbbede3d94c0cddc8041628a8bf88eb1674613d37b",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/CMakeLists.txt": "e27e08e659281bd1c47e3c3092816ea4b33c3641b1e0656deb094f95a6530c69",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_qspi_diagnostics/src/main.c": "b4ebfa5bd1d00a4d87edb61fdee43a1e76c2cb1fa845ee8d655b25fe7771292c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/data/gamebub_hello_jtag.yaml": "12f3b0120cf5f95def76ab2280fc58a35e46e784639ca0ab02aa5384e3d47f70",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/CMakeLists.txt": "8f1be28e8baf4942029812f44b6953b4dd2e857ce4e2903e79dbaf9dbd947478",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_hello_jtag/src/main.c": "a0729a8b328719acf9ab9ae5bec52843b2c29d498e4ef59e8a11fc3aef44ca54",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/data/gamebub_esp32_poll.yaml": "501a3850e920cfc2ff8700ab65f8c7c53844d43d0bda85ad0381d1a913087312",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/CMakeLists.txt": "319ca6c936484ea04474df6a2f7d9e3d92ac67f70bdf45ea3558fe4420111b76",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_esp32_poll/src/main.c": "009ca0f970bd1a2d826db32793eb22913ea73ac0854625aa61eb5b458355b6a6",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/data/gamebub_custom_demo.yaml": "a62783e62846fcccfa5faf493cb459d9bcc601257704440e85b92d334deb6b7a",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/CMakeLists.txt": "b54ebd2f7145d7f1369cc032303dbed307f52d482fe525189820a74b161b793e",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_custom_demo/src/main.c": "96467e9ebd7ec52920315d035fd5356ef614dcf5d58c0d02de965df36faccb24",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/data/gamebub_cpu_overlay.yaml": "05ac6b6fd3f984488acfc6abfb59e9d319544d09d40ff5278c6f6bd7f18ccf1a",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/CMakeLists.txt": "cf02a05941256c09970571779c415042e277def54f57470410ddf4387789454d",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_cpu_overlay/src/main.c": "94e2c6f900a52f935226d2d469051e7a1fe55c658ec4d70c743ed3c7cfc52488",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/data/gamebub_buttons_irq.yaml": "8841731cd0a1e83b63214b590a13c174bd71953a514a358dbf74a0fbd2814480",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/CMakeLists.txt": "4fa0ddc243d107b222938733fcb55f0bb39a824e89d2f7d9dcc01946f5bfce95",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_buttons_irq/src/main.c": "29468e71f11c93cb5ff30074d62f9a79417bf544a84fc19e9ad9cf1fc8a631ac",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/data/gamebub_audio_tone.yaml": "0d140f64d89fe5d5635e86b53d1c3b4ef941b573f5baac2fe74ab7df2e73c3cc",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/CMakeLists.txt": "0370a52b8269b9be64b2990fe549d19146130467d9be0081dfbd216ff6a85183",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/demo_program.h": "c2f6a91d09c0467ed1abee6f3f977668b73406f33d98890c32a1f740c3269b46",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/lib/sw_apps/gamebub_audio_tone/src/main.c": "8eac1f53394fb7c53ddca126ad147c8f149a632a9465f1bb237c4f5b91abf5c6",
+    "fpga/sw_repo/templates/apps.json": "76882b741be1ab20fbe622b75a837f0416b5e3eee1134d463b424b5e6823c752",
+    "fpga/sw_repo/templates/CMakeLists.txt.in": "3e60b3c4220a840eb3fe11d5903d487ffb7addc56ed5a3eaab15e0754c8acc64",
+    "fpga/sw_repo/templates/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/templates/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/templates/gamebub_vibration.cmake": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca"
+  },
+  "method": "get_templates(EMBD_APP) uses the Examples sidebar GetEmbeddedExampleTemplateTree backend; create_app_component uses each real gamebub_* template. No manual source import or post-creation address/linker repair.",
+  "limits": [
+    "Mouse gestures were not automated",
+    "Matching previously built owned BSP was reused in the final all-template run",
+    "Memory/retiming templates built with destructive operations disabled",
+    "No FPGA, ESP32 or persistent flash programming",
+    "Vendor generated-BSP/RWX warnings remain visible"
+  ],
+  "preserved_attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "reason": "Application validator cannot request INTC phandle property",
+      "completed_templates": 3
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL",
+      "reason": "Numeric phandles change between Lopper invocations; fixed by resolving both endpoints in one exported DTS",
+      "completed_templates": 10
+    }
+  ],
+  "log_hashes": {
+    "final_native_console": "cbbc86adba37a59fa0ff9be12f2ff5f753a35301d08a2a91714b3033d3dae32b",
+    "final_native_evidence": "0b82990a806a4a00911bb1f427251d861e04d3961c25183d9cfccbda4f04e29a"
+  },
+  "apps": [
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10432
+        }
+      ],
+      "template": "gamebub_hello_jtag",
+      "component": "native_hello_jtag",
+      "sha256": "448bb05172e2a40422d067567c3f969adbf3fac57e288a7becc71ade12f158b9"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 11544
+        }
+      ],
+      "template": "gamebub_esp32_poll",
+      "component": "native_esp32_poll",
+      "sha256": "6731951f140956dc20634e32be97f45f1ca67d5102ffbc95ac4154048b97fef7"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10896
+        }
+      ],
+      "template": "gamebub_qspi_diagnostics",
+      "component": "native_qspi_diagnostics",
+      "sha256": "e07e0d83e8f5b006ab35a5d10691c4831eea2f0eabec36c873b8b4c8cfc284ee"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 11368
+        }
+      ],
+      "template": "gamebub_cpu_overlay",
+      "component": "native_cpu_overlay",
+      "sha256": "eadcb764abf51dd185d60a9e3488b1eb7471686b15be3f198bcf3af3803104b3"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 12152
+        }
+      ],
+      "template": "gamebub_tpg_bars",
+      "component": "native_tpg_bars",
+      "sha256": "e0b35bd99dc4525f287e6a878d6f513e72ff2d627bde0bbf93bf516d6e1394ae"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 12864
+        }
+      ],
+      "template": "gamebub_tpg_patterns",
+      "component": "native_tpg_patterns",
+      "sha256": "973dd10a29b0c9b75931e860b4ca7b6b08d6d5f2041c52c29020f85f5f89c803"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 12048
+        }
+      ],
+      "template": "gamebub_audio_tone",
+      "component": "native_audio_tone",
+      "sha256": "87c36711c2054598a5222404dc4abf37cc31d0ba3d806c51c4404984e6f66c95"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 12264
+        }
+      ],
+      "template": "gamebub_vibration_pulse",
+      "component": "native_vibration_pulse",
+      "sha256": "f1f67ee7ee7c588b769f31abcd4ba400e4444e72d67fc3a6ef38bb7823600466"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10880
+        }
+      ],
+      "template": "gamebub_sram_probe",
+      "component": "native_sram_probe",
+      "sha256": "5d2090c5cfc1bf7c51dca9ab2c6bb8dd070c910daf60ec40cbf124fad09b45a7"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10912
+        }
+      ],
+      "template": "gamebub_sdram_probe",
+      "component": "native_sdram_probe",
+      "sha256": "38cc87bcd67eb8a20fee9f068130df9942e78705531259377444038965a5e380"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 14432
+        }
+      ],
+      "template": "gamebub_buttons_irq",
+      "component": "native_buttons_irq",
+      "sha256": "8101291b122a604e96428ea21a00d4637628d6dd0a5f29dabb1d2f704dd6be55"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 12224
+        }
+      ],
+      "template": "gamebub_custom_demo",
+      "component": "native_custom_demo",
+      "sha256": "70c45fda12e58ed29242370b0a9b515f449f7e62764ef75f4a3fd5483be9097b"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10992
+        }
+      ],
+      "template": "gamebub_sram_scratch",
+      "component": "native_sram_scratch",
+      "sha256": "28b65cc58182511b65f19d652b9b35d450f1f547c4b652ebc016a953c3fb79af"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 11024
+        }
+      ],
+      "template": "gamebub_sdram_scratch",
+      "component": "native_sdram_scratch",
+      "sha256": "89878ec23b3e12745711eb6781955c2704bbbbd7a7dbd45df48d9aa01ffbacb0"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10304
+        }
+      ],
+      "template": "gamebub_sram_instruction",
+      "component": "native_sram_instruction",
+      "sha256": "a6d9272e05bafdee4ee6d151eb7a7354d7f571b06db2d0f0ed07c6799a89efd5"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10296
+        }
+      ],
+      "template": "gamebub_sram_test",
+      "component": "native_sram_test",
+      "sha256": "5b43de312fc1635d5e2b457f38c19cf157f2841d8fcc0a598225459e729f09ab"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10304
+        }
+      ],
+      "template": "gamebub_sdram_instruction",
+      "component": "native_sdram_instruction",
+      "sha256": "75849d2d27e2b92f35e796c5507293f1780593dbc60288fe78e540b48df3b80a"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10296
+        }
+      ],
+      "template": "gamebub_sdram_test",
+      "component": "native_sdram_test",
+      "sha256": "1321144ff10bd3b9e325579efe2e850924e386a05841f1d47a72cecded9f09a8"
+    },
+    {
+      "entry": 0,
+      "loads": [
+        {
+          "address": 0,
+          "bytes": 10312
+        }
+      ],
+      "template": "gamebub_sdram_timing",
+      "component": "native_sdram_timing",
+      "sha256": "b656f15ca64040bbd21b15778091f48c7f2e7d5d366cc10977e0b5a2a59de488"
+    }
+  ]
+}

@@ -8,14 +8,28 @@
 #include "xstatus.h"
 #include "sleep.h"
 #include "xil_cache.h"
+#if GB_DEMO_KIND == 2 || GB_DEMO_KIND == 3 || GB_DEMO_KIND == 4 || GB_DEMO_KIND == 11 || GB_DEMO_KIND == 12
 #include "gbesp32.h"
+#endif
+#if GB_DEMO_KIND == 7
 #include "gbaudio.h"
+#endif
+#if GB_DEMO_KIND == 9 || GB_DEMO_KIND == 13
 #include "gbsram.h"
+#endif
+#if GB_DEMO_KIND == 10 || GB_DEMO_KIND == 14
 #include "gbsdram.h"
+#endif
+#if GB_DEMO_KIND == 8
 #include "xgpio.h"
+#endif
+#if GB_DEMO_KIND == 5 || GB_DEMO_KIND == 6
 #include "xv_tpg.h"
+#endif
+#if GB_DEMO_KIND == 11
 #include "xintc.h"
 #include "xil_exception.h"
+#endif
 
 #if GB_DEMO_KIND == 11
 static volatile u32 event_count, last_buttons;
