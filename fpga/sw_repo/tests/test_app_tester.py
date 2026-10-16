@@ -22,12 +22,12 @@ class AppTester(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix='gb-tester-') as folder:
             root = Path(folder)
             (root/'platform_bindings.h').write_text(
-                '#define GB_SRAM_MEMORY_SIZE 0x80000U\n#define GB_SDRAM_MEMORY_SIZE 0x2000000U\n')
-            (root/'xgpio.h').write_text('#include "xil_types.h"\ntypedef struct {int unused;} XGpio;\nvoid XGpio_DiscreteWrite(XGpio*,unsigned,u32);\n')
-            (root/'xv_tpg.h').write_text('/* main excluded in host tests */\n')
+                '#define GB_VIBRATION_BASE 0x1000U\n#define GB_SRAM_MEMORY_SIZE 0x80000U\n#define GB_SDRAM_MEMORY_SIZE 0x2000000U\n')
+            (root/'xgpio_l.h').write_text('#include "xil_io.h"\n#define XGPIO_DATA_OFFSET 0\n#define XGpio_WriteReg(b,o,v) Xil_Out32((b)+(o),(v))\n')
             (root/'sleep.h').write_text('/* no host sleeps */\n')
             (root/'xil_cache.h').write_text('void Xil_DCacheFlush(void);\nvoid Xil_DCacheDisable(void);\n')
             (root/'xil_printf.h').write_text('void print(const char*);\n')
+            (root/'gamebub_settings.h').write_bytes((SW/'templates/app_tester_settings.h').read_bytes())
             includes = [root, SW/'templates', SW/'tests/mock_include']
             includes += [SW/'drivers'/d/'src' for d in ['gbesp32','gbaudio','gbsram','gbsdram']]
             for guarded in (True, False):
@@ -35,9 +35,8 @@ class AppTester(unittest.TestCase):
                 cmd = [gcc, '-std=c11', '-Wall', '-Wextra', '-Werror', '-O2']
                 for include in includes:
                     cmd += ['-I', str(include)]
-                if not guarded:
-                    cmd += ['-DGB_ALLOW_DESTRUCTIVE=1', '-DGB_BRAM_EXECUTION_CONFIRMED=1',
-                            '-DGB_SCRATCH_BYTES=1024', '-DGB_SCRATCH_OFFSET=4096']
+                if guarded:
+                    cmd += ['-DGB_ALLOW_DESTRUCTIVE=0']
                 cmd += [str(SW/'tests/test_app_tester.c'), '-o', str(exe)]
                 result = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=60)
                 self.assertEqual(result.returncode, 0, result.stdout+result.stderr)

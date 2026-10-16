@@ -7,8 +7,10 @@
 #include "gbaudio.h"
 #include "gbsram.h"
 #include "gbsdram.h"
-#include "xgpio.h"
-#include "xv_tpg.h"
+#include "xgpio_l.h"
+#ifndef GAMEBUB_APP_TESTER_HOST
+#include "xv_tpg_hw.h"
+#endif
 #include "xil_cache.h"
 #include "xil_printf.h"
 #include "sleep.h"
@@ -19,7 +21,6 @@ static GBEsp32 at_esp;
 static GBAudio at_audio;
 static GBSram at_sram;
 static GBSdram at_sdram;
-static XGpio at_motor;
 static unsigned at_page, at_state, at_progress, at_remaining, at_cursor;
 static unsigned at_raw_last, at_stable, at_previous, at_debounce;
 static unsigned at_dirty=1, at_release=1;
@@ -67,7 +68,7 @@ static int at_draw(void) {
  static const char *names[]={"SRAM","AUDIO","VIBRATION","SDRAM"};
  static const char *states[]={"READY","RUNNING","PASS","FAIL","STOPPED","GUARDED - SEE SETTINGS"};
  const char *detail=at_page==AT_AUDIO?"440 HZ - 5 PERCENT - 250 MS":
-   at_page==AT_VIBRATION?"FORWARD PULSE - 100 MS":"RESERVED SCRATCH RANGE ONLY";
+   at_page==AT_VIBRATION?"FORWARD PULSE - 100 MS":"SCRATCH TEST - OVERWRITES";
  static struct at_label labels[]={{171,58,"GAMEBUB"},{159,70,"VIVADO FLOW"},
    {104,94,0},{104,108,0},{104,122,0},
    {104,134,"NOT A TIMING QUALIFICATION"},{104,164,"L R CHANGE APP"},{104,178,"A START   B STOP"}};
@@ -85,7 +86,7 @@ static int at_draw(void) {
  return GBEsp32_OverlayEnable(&at_esp,1);
 }
 static void at_off(void) {
- XGpio_DiscreteWrite(&at_motor,1,0);
+ XGpio_WriteReg(GB_VIBRATION_BASE,XGPIO_DATA_OFFSET,0);
  (void)GBAudio_Stop(&at_audio);
  at_remaining=0;
 }
@@ -106,7 +107,7 @@ static void at_start(void) {
    /* Complete the slow UI upload BEFORE starting the software-bounded motor. */
    at_state=AT_RUNNING;
    if(at_draw()){at_state=AT_FAIL;at_dirty=1;return;}
-   XGpio_DiscreteWrite(&at_motor,1,1);at_remaining=100;at_dirty=0;return;
+   XGpio_WriteReg(GB_VIBRATION_BASE,XGPIO_DATA_OFFSET,1);at_remaining=100;at_dirty=0;return;
  } else {
 #if GB_ALLOW_DESTRUCTIVE && GB_BRAM_EXECUTION_CONFIRMED && GB_SCRATCH_BYTES > 0
    u32 size=at_page==AT_SRAM?GB_SRAM_MEMORY_SIZE:GB_SDRAM_MEMORY_SIZE;
@@ -138,7 +139,9 @@ static void at_memory_step(void) {
  }
  if(rc){at_state=AT_FAIL;at_dirty=1;print("Scratch test FAIL\r\n");return;}
  at_cursor+=bytes;
- unsigned progress=(unsigned)(((u64)at_cursor*100)/GB_SCRATCH_BYTES);
+ /* Runtime range validation caps bytes at 32 MiB: *100 fits in u32.
+  * Avoid pulling 64-bit arithmetic helpers into this RV32I image. */
+ unsigned progress=at_cursor*100U/GB_SCRATCH_BYTES;
  if(progress/5!=at_progress/5){at_progress=progress;at_dirty=1;}
  if(at_cursor==GB_SCRATCH_BYTES){at_progress=100;at_state=AT_PASS;at_dirty=1;}
 #endif
@@ -171,27 +174,37 @@ static void at_tick(unsigned raw) {
 }
 #ifndef GAMEBUB_APP_TESTER_HOST
 int main(void) {
- GBEsp32_Config *ec=GBEsp32_LookupConfig(GB_ESP32_BASE);
- GBAudio_Config *ac=GBAudio_LookupConfig(GB_AUDIO_BASE);
- GBSram_Config *sc=GBSram_LookupConfig(GB_SRAM_CTRL_BASE);
- GBSdram_Config *dc=GBSdram_LookupConfig(GB_SDRAM_CTRL_BASE);
- XV_tpg tpg;XV_tpg_Config *tc=XV_tpg_LookupConfig(GB_TPG_BASE);
- if(XGpio_Initialize(&at_motor,GB_VIBRATION_BASE))return XST_FAILURE;
- XGpio_DiscreteWrite(&at_motor,1,0);XGpio_SetDataDirection(&at_motor,1,0);
- if(!ac || GBAudio_CfgInitialize(&at_audio,ac,ac->BaseAddress))return XST_FAILURE;
+ /* Native CMake has already resolved one unambiguous instance per class.
+  * Initialize from those generated addresses rather than linking four
+  * runtime name tables/searches. CfgInitialize still checks device IDs/ABI. */
+ GBEsp32_Config ec={0,GB_ESP32_BASE};
+ GBAudio_Config ac={0,GB_AUDIO_BASE};
+ GBSram_Config sc={0,GB_SRAM_CTRL_BASE};
+ GBSdram_Config dc={0,GB_SDRAM_CTRL_BASE};
+ /* The native metadata gate requires one two-bit all-output GPIO. The
+  * low-level AMD register API avoids linking general-purpose GPIO setup. */
+ XGpio_WriteReg(GB_VIBRATION_BASE,XGPIO_DATA_OFFSET,0);
+ XGpio_WriteReg(GB_VIBRATION_BASE,XGPIO_TRI_OFFSET,0);
+ if(GBAudio_CfgInitialize(&at_audio,&ac,ac.BaseAddress))return XST_FAILURE;
  at_off();
- if(!ec || GBEsp32_CfgInitialize(&at_esp,ec,ec->BaseAddress) ||
-    !sc || GBSram_CfgInitialize(&at_sram,sc,sc->BaseAddress) ||
-    !dc || GBSdram_CfgInitialize(&at_sdram,dc,dc->BaseAddress) ||
-    !tc || XV_tpg_CfgInitialize(&tpg,tc,tc->BaseAddress))return XST_FAILURE;
+ if(GBEsp32_CfgInitialize(&at_esp,&ec,ec.BaseAddress) ||
+    GBSram_CfgInitialize(&at_sram,&sc,sc.BaseAddress) ||
+    GBSdram_CfgInitialize(&at_sdram,&dc,dc.BaseAddress))return XST_FAILURE;
  if(GBSram_BindMemory(&at_sram,GB_SRAM_MEMORY_BASE,GB_SRAM_MEMORY_SIZE) ||
     GBSdram_BindMemory(&at_sdram,GB_SDRAM_MEMORY_BASE,GB_SDRAM_MEMORY_SIZE))return XST_FAILURE;
- XV_tpg_Set_height(&tpg,800);XV_tpg_Set_width(&tpg,480);
- XV_tpg_Set_colorFormat(&tpg,0);XV_tpg_Set_bckgndId(&tpg,9);
- XV_tpg_EnableAutoRestart(&tpg);XV_tpg_Start(&tpg);
+ /* Dimensions match the existing LCD sink. Clear unrelated TPG features so
+  * reloading just the ELF cannot inherit another application's overlay. */
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_HEIGHT_DATA,800);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_WIDTH_DATA,480);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_COLORFORMAT_DATA,0);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_BCKGNDID_DATA,9);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_OVRLAYID_DATA,0);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_MASKID_DATA,0);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_ENABLEINPUT_DATA,0);
+ Xil_Out32(GB_TPG_BASE+XV_TPG_CTRL_ADDR_AP_CTRL,0x81);
  if(at_draw())return XST_FAILURE;
  at_dirty=0;
- print("GameBub App Tester: L/R app, A start, B stop. Memory guarded by settings.\r\n");
+ print("GameBub: L/R app, A start, B stop. Scratch tests overwrite reserved RAM.\r\n");
  for(;;){at_tick(at_buttons(GBEsp32_Buttons(&at_esp)));usleep(1000);}
 }
 #endif

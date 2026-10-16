@@ -52,7 +52,7 @@ All IDs begin with `gamebub_`. The suffixes below also match the existing comman
 
 | Suffix | Purpose / prerequisites |
 | --- | --- |
-| `app_tester` | Combined compact LCD tester: SRAM, Audio, Vibration, SDRAM; all six peripheral classes required; memory writes guarded |
+| `app_tester` | Combined compact LCD tester: SRAM, Audio, Vibration, SDRAM; all six peripheral classes required; destructive 4-KiB scratch tests included, started by A |
 | `hello_jtag` | Hello-world through the selected console; MDM UART and BRAM |
 | `esp32_poll` | Read buttons; combined ESP32 core |
 | `qspi_diagnostics` | Read ESP32 diagnostics; not a lossless QSPI trace |
@@ -78,17 +78,19 @@ Select **GameBub - App Tester** (`gamebub_app_tester`) for the combined UI:
 - A starts the selected test; B stops. Outputs stop when switching apps.
 - The compact black panel has white text; the surrounding CPU layer is transparent so TPG bars remain visible. The independent ESP32 menu layer retains priority.
 - Audio is a 440-Hz, 5% level tone for nominally 250 ms. Vibration is a nominal 100-ms forward/coast pulse. GPIO vibration has no independent hardware watchdog; do not halt/debug the processor during a pulse.
-- SRAM/SDRAM show **GUARDED**, not PASS, until `GB_ALLOW_DESTRUCTIVE`, `GB_BRAM_EXECUTION_CONFIRMED` and a nonzero, word-aligned `GB_SCRATCH_BYTES` are set in the imported `gamebub_settings.h`. Set `GB_SCRATCH_OFFSET` to a reserved range and park all other clients first. The same offset/length is used for both RAMs, so it must fit both.
+- SRAM/SDRAM scratch tests are **compiled in by default**. Pressing A overwrites 4 KiB at byte offsets `0x1000` through `0x1FFF` in the selected RAM. Reserve this range in BOTH memories and park other clients before running. There are no automatic memory writes at startup. Set `GB_ALLOW_DESTRUCTIVE=0` in the imported `gamebub_settings.h` to restore guarded pages. The same offset/length is used for both RAMs, so any edited range must fit both. No clock/tap retiming is enabled.
 - Enabled memory tests use uncached CPU accesses in 256-byte chunks: zero, ones, address, inverted-address and byte-lane checks. The progress bar covers the configured scratch range only, not the entire memory unless explicitly configured. This is not an exhaustive memory/timing qualification. Cache is flushed and disabled when starting a memory test; it is not automatically re-enabled. SDRAM is left CPU-owned.
 
 The selected platform needs one combined ESP32 core with the COV2 two-bit CPU overlay enabled, DAC audio, SRAM and SDRAM control and memory apertures, AMD TPG and one two-bit all-output vibration AXI GPIO. The TPG must already be wired through the correct FIFO/LCD path, and the ESP32 overlay stream connected. The template cannot create those hardware connections. It links into local BRAM and uses a scanline renderer instead of a large framebuffer.
 
-The combined application's CMake adds `-Os` even in Debug to fit the reference 16-KiB BRAM. The guarded build loads through byte 16,352, including its reserved 2-KiB stack, leaving only 32 bytes of unallocated BRAM. Disabling optimization, enabling destructive tests or adding features may require more BRAM; use 32 KiB or more for development and check linker usage rather than moving test code into the RAM being tested.
+The combined application's CMake adds `-Os` even in Debug. The current compact build includes both scratch paths in **15,120 bytes**, including the original 2-KiB stack, within the reference 16-KiB BRAM; see its current [size verification record](app-tester-validation.json). It uses AMD low-level GPIO/TPG register APIs and platform-bound configuration rather than unnecessary instance-search tables; device ID/ABI, ownership and range checks are retained. Larger feature additions may still require more BRAM. Never enlarge the linker region without matching physical memory or move the tester into the RAM it overwrites.
+
+For an already imported application, pulling the repository does not replace its copied sources. Import a new App Tester component from the updated template, or deliberately update only its `src/app_tester.h` and `src/gamebub_settings.h` from the current generated template after preserving any local edits. No bitstream/XSA change is needed for this software-only size reduction.
 
 After adding/updating the repository, **rescan repositories, then create/build a new platform** if its supported-template list is stale. Existing domains cache that list; a sidebar entry alone does not refresh it. Regenerate BSP plus Build did not reliably resolve this in observed 2025.2 GUI use.
 
 - **Build never runs hardware.** Deliberately running the audio or vibration ELF actuates the board. The GPIO motor has no independent CPU-hang watchdog.
-- Memory/retiming examples print a disabled/refusal result by default, not PASS. Before editing the imported application's `gamebub_settings.h`, verify its entire memory mapping, reserve the scratch range, park all other masters and satisfy the [cache/ownership requirements](memory-cache.md). These flags acknowledge preconditions; they do not park other hardware automatically.
+- The separate guarded memory/retiming examples print a disabled/refusal result by default, not PASS. The combined App Tester is the explicit exception: its limited scratch tests are enabled by default. Verify its memory mapping, reserve the scratch range, park other masters and satisfy the [cache/ownership requirements](memory-cache.md) before running. The settings flags acknowledge preconditions; they do not park other hardware automatically.
 - RAM bases come from the selected BSP's generated secondary `reg` macros. Physical capacities follow the current fixed controller contract (512 KiB SRAM / 32 MiB SDRAM), not a measurement of your Address Editor window. Verify the full aperture before enabling destructive tests.
 - Templates require a unique LMB BRAM boot region and link there, with a 2 KiB stack and no heap. External RAM linker registration is not required for these BRAM-resident examples, and native SDT external-memory linker discovery is not claimed.
 - Each required peripheral class must be unambiguous. Multiple GPIOs, TPGs or instances of a required custom core cause an explicit selection error rather than guessing. Create an instance-selection variant for those designs.
@@ -121,7 +123,7 @@ Native backend discovery/build is tested separately from mouse-driven acceptance
 
 ### Executed verification (2026-10-16)
 
-The added App Tester passes native discovery (20 templates visible), the GUI's `validate_bsp` gate, native application creation and ELF build. Host tests exercise both guarded and opted-in mocked memory paths, buttons, rendering and actuator shutdown. See the [App Tester verification record](app-tester-validation.json). This template has not been run on physical hardware; the earlier compact UI's hardware observations do not qualify this new package automatically.
+The current App Tester passes native discovery (20 templates visible), the GUI's `validate_bsp` gate, native application creation and ELF build with both scratch paths enabled by default. Host tests exercise the default enabled and explicitly re-guarded memory paths, buttons, rendering and actuator shutdown. The user's existing 16-KiB workspace application also rebuilt after only the tester-header update, preserving its settings. See the [App Tester verification record](app-tester-validation.json), including the historical guarded-build evidence. This version has not been run on physical hardware; the earlier compact UI's hardware observations do not qualify this new package automatically.
 
 All **19** templates are advertised by the native Examples-tree service and create/build successfully through the public Vitis API. The final run verified **101 imported source files**, allowing only Vitis's normal application-name/library substitutions in CMake. Maximum ELF load end is **14,432 bytes**, within the reference's 16 KiB BRAM.
 

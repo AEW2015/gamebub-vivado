@@ -19,6 +19,8 @@ def expected():
         description = 'Standalone MicroBlaze V GameBub example; building never runs hardware.'
         if app.get('guarded'):
             description += ' Destructive/retiming operations are disabled until explicitly configured.'
+        elif app['name'] == 'app_tester':
+            description += ' A starts destructive 4-KiB SRAM/SDRAM scratch tests or bounded audio/vibration. Reserve the range and park other clients before running.'
         elif app['name'] in ('audio_tone', 'vibration_pulse'):
             description += ' Deliberately running this ELF actuates the board for a bounded interval.'
         yaml = '# SPDX-License-Identifier: CERN-OHL-S-2.0\n%YAML 1.2\n---\n'
@@ -45,6 +47,8 @@ def expected():
         files['src/CMakeLists.txt'] = cmake.encode()
         for name in ('gamebub_settings.h', 'gamebub_bindings.cmake'):
             files['src/' + name] = (CANONICAL / name).read_bytes()
+        if app['name'] == 'app_tester':
+            files['src/gamebub_settings.h'] = (CANONICAL / 'app_tester_settings.h').read_bytes()
         main = '/* SPDX-License-Identifier: CERN-OHL-S-2.0 */\n#include "gamebub_settings.h"\n'
         if 'source' in app:
             main += '#include "' + app['source'] + '"\n'

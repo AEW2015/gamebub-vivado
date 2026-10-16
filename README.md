@@ -45,7 +45,7 @@ To select and build individual applications in Vitis, use the [Examples sidebar 
 
 For AI-assisted development, install the portable [GameBub agent skill](skills/README.md). See [AMD Ross setup](docs/vivado/amd-ross-setup.md) for optional official agent skills and Vivado MCP integration; Ross release compatibility is separate from this repository's 2025.2 target.
 
-Select **GameBub - App Tester** for the combined compact LCD UI with SRAM, SDRAM, audio and vibration pages. The native sidebar now provides 20 templates. Memory writes are guarded by default; see the walkthrough for prerequisites and controls. After repository updates, rescan first; if the existing platform rejects the new template, create/build a new platform. BSP regeneration alone did not reliably refresh the list in observed 2025.2 GUI use.
+Select **GameBub - App Tester** for the combined compact LCD UI with SRAM, SDRAM, audio and vibration pages. Its SRAM/SDRAM pages include destructive 4-KiB scratch tests by default: reserve offsets `0x1000`–`0x1FFF` in both memories and park other clients before running; A starts and B stops. The separate advanced memory examples remain guarded. The native sidebar provides 20 templates. After repository updates, rescan first; if the existing platform rejects a new template, create/build a new platform. BSP regeneration alone did not reliably refresh the list in observed 2025.2 GUI use.
 
 ## Status
 

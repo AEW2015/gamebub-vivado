@@ -7,8 +7,8 @@
 
 static unsigned motor, audio, uploads, memory_calls, owner_calls, fail_audio;
 static unsigned fail_memory;
-void XGpio_DiscreteWrite(XGpio *g,unsigned channel,u32 value) {
- (void)g;assert(channel==1);motor=value;
+void Xil_Out32(UINTPTR address,u32 value) {
+ assert(address==GB_VIBRATION_BASE);motor=value;
 }
 int GBAudio_Stop(const GBAudio *a){(void)a;audio=0;return 0;}
 int GBAudio_Configure(const GBAudio *a,const GBAudio_Tone *t){
@@ -49,7 +49,7 @@ int main(void){
  assert(at_buttons(0x800)==1);assert(at_buttons(0x400)==2);
  assert(at_buttons(8)==0x100);assert(at_buttons(4)==0x200);
  at_tick(0); /* also exercises initial rendering */
- assert(uploads==240);
+ assert(uploads==240 && !memory_calls && !owner_calls); /* no auto-run */
  struct at_label label={110,100,"A"};
  assert(at_pixel(0,0,&label,1)==0);
  assert(at_pixel(100,100,&label,1)==2);
@@ -69,6 +69,9 @@ int main(void){
  assert(at_progress==100);
  press(0x200);assert(at_page==AT_SRAM);
  fail_memory=1;press(1);assert(at_state==AT_FAIL);
+ fail_memory=0;hold(1,9);assert(at_state==AT_RUNNING);
+ unsigned stopped_at=memory_calls;at_tick(2);hold(0,10);
+ assert(at_state==AT_STOPPED && memory_calls==stopped_at);
 #else
  assert(at_state==AT_GUARDED && !memory_calls && !owner_calls);
  press(0x200);press(1);assert(at_page==AT_SRAM && at_state==AT_GUARDED);

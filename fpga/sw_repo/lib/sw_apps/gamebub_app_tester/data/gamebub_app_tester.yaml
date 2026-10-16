@@ -3,7 +3,7 @@
 ---
 title: "GameBub - App Tester"
 type: apps
-description: "Standalone MicroBlaze V GameBub example; building never runs hardware. Destructive/retiming operations are disabled until explicitly configured."
+description: "Standalone MicroBlaze V GameBub example; building never runs hardware. A starts destructive 4-KiB SRAM/SDRAM scratch tests or bounded audio/vibration. Reserve the range and park other clients before running."
 supported_processors:
   - microblaze_riscv
 supported_os:

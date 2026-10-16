@@ -35,7 +35,8 @@ class NativeTemplates(unittest.TestCase):
             self.assertEqual(meta['supported_os'], ['standalone'])
             self.assertEqual(meta['depends'], app['drivers'])
             self.assertEqual(meta['linker_constraints'], {'heap':0, 'stack':2048})
-            self.assertIn('#define GB_ALLOW_DESTRUCTIVE 0', (root / 'src/gamebub_settings.h').read_text())
+            destructive_default = 1 if app['name'] == 'app_tester' else 0
+            self.assertIn(f'#define GB_ALLOW_DESTRUCTIVE {destructive_default}', (root / 'src/gamebub_settings.h').read_text())
             self.assertIn('#define GB_ALLOW_RETIMING 0', (root / 'src/gamebub_settings.h').read_text())
 
     def run_binding(self, metadata, xparameters='', good=True, parent=5, motor=False):

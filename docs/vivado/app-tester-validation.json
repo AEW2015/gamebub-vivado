@@ -1,46 +1,120 @@
 {
   "status": "PASS",
   "date": "2026-10-16",
-  "scope": "App Tester native Vitis 2025.2 BSP validation, discovery/create/build and host-mode behavioral tests; NOT physical execution",
+  "scope": "Compact App Tester with default-enabled SRAM and SDRAM scratch code: native creation/build, ELF bounds and host behavior only; NOT physical execution",
   "hardware_access": "none",
   "template": "gamebub_app_tester",
   "templates_discovered": 20,
-  "new_templates_built_this_run": 1,
-  "previous_19_template_evidence": "native-template-validation.json",
   "gui_precreation_validate_bsp": "PASS",
-  "platform": "Owned reference platform, freshly built with all 20 templates during attempt 2, reused unchanged for the final app build",
+  "native_create_build": "PASS",
   "xsa_sha256": "319b7a1beae5dfad2d7f3f9ab0e73f9d8b0fdea040f5db59ec39b0d31f7e3d22",
-  "elf_sha256": "023d6f1b2faa8fc888d5faa7df5d0410cd2acce7e7fcc1925f977e66b99c1d7e",
-  "elf_load_end": 16352,
+  "elf_sha256": "77aa64f38533a992659a92ce4e67d04716c23f86da894ea0edc4d9c0103af497",
+  "elf_load_end": 15120,
   "bram_bytes": 16384,
   "reserved_stack_bytes": 2048,
   "heap_bytes": 0,
-  "compile_optimization": "-Os for App Tester, including Debug",
-  "portable_suite": "20 Python unittest cases PASS, including exact-source App Tester builds with default guards and opted-in mocked scratch tests; seven memory-helper tests and four driver host suites also PASS",
-  "host_observations": [
-    "ESP32 reverse-order register bitmap to A/B/shoulder mapping",
-    "Debounced shoulder changes page once while held",
-    "Transparent exterior, opaque black center and white text/border pixels",
-    "Audio and vibration stop on timeout, B and app change",
-    "No overlay upload while an actuator is active",
-    "Default memory guards prevent scratch accesses and ownership changes",
-    "Opted-in scratch chunks stay in the configured reservation, finish with progress 100 and propagate failures"
+  "scratch_defaults": {
+    "enabled": true,
+    "byte_offset": 4096,
+    "bytes": 4096,
+    "start": "A press only; no automatic memory test at startup",
+    "requires": "Reserved in both memories, other clients parked, matching BRAM-resident image"
+  },
+  "unchanged_tests": "Zero, ones, address, inverse-address and byte-lane checks through existing SRAM/SDRAM drivers; 256-byte chunks; B stops between chunks",
+  "size_changes": [
+    "AMD low-level GPIO and TPG register setup",
+    "Use native metadata-bound configuration addresses without runtime search tables; retain CfgInitialize hardware identity/ABI checks",
+    "32-bit progress calculation within validated 32-MiB maximum",
+    "No stack reduction or external-memory code relocation"
   ],
-  "preserved_failed_attempts": [
-    "Attempt 1 reused an old platform: GUI validation rejected the new template because app_list.yaml was stale",
-    "Attempt 2 freshly generated the platform: unoptimized application overflowed 16-KiB BRAM by 3408 bytes",
-    "Attempt 3 added size optimization but still overflowed BRAM by 2488 bytes; a diagnostic link map identified unnecessary formatter and UI-copy costs"
+  "native_linked_symbols": [
+    "GBSram_ScratchTest",
+    "GBSdram_ScratchTest"
   ],
-  "final_local_evidence_directory": "D:/xup_2026/bub/native-app-tester4",
+  "portable_checks": "22 Python unittest cases PASS; seven memory-helper tests PASS; four unchanged driver host suites PASS",
+  "user_workspace_rebuild": {
+    "status": "PASS",
+    "elf": "C:\\xup\\gamebub\\c_001\\ws_002\\gamebub_app_tester\\build\\gamebub_app_tester.elf",
+    "sha256": "773e8681d49e4f86c6f3bccd973fc243e3713ebf9e5b41cdd3be78d1917c4f70",
+    "elf_load_end": 15112,
+    "preserved": "Existing hardware, XSA, platform, linker and user settings",
+    "source_change": "Only app_tester.h updated after checking it matched the old template",
+    "previous_enabled_link_overflow_bytes": 1904,
+    "original_header_backup": "D:\\xup_2026\\bub\\app-tester-enabled-link-diagnostic1\\original-app_tester.h"
+  },
+  "source_bindings": {
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/data/gamebub_app_tester.yaml": "366b30c844f5e02bb618d517eb411a6890916a079d60b8b508257f15f3b45b13",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/app_tester.h": "85d484feb95a13069103d7505c3619e709e8ebc00815f60928f38d91a02bddf9",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/CMakeLists.txt": "4e4034be4a504af50525a767db59b17ec0383015de494cfb04ea79c5fe431786",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_settings.h": "34c89c99d3a5dd38f99592942cc6586d9999e96e54d884725deffb008fee3476",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/gamebub_vibration.cmake": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca",
+    "fpga/sw_repo/lib/sw_apps/gamebub_app_tester/src/main.c": "3791cb2938eee64faf88f106496962bee8cc4e161d4b47369832afde7ed03c88",
+    "fpga/sw_repo/templates/apps.json": "1208a2e8572df2671050a740d49c333c9f5041d1399f12f9170cc83b4be02502",
+    "fpga/sw_repo/templates/app_tester.h": "85d484feb95a13069103d7505c3619e709e8ebc00815f60928f38d91a02bddf9",
+    "fpga/sw_repo/templates/app_tester_settings.h": "34c89c99d3a5dd38f99592942cc6586d9999e96e54d884725deffb008fee3476",
+    "fpga/sw_repo/templates/CMakeLists.txt.in": "3e60b3c4220a840eb3fe11d5903d487ffb7addc56ed5a3eaab15e0754c8acc64",
+    "fpga/sw_repo/templates/gamebub_bindings.cmake": "e00ebb4fec6a62b84a8388a670620a034382f2c143da16fe5c4d4209bb2ca66c",
+    "fpga/sw_repo/templates/gamebub_settings.h": "c066d2b35b800d8d1c893772f52be54f8b351dc337070025b05031d3588da321",
+    "fpga/sw_repo/templates/gamebub_vibration.cmake": "7e755f6eb36e08080be8488354ababa854f6c459b0e3178c3b66905d2f35c7ca"
+  },
   "raw_logs_in_git": false,
   "raw_evidence_hashes": {
-    "template-evidence.json": "3c042aa0562b2723bc2d4584761ea01630937a7725a3dd6cbc25b189387c050e",
-    "native-app-tester4.console.log": "fb566d15f38dfe4ac4a56efb874fef02374a820ecddd3e8d6d620a9b9d5b1c82",
-    "app-tester-host2.log": "9546128810d2553fe16d315d6b36319fdb19165e7bb8e09802c57264738d57eb"
+    "native-app-tester6/template-evidence.json": "8d9e4f590ec4213b9aca25df267f5139965c7be42ae423b4d7adfd4bd19ecb1e",
+    "native-app-tester6.console.log": "ff2068c6f4c1a0e98a213695168c08b8bff11a950ea307b675d78ade0bc25d89",
+    "app-tester-scratch-default-host2.log": "3142073c9615ecf56b0a8c85d6ffc7a94ea595e6287c51a903c5f9b6860a9964",
+    "app-tester-scratch-default-user-build1.log": "3b58cfbbdd3a45289bf34215ee44d688e6879558cc33c3fefb9ca09f5bdd610d",
+    "app-tester-scratch-default-drivers1.log": "c369f02851b446e56f38539df72f82e814af1932c1887bd8fb7c42d4a5e562ac"
+  },
+  "historical_guarded_build": {
+    "status": "PASS",
+    "date": "2026-10-16",
+    "scope": "App Tester native Vitis 2025.2 BSP validation, discovery/create/build and host-mode behavioral tests; NOT physical execution",
+    "hardware_access": "none",
+    "template": "gamebub_app_tester",
+    "templates_discovered": 20,
+    "new_templates_built_this_run": 1,
+    "previous_19_template_evidence": "native-template-validation.json",
+    "gui_precreation_validate_bsp": "PASS",
+    "platform": "Owned reference platform, freshly built with all 20 templates during attempt 2, reused unchanged for the final app build",
+    "xsa_sha256": "319b7a1beae5dfad2d7f3f9ab0e73f9d8b0fdea040f5db59ec39b0d31f7e3d22",
+    "elf_sha256": "023d6f1b2faa8fc888d5faa7df5d0410cd2acce7e7fcc1925f977e66b99c1d7e",
+    "elf_load_end": 16352,
+    "bram_bytes": 16384,
+    "reserved_stack_bytes": 2048,
+    "heap_bytes": 0,
+    "compile_optimization": "-Os for App Tester, including Debug",
+    "portable_suite": "20 Python unittest cases PASS, including exact-source App Tester builds with default guards and opted-in mocked scratch tests; seven memory-helper tests and four driver host suites also PASS",
+    "host_observations": [
+      "ESP32 reverse-order register bitmap to A/B/shoulder mapping",
+      "Debounced shoulder changes page once while held",
+      "Transparent exterior, opaque black center and white text/border pixels",
+      "Audio and vibration stop on timeout, B and app change",
+      "No overlay upload while an actuator is active",
+      "Default memory guards prevent scratch accesses and ownership changes",
+      "Opted-in scratch chunks stay in the configured reservation, finish with progress 100 and propagate failures"
+    ],
+    "preserved_failed_attempts": [
+      "Attempt 1 reused an old platform: GUI validation rejected the new template because app_list.yaml was stale",
+      "Attempt 2 freshly generated the platform: unoptimized application overflowed 16-KiB BRAM by 3408 bytes",
+      "Attempt 3 added size optimization but still overflowed BRAM by 2488 bytes; a diagnostic link map identified unnecessary formatter and UI-copy costs"
+    ],
+    "final_local_evidence_directory": "D:/xup_2026/bub/native-app-tester4",
+    "raw_logs_in_git": false,
+    "raw_evidence_hashes": {
+      "template-evidence.json": "3c042aa0562b2723bc2d4584761ea01630937a7725a3dd6cbc25b189387c050e",
+      "native-app-tester4.console.log": "fb566d15f38dfe4ac4a56efb874fef02374a820ecddd3e8d6d620a9b9d5b1c82",
+      "app-tester-host2.log": "9546128810d2553fe16d315d6b36319fdb19165e7bb8e09802c57264738d57eb"
+    },
+    "pending": [
+      "Physical acceptance of this newly packaged template on a matching timing-qualified image",
+      "Opted-in destructive memory code native size/run qualification; additional BRAM may be necessary",
+      "Independent GPIO motor watchdog is not present"
+    ]
   },
   "pending": [
-    "Physical acceptance of this newly packaged template on a matching timing-qualified image",
-    "Opted-in destructive memory code native size/run qualification; additional BRAM may be necessary",
-    "Independent GPIO motor watchdog is not present"
+    "Hardware acceptance of this software revision",
+    "No independent watchdog exists for the GPIO motor",
+    "Scratch checks do not qualify full memory capacity, cross-chunk aliasing or dynamic timing"
   ]
 }

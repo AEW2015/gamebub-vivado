@@ -43,7 +43,7 @@ python -m unittest discover -s fpga/sw_repo/tests -p "test_*.py"
 
 Use `fpga/vivado/gamebub_ipi_demo/test_app_templates.py` with Vitis, a matching XSA and a new output workspace to verify discovery, GUI `validate_bsp`, native creation and ELF bounds. A reused platform may itself have a stale list. Do not touch a user's platform export for an automated experiment.
 
-The combined template is `gamebub_app_tester`: SRAM, Audio, Vibration and SDRAM pages, L/R shoulders to switch, A start, B stop. The guarded build uses `-Os` and occupies 16,352 bytes including a reserved 2-KiB stack in the reference 16-KiB BRAM. Additional features or enabled memory writes may need 32 KiB or more; check the ELF rather than placing the tester in the RAM it overwrites.
+The combined template is `gamebub_app_tester`: SRAM, Audio, Vibration and SDRAM pages, L/R shoulders to switch, A start, B stop. Its compact build now includes destructive 4-KiB scratch tests by default, only started by A: reserve offsets `0x1000`–`0x1FFF` in both memories and park other clients before running. `app_tester_settings.h` is canonical for its generated settings; other memory templates remain guarded. The `-Os` build occupies 15,120 bytes including a reserved 2-KiB stack in the reference 16-KiB BRAM. Low-level GPIO/TPG setup and platform-bound configurations reduce code size without removing device ID/ABI or ownership checks. Check the actual ELF for the selected BSP; do not enlarge linker memory without matching hardware or put the tester in the RAM it overwrites.
 
 ## Runtime boundaries
 
