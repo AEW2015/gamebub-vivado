@@ -1,7 +1,7 @@
 name: GameBub SDK and documentation
 on:
   pull_request:
-    paths: ['docs/vivado/**', 'fpga/sw_repo/**', 'fpga/vivado/gamebub_ipi_demo/**', '.github/workflows/gamebub-sdk.yml']
+    paths: ['docs/vivado/**', 'skills/**', 'fpga/sw_repo/**', 'fpga/vivado/gamebub_ipi_demo/**', '.github/workflows/gamebub-sdk.yml']
   workflow_dispatch:
 permissions:
   contents: read

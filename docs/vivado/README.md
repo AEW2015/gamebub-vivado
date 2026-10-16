@@ -36,3 +36,5 @@ flowchart LR
 The [software repository](../../fpga/sw_repo/README.md) contains drivers and examples. The [reproducible reference](../../fpga/vivado/gamebub_ipi_demo/README.md) preserves the user's revised block diagram. Read [validation status](validation.md) before interpreting a successful build as hardware qualification. The [implementation plan](../../fpga/board_files/IP_DOCUMENTATION_DRIVER_PLAN.md) remains the longer-term checklist.
 
 Markdown is the canonical documentation. Generated HTML/API pages are outputs, not separately maintained sources. All commands that create projects/workspaces require a new output directory; do not overwrite a project you are editing.
+
+For coding-agent workflows, see the portable [GameBub skill](../../skills/README.md) and optional [AMD Ross setup](amd-ross-setup.md). These add instructions/tool integration, not automatic permission to program or flash hardware.

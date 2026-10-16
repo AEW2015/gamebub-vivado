@@ -67,6 +67,11 @@
     "portable_checks_20_plus_7": {
       "status": "pass",
       "evidence": "docs/vivado/vitis-examples.md"
+    },
+    "agent_skill_package": {
+      "status": "pass",
+      "evidence": "skills/README.md",
+      "scope": "Skill structure, local references and documented PowerShell syntax only; Ross not installed or hardware tested"
     }
   },
   "execution_record_hashes": {
@@ -120,7 +125,7 @@
     {
       "role": "source",
       "path": ".github/workflows/gamebub-sdk.yml",
-      "sha256": "d198e928f3f5947fa82f81ae025b7cb81c8daafa4905228d41e2ae94f582856f"
+      "sha256": "3e84a3cccbaaa09b5e11714f648a63a3ff154ff8a21c651349e203f21040e920"
     },
     {
       "role": "source",
@@ -160,17 +165,22 @@
     {
       "role": "source",
       "path": "README.md",
-      "sha256": "1d5ff296e6b011ba52bb9f8a237c6bd52803a2a5defbad6b4e6fd7c53658dfa6"
+      "sha256": "0fa28e2adb3fa6bc479bd525fbdb29597542be71b55cf212e3ff4d1a43eb5a41"
     },
     {
       "role": "source",
       "path": "docs/vivado/README.md",
-      "sha256": "6946739c03bee096cbfef7e3f818ac7b71cd543b1e6aee0b43867e06114badf4"
+      "sha256": "790205fb77b1a10cf80d1c79ea874933da3b77e7a7743e0db2610a35b8a28a1c"
     },
     {
       "role": "source",
       "path": "docs/vivado/amd-ip.md",
       "sha256": "96b950e864fa5ae17d2b17839bebbb4e6e41ec9e6fc6e34d041fd75002bdaa83"
+    },
+    {
+      "role": "source",
+      "path": "docs/vivado/amd-ross-setup.md",
+      "sha256": "020f7ad99cb5efd16e3d370a104d13eedc1f61dc6312ca187d088bf06f80eab5"
     },
     {
       "role": "source",
@@ -360,7 +370,7 @@
     {
       "role": "source",
       "path": "docs/vivado/vitis-examples.md",
-      "sha256": "71013aeaf1c0f6b7ba616947cc7819f6b9d39efebc7ce898529bed41a564a83a"
+      "sha256": "ad8163dd1216cf1f19775313a204b96dad8b3f8a5657ff26dd702fcecd585918"
     },
     {
       "role": "source",
@@ -2309,6 +2319,11 @@
     },
     {
       "role": "source",
+      "path": "fpga/sw_repo/tests/test_skill_package.py",
+      "sha256": "1ea48f2170f3ec1246155abc01516f2085dae9f04f62a113ae40ef9601a924cc"
+    },
+    {
+      "role": "source",
       "path": "fpga/sw_repo/tools/catalog_docs.py",
       "sha256": "9e8b9d6912b4a780cc4c4df7bcc9f89ec31e3ec036373bb885c5c9c6978b00af"
     },
@@ -2391,6 +2406,16 @@
       "role": "source",
       "path": "fpga/vivado/gamebub_ipi_demo/validate_design.tcl",
       "sha256": "3554e6e04487597fd4c70b508241803148e8f62b85c8033974382724c426188c"
+    },
+    {
+      "role": "source",
+      "path": "skills/README.md",
+      "sha256": "48fcef5ded26206fbe3353b15fbde45e639159d40ea7d35009e62bd9540a4d0a"
+    },
+    {
+      "role": "source",
+      "path": "skills/gamebub-vivado/SKILL.md",
+      "sha256": "c950f1f58c7ae72a385dccb78f0f3ae84d2658c6344d0386b260832d72df871d"
     }
   ],
   "native_application_templates": 19

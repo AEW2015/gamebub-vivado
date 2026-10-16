@@ -32,7 +32,7 @@ Use the `sw_repo` directory, not its `drivers` subdirectory or the Vivado `ip_re
 
 Create a **Platform Component from XSA**, selecting the matching GameBub hardware export, **MicroBlaze V**, **standalone** and a domain name of your choice. In that domain's BSP settings, select the MDM JTAG UART for stdin/stdout (`mdm_1` in the reference design).
 
-Build the platform. The relevant peripherals should bind to `gbesp32`, `gbaudio`, `gbsram` and `gbsdram` rather than a generic fallback. A platform created before adding the repository may need BSP regeneration/rebuild; prefer a fresh platform when learning, and do not reset someone else's customized BSP without saving it.
+Build the platform. The relevant peripherals should bind to `gbesp32`, `gbaudio`, `gbsram` and `gbsdram` rather than a generic fallback. Register the repository before platform creation. After adding new templates, existing domains may retain their old supported-template list even after BSP regeneration and build; creating a new platform after the rescan is the reliable workaround observed in 2025.2. A fresh workspace also worked. Preserve existing customized platforms.
 
 The supplied [reference creation script](../../fpga/vivado/gamebub_ipi_demo/README.md) exports a metadata-only XSA without programming hardware. It is enough to build software, but not to run it on a board.
 
@@ -85,7 +85,7 @@ The selected platform needs one combined ESP32 core with the COV2 two-bit CPU ov
 
 The combined application's CMake adds `-Os` even in Debug to fit the reference 16-KiB BRAM. The guarded build loads through byte 16,352, including its reserved 2-KiB stack, leaving only 32 bytes of unallocated BRAM. Disabling optimization, enabling destructive tests or adding features may require more BRAM; use 32 KiB or more for development and check linker usage rather than moving test code into the RAM being tested.
 
-After adding/updating the repository, **rescan repositories, Regenerate BSP and Build the platform**, then create the application. Existing domains cache their supported-template list; a sidebar entry alone does not refresh it.
+After adding/updating the repository, **rescan repositories, then create/build a new platform** if its supported-template list is stale. Existing domains cache that list; a sidebar entry alone does not refresh it. Regenerate BSP plus Build did not reliably resolve this in observed 2025.2 GUI use.
 
 - **Build never runs hardware.** Deliberately running the audio or vibration ELF actuates the board. The GPIO motor has no independent CPU-hang watchdog.
 - Memory/retiming examples print a disabled/refusal result by default, not PASS. Before editing the imported application's `gamebub_settings.h`, verify its entire memory mapping, reserve the scratch range, park all other masters and satisfy the [cache/ownership requirements](memory-cache.md). These flags acknowledge preconditions; they do not park other hardware automatically.
@@ -103,7 +103,7 @@ After adding/updating the repository, **rescan repositories, Regenerate BSP and 
 
 **Template listed but creation/build fails:** read the first missing-driver/memory/metadata error. The platform must contain the selected example's peripherals. Bind custom drivers and rebuild the BSP before retrying in a new component. Preserve the failed component/log when investigating.
 
-**"Not a valid template name" despite being listed:** the platform's generated `app_list.yaml` predates the repository update. In the platform editor, select the standalone domain's Board Support Package, click **Regenerate BSP**, then **Build** the platform and retry. Do not edit the generated list or the AMD installation manually.
+**"Not a valid template name" despite being listed:** compare the workspace repository index with the platform's BSP/export `app_list.yaml`. In observed 2025.2 GUI use, **Regenerate BSP and Build reported success but left the list stale**. Register/rescan the software repository first, then create and build a new platform from the matching XSA. A fresh workspace plus platform also worked. Keep the old platform for its settings and evidence; do not edit the generated list or AMD installation manually. A workspace reset is a workaround, not a required part of every repository update.
 
 **Address/instance selection failure:** use one supported instance per required peripheral class, or make an explicit application-specific selection. Renamed instances are supported; ambiguous multiple instances are not selected automatically.
 

@@ -43,7 +43,9 @@ See the [step-by-step quickstart](QUICKSTART.md) for the GUI flow, reference blo
 
 To select and build individual applications in Vitis, use the [Examples sidebar walkthrough](docs/vivado/vitis-examples.md). Register `fpga/sw_repo` through **Embedded SW Repositories...**; native templates are listed under **Embedded Software Examples**.
 
-Select **GameBub - App Tester** for the combined compact LCD UI with SRAM, SDRAM, audio and vibration pages. The native sidebar now provides 20 templates. Memory writes are guarded by default; see the walkthrough for prerequisites and controls. After repository updates, rescan and regenerate/rebuild your platform BSP before creating a new template.
+For AI-assisted development, install the portable [GameBub agent skill](skills/README.md). See [AMD Ross setup](docs/vivado/amd-ross-setup.md) for optional official agent skills and Vivado MCP integration; Ross release compatibility is separate from this repository's 2025.2 target.
+
+Select **GameBub - App Tester** for the combined compact LCD UI with SRAM, SDRAM, audio and vibration pages. The native sidebar now provides 20 templates. Memory writes are guarded by default; see the walkthrough for prerequisites and controls. After repository updates, rescan first; if the existing platform rejects the new template, create/build a new platform. BSP regeneration alone did not reliably refresh the list in observed 2025.2 GUI use.
 
 ## Status
 
